@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <bottom>
+      <SplitPane dividerPositions="0.5" prefHeight="244.0" prefWidth="1003.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TabPane layoutX="79.0" layoutY="-42.0" prefHeight="242.0" prefWidth="507.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <tabs>
+                      <Tab text="Equipamiento">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        </content>
+                      </Tab>
+                      <Tab text="Habilidades">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        </content>
+                      </Tab>
+                        <Tab text="Inventario">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                           </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <AnchorPane prefHeight="158.0" prefWidth="507.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox layoutX="37.0" layoutY="14.0">
+                           <children>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../../Desktop/fxfxfxfx/1.jpg" />
+                                 </image>
+                                 <effect>
+                                    <Reflection />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../../Desktop/fxfxfxfx/2.jpg" />
+                                 </image>
+                                 <effect>
+                                    <Reflection />
+                                 </effect>
+                              </ImageView>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../../Desktop/fxfxfxfx/3.png" />
+                                 </image>
+                                 <effect>
+                                    <Reflection />
+                                 </effect>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <Label layoutX="202.0" layoutY="181.0" text="Reconocimiento" AnchorPane.leftAnchor="170.0" AnchorPane.topAnchor="180.0">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <effect>
+                              <Reflection />
+                           </effect>
+                        </Label>
+                        <Label layoutX="361.0" layoutY="181.0" text="Apoyo" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="180.0">
+                           <effect>
+                              <Reflection />
+                           </effect>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="51.0" layoutY="178.0" text="Asalto" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="180.0">
+                           <effect>
+                              <Reflection />
+                           </effect>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </bottom>
+   <top>
+      <AnchorPane prefHeight="164.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
+         <children>
+            <Accordion layoutX="14.0" layoutY="14.0">
+              <panes>
+                <TitledPane animated="false" text="Estado Escuadrón A">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="20.0" layoutY="23.0" text="Vitalidad" />
+                              <Label layoutX="20.0" layoutY="55.0" text="Energía" />
+                              <Label layoutX="20.0" layoutY="90.0" text="Algo más" />
+                           </children></AnchorPane>
+                  </content>
+                </TitledPane>
+                <TitledPane animated="false" text="Estado Escuadrón B">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                </TitledPane>
+                <TitledPane animated="false" text="Estado Escuadrón C">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="199.0" />
+                  </content>
+                </TitledPane>
+              </panes>
+            </Accordion>
+            <MenuButton layoutX="896.0" layoutY="14.0" mnemonicParsing="false" text="Menú">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Guardar Partida" />
+                <MenuItem mnemonicParsing="false" text="Cargar Partida" />
+                  <MenuItem mnemonicParsing="false" text="Opciones" />
+                  <MenuItem mnemonicParsing="false" text="Salir de la Partida" />
+              </items>
+            </MenuButton>
+         </children>
+      </AnchorPane>
+   </top>
+   <right>
+      <TextArea prefHeight="200.0" prefWidth="200.0" promptText="Aquí aparecerá lo que la peña de los escuadrones diga" BorderPane.alignment="CENTER" />
+   </right>
+   <left>
+      <TextArea prefHeight="321.0" prefWidth="169.0" promptText="Consola de mando" BorderPane.alignment="CENTER" />
+   </left>
+   <center>
+      <AnchorPane prefHeight="374.0" prefWidth="655.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="375.0" fitWidth="910.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../Desktop/fxfxfxfx/mp.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+   </center>
+   <effect>
+      <DropShadow />
+   </effect>
+</BorderPane>

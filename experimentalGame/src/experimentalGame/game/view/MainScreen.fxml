@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox layoutX="455.0" layoutY="404.0" spacing="20.0">
+         <children>
+            <Button layoutX="480.0" layoutY="486.0" mnemonicParsing="false" prefWidth="115.0" text="Nueva Partida" />
+            <Button layoutX="480.0" layoutY="543.0" mnemonicParsing="false" text="Cargar Partida" />
+            <Button layoutX="480.0" layoutY="616.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="115.0" text="Opciones" />
+            <Button layoutX="480.0" layoutY="670.0" mnemonicParsing="false" prefWidth="115.0" text="Salir" />
+         </children>
+      </VBox>
+      <Label layoutX="914.0" layoutY="733.0" text="Build 2.0.01">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
