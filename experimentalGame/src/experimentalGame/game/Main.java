@@ -48,6 +48,7 @@ public class Main extends Application {
 
 		initRootStage();
 		showMainScreen();
+		//showMainUI();
 
 	}
 
@@ -105,7 +106,7 @@ public class Main extends Application {
             
             // Give the controller access to the main app.
             MainUIController controller = loader.getController();
-            controller.setMainApp(this);
+            controller.setMain(this);
             
         } catch (IOException e) {
             e.printStackTrace();

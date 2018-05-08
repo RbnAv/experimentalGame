@@ -21,6 +21,9 @@ public class Squad {
 	private final IntegerProperty agilidad;
 	private final IntegerProperty percepcion;
 	private final IntegerProperty voluntad;
+	private  IntegerProperty vitalidad;
+	private  IntegerProperty energia;
+	private  IntegerProperty miedo;
 
 	/** default constructor
 	 * 
@@ -122,5 +125,50 @@ public class Squad {
 	public IntegerProperty voluntadProperty() {
 		return voluntad;
 	}
+
+	public final IntegerProperty vitalidadProperty() {
+		return this.vitalidad;
+	}
+	
+
+	public final int getVitalidad() {
+		return this.vitalidadProperty().get();
+	}
+	
+
+	public final void setVitalidad(final int vitalidad) {
+		this.vitalidadProperty().set(vitalidad);
+	}
+	
+
+	public final IntegerProperty energiaProperty() {
+		return this.energia;
+	}
+	
+
+	public final int getEnergia() {
+		return this.energiaProperty().get();
+	}
+	
+
+	public final void setEnergia(final int energia) {
+		this.energiaProperty().set(energia);
+	}
+	
+
+	public final IntegerProperty miedoProperty() {
+		return this.miedo;
+	}
+	
+
+	public final int getMiedo() {
+		return this.miedoProperty().get();
+	}
+	
+
+	public final void setMiedo(final int miedo) {
+		this.miedoProperty().set(miedo);
+	}
+	
 
 }

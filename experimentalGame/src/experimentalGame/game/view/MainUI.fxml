@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view/MainUIController.java">
+<BorderPane prefHeight="768.0" prefWidth="1024.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experimentalGame.game.view.MainUIController">
    <bottom>
       <SplitPane dividerPositions="0.5" prefHeight="244.0" prefWidth="1003.0" BorderPane.alignment="CENTER">
         <items>
@@ -118,11 +118,11 @@
                                 </rowConstraints>
                                  <children>
                                     <Label text="Vitalidad" />
-                                    <Label text="Label" GridPane.columnIndex="1" />
+                                    <Label fx:id="vitalityLabel" text="Label" GridPane.columnIndex="1" />
                                     <Label text="Energía" GridPane.rowIndex="1" />
                                     <Label text="Miedo" GridPane.rowIndex="2" />
-                                    <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                    <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <Label fx:id="energyLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Label fx:id="fearLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                                  </children>
                               </GridPane>
                            </children></AnchorPane>

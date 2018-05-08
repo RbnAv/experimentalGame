@@ -46,6 +46,11 @@ public class MainUIController {
 	private void initialize() {
 		// Initialize the person table with the two columns.
 		nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
+		
+		showSquadDetails(null);
+		
+		squadTable.getSelectionModel().selectedItemProperty().addListener((observable,
+				oldValue, newValue) -> showSquadDetails(newValue));
 	}
 
 	/**
@@ -53,11 +58,28 @@ public class MainUIController {
 	 * 
 	 * @param mainApp
 	 */
-	public void setMainApp(Main main) {
+	public void setMain(Main main) {
 		this.main = main;
 
 		// Add observable list data to the table
 		squadTable.setItems(main.getSquadData());
+	}
+
+	/**
+	 * Fills all text fields to show details about the person. If the specified
+	 * person is null, all text fields are cleared.
+	 * 
+	 * @param person
+	 *            the person or null
+	 */
+	private void showSquadDetails(Squad squad) {
+		if (squad != null) {
+			// Fill the labels with info from the person object.
+			vitalityLabel.setText(Integer.toString(squad.getVitalidad()));
+			energyLabel.setText(Integer.toString(squad.getEnergia()));
+			fearLabel.setText(Integer.toString(squad.getMiedo()));
+
+		}
 	}
 
 }
