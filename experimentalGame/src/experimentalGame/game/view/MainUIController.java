@@ -41,6 +41,8 @@ public class MainUIController implements Initializable  {
 
 	@FXML
 	private Label lbl;
+	//private ImageView img = new ImageView();
+	
 
 	// Reference to the main application.
 	// private Main main;
@@ -69,6 +71,7 @@ public class MainUIController implements Initializable  {
 
 	public void nuevaPartida(ActionEvent event) {
 		// System.out.println("Hola!");
+		//img.setImage(null);
 		try {
 			// Cerramos esta ventana
 			((Node) event.getSource()).getScene().getWindow().hide();

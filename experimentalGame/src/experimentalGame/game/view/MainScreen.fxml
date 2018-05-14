@@ -23,7 +23,7 @@
             <Font size="12.0" />
          </font>
       </Label>
-      <ImageView fitHeight="273.0" fitWidth="497.0" layoutX="279.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="img" fitHeight="273.0" fitWidth="497.0" layoutX="279.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../Image/Horizon.jpg" />
          </image></ImageView>
