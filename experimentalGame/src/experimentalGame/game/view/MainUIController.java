@@ -9,6 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -23,7 +24,7 @@ import javafx.stage.Stage;
  *
  */
 
-public class MainUIController implements Initializable {
+public class MainUIController implements Initializable  {
 
 	@FXML
 	private TableView<Squad> squadTable;
@@ -38,8 +39,11 @@ public class MainUIController implements Initializable {
 	@FXML
 	private Label fearLabel;
 
+	@FXML
+	private Label lbl;
+
 	// Reference to the main application.
-	//private Main main;
+	// private Main main;
 	Main main;
 
 	/**
@@ -56,64 +60,100 @@ public class MainUIController implements Initializable {
 	private void initialize() {
 		// Initialize the person table with the two columns.
 		nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
-		
+
 		showSquadDetails(null);
-		
-		squadTable.getSelectionModel().selectedItemProperty().addListener((observable,
-				oldValue, newValue) -> showSquadDetails(newValue));
+
+		squadTable.getSelectionModel().selectedItemProperty()
+				.addListener((observable, oldValue, newValue) -> showSquadDetails(newValue));
 	}
-	
-	public void showGreeting(ActionEvent event) {
-		//System.out.println("Hola!");
-		try{
-			 
-			//Te lo comento para que  lo comprendamos tú y yo
-			//Léeme el source del archivo que te digo fxml y te pongo el path
-			 
-			FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("narrativeScreen.fxml"));
-			Parent root1= (Parent)fxmlLoader.load();
-			 
-			//Creame un nuevo Stage o para que nos entendamos una nueva ventana windows vacía
-			Stage stage= new Stage();
-			 
-			//Y ahora dentro del Stage me metes la escena que anteriormente hemos leído y metido en root1
-			stage.setScene(new Scene(root1));
-			 
-			// Y ahora le digo que me muestres el stage
-			stage.show();
+
+	public void nuevaPartida(ActionEvent event) {
+		// System.out.println("Hola!");
+		try {
+			// Cerramos esta ventana
+			((Node) event.getSource()).getScene().getWindow().hide();
 			
-			// Cerrar esta ventana
-			Stage ventana1= new Stage();
-			ventana1.getScene().getWindow();
-			ventana1.close();
-			}
-		catch (Exception e) {
+			// Añadimos el fxml y lo cargamos
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("narrativeScreen.fxml"));
+			Parent root = (Parent) fxmlLoader.load();
+
+			// Creamos un nuevo Stage (una nueva ventana vacía)
+			Stage stage = new Stage();
+
+			// Dentro del Stage añadimos la escena que anteriormente hemos leído y metido en root
+			stage.setScene(new Scene(root));
+
+			// Mostramos la ventana
+			stage.show();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+	public void continuar(ActionEvent event) {
+		try {
+			// Cerramos esta ventana
+			((Node) event.getSource()).getScene().getWindow().hide();
+			// Léeme el source del archivo que te digo fxml y te pongo el path
+
+			// Añadimos el fxml y lo cargamos
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MainUI.fxml"));
+			Parent root = (Parent) fxmlLoader.load();
+
+			// Creamos un nuevo Stage (una nueva ventana vacía)
+			Stage stage = new Stage();
+
+			// Dentro del Stage añadimos la escena que anteriormente hemos leído y metido en root
+			stage.setScene(new Scene(root));
+
+			// Mostramos la ventana
+			stage.show();
+		} catch (Exception e) {
 			// TODO: handle exception
 		}
 	}
 	
-	public void continuar(ActionEvent event) {
-		try{
-			 
-			//Te lo comento para que  lo comprendamos tú y yo
-			//Léeme el source del archivo que te digo fxml y te pongo el path
-			 
-			FXMLLoader fxmlLoader= new FXMLLoader(getClass().getResource("MainUI.fxml"));
-			Parent root1= (Parent)fxmlLoader.load();
-			 
-			//Creame un nuevo Stage o para que nos entendamos una nueva ventana windows vacía
-			Stage stage= new Stage();
-			 
-			//Y ahora dentro del Stage me metes la escena que anteriormente hemos leído y metido en root1
-			stage.setScene(new Scene(root1));
-			 
-			// Y ahora le digo que me muestres el stage
-			stage.show();
+	public void salir(ActionEvent event) {
+		System.exit(0);
+	}
+
+	/*
+	public void escogerPersonaje(ActionEvent event) {
+		try {
+			// create our mysql database connection
+			String myDriver = "org.gjt.mm.mysql.Driver";
+			String myUrl = "jdbc:mysql://localhost/mydb";
+			Class.forName(myDriver);
+			Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
+
+			// our SQL SELECT query.
+			// if you only need a few columns, specify them by name instead of using "*"
+			String query = "SELECT * FROM personaje";
+
+			// create the java statement
+			Statement st = (Statement) conn.createStatement();
+
+			// execute the query, and get a java resultset
+			ResultSet rs = st.executeQuery(query);
+
+			// iterate through the java resultset
+			while (rs.next()) {
+				String nombrePersonaje = rs.getString("nombrePersonaje");
+				int vidaPersonaje = rs.getInt("vidaPersonaje");
+
+				// Apoyo 
+				if (nombrePersonaje.equals("Apoyo")) {
+					int v1 = vidaPersonaje;
+					lbl.setText("Vida :" + v1);
+				}
 			}
-		catch (Exception e) {
-			// TODO: handle exception
+			st.close();
+		} catch (Exception e) {
+			System.err.println("Got an exception! ");
+			System.err.println(e.getMessage());
 		}
 	}
+	*/
 
 	/**
 	 * Is called by the main application to give a reference back to itself.
@@ -146,7 +186,7 @@ public class MainUIController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }
