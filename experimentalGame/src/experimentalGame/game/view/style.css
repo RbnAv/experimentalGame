@@ -1,5 +1,5 @@
-#splitPane{
-    -fx-background-image: url("../fxfxfxfx\asd.jpg");
+#interfaz{
+    -fx-background-image: url("@../../../../Image/fondo.jpg");
     -fx-background-repeat: stretch;   
     -fx-background-size: 1280 800;
     -fx-background-position: center center;
