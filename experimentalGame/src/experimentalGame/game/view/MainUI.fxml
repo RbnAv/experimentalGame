@@ -59,7 +59,7 @@
                            <children>
                               <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../../../Desktop/fxfxfxfx/1.jpg" />
+                                    <Image url="@../../../../Image/1.jpg" />
                                  </image>
                                  <effect>
                                     <Reflection />
@@ -67,7 +67,7 @@
                               </ImageView>
                               <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../../../Desktop/fxfxfxfx/2.jpg" />
+                                    <Image url="@../../../../Image/2.jpg" />
                                  </image>
                                  <effect>
                                     <Reflection />
@@ -75,7 +75,7 @@
                               </ImageView>
                               <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../../../Desktop/fxfxfxfx/3.png" />
+                                    <Image url="@../../../../Image/3.png" />
                                  </image>
                                  <effect>
                                     <Reflection />
@@ -83,7 +83,12 @@
                               </ImageView>
                            </children>
                         </HBox>
-                        <Label layoutX="202.0" layoutY="181.0" text="Reconocimiento" AnchorPane.leftAnchor="170.0" AnchorPane.topAnchor="180.0">
+                        <Label layoutX="100.0" layoutY="180.0" text="Asalto">
+                           <effect>
+                              <Reflection />
+                           </effect>
+                        </Label>
+                        <Label layoutX="211.0" layoutY="180.0" text="Reconocimiento" AnchorPane.leftAnchor="211.0" AnchorPane.topAnchor="180.0">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
@@ -91,16 +96,7 @@
                               <Reflection />
                            </effect>
                         </Label>
-                        <Label layoutX="361.0" layoutY="181.0" text="Apoyo" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="180.0">
-                           <effect>
-                              <Reflection />
-                           </effect>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                     <children>
-                        <Label layoutX="51.0" layoutY="178.0" text="Asalto" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="180.0">
+                        <Label layoutX="393.0" layoutY="180.0" text="Apoyo" AnchorPane.leftAnchor="393.0" AnchorPane.topAnchor="180.0">
                            <effect>
                               <Reflection />
                            </effect>
@@ -222,9 +218,9 @@
    <center>
       <AnchorPane prefHeight="374.0" prefWidth="655.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="280.0" fitWidth="230.0" layoutX="183.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="281.0" fitWidth="492.0" layoutX="55.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../Desktop/fxfxfxfx/mp.png" />
+                  <Image url="@../../../../Image/mp.png" />
                </image>
             </ImageView>
          </children></AnchorPane>

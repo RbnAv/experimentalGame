@@ -95,21 +95,12 @@ public class MainUIController implements Initializable  {
 
 	public void continuar(ActionEvent event) {
 		try {
-			// Cerramos esta ventana
 			((Node) event.getSource()).getScene().getWindow().hide();
-			// Léeme el source del archivo que te digo fxml y te pongo el path
-
-			// Añadimos el fxml y lo cargamos
+			
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MainUI.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
-
-			// Creamos un nuevo Stage (una nueva ventana vacía)
 			Stage stage = new Stage();
-
-			// Dentro del Stage añadimos la escena que anteriormente hemos leído y metido en root
 			stage.setScene(new Scene(root));
-
-			// Mostramos la ventana
 			stage.show();
 		} catch (Exception e) {
 			// TODO: handle exception
