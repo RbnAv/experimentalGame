@@ -24,7 +24,7 @@ import javafx.stage.Stage;
  *
  */
 
-public class MainUIController implements Initializable  {
+public class MainUIController implements Initializable {
 
 	@FXML
 	private TableView<Squad> squadTable;
@@ -41,8 +41,9 @@ public class MainUIController implements Initializable  {
 
 	@FXML
 	private Label lbl;
-	//private ImageView img = new ImageView();
-	
+
+	// @FXML
+	// private ImageView img;
 
 	// Reference to the main application.
 	// private Main main;
@@ -71,11 +72,14 @@ public class MainUIController implements Initializable  {
 
 	public void nuevaPartida(ActionEvent event) {
 		// System.out.println("Hola!");
-		//img.setImage(null);
+
+		// Image image = new Image("/img/1.jpg");
+		// img.setImage(image);
+
 		try {
 			// Cerramos esta ventana
 			((Node) event.getSource()).getScene().getWindow().hide();
-			
+
 			// Añadimos el fxml y lo cargamos
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("narrativeScreen.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
@@ -83,7 +87,8 @@ public class MainUIController implements Initializable  {
 			// Creamos un nuevo Stage (una nueva ventana vacía)
 			Stage stage = new Stage();
 
-			// Dentro del Stage añadimos la escena que anteriormente hemos leído y metido en root
+			// Dentro del Stage añadimos la escena que anteriormente hemos leído y metido en
+			// root
 			stage.setScene(new Scene(root));
 
 			// Mostramos la ventana
@@ -96,7 +101,7 @@ public class MainUIController implements Initializable  {
 	public void continuar(ActionEvent event) {
 		try {
 			((Node) event.getSource()).getScene().getWindow().hide();
-			
+
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MainUI.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
@@ -106,48 +111,35 @@ public class MainUIController implements Initializable  {
 			// TODO: handle exception
 		}
 	}
-	
+
 	public void salir(ActionEvent event) {
 		System.exit(0);
 	}
 
 	/*
-	public void escogerPersonaje(ActionEvent event) {
-		try {
-			// create our mysql database connection
-			String myDriver = "org.gjt.mm.mysql.Driver";
-			String myUrl = "jdbc:mysql://localhost/mydb";
-			Class.forName(myDriver);
-			Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
-
-			// our SQL SELECT query.
-			// if you only need a few columns, specify them by name instead of using "*"
-			String query = "SELECT * FROM personaje";
-
-			// create the java statement
-			Statement st = (Statement) conn.createStatement();
-
-			// execute the query, and get a java resultset
-			ResultSet rs = st.executeQuery(query);
-
-			// iterate through the java resultset
-			while (rs.next()) {
-				String nombrePersonaje = rs.getString("nombrePersonaje");
-				int vidaPersonaje = rs.getInt("vidaPersonaje");
-
-				// Apoyo 
-				if (nombrePersonaje.equals("Apoyo")) {
-					int v1 = vidaPersonaje;
-					lbl.setText("Vida :" + v1);
-				}
-			}
-			st.close();
-		} catch (Exception e) {
-			System.err.println("Got an exception! ");
-			System.err.println(e.getMessage());
-		}
-	}
-	*/
+	 * public void escogerPersonaje(ActionEvent event) { try { // create our mysql
+	 * database connection String myDriver = "org.gjt.mm.mysql.Driver"; String myUrl
+	 * = "jdbc:mysql://localhost/mydb"; Class.forName(myDriver); Connection conn =
+	 * (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
+	 * 
+	 * // our SQL SELECT query. // if you only need a few columns, specify them by
+	 * name instead of using "*" String query = "SELECT * FROM personaje";
+	 * 
+	 * // create the java statement Statement st = (Statement)
+	 * conn.createStatement();
+	 * 
+	 * // execute the query, and get a java resultset ResultSet rs =
+	 * st.executeQuery(query);
+	 * 
+	 * // iterate through the java resultset while (rs.next()) { String
+	 * nombrePersonaje = rs.getString("nombrePersonaje"); int vidaPersonaje =
+	 * rs.getInt("vidaPersonaje");
+	 * 
+	 * // Apoyo if (nombrePersonaje.equals("Apoyo")) { int v1 = vidaPersonaje;
+	 * lbl.setText("Vida :" + v1); } } st.close(); } catch (Exception e) {
+	 * System.err.println("Got an exception! "); System.err.println(e.getMessage());
+	 * } }
+	 */
 
 	/**
 	 * Is called by the main application to give a reference back to itself.
