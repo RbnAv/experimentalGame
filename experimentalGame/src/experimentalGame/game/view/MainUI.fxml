@@ -202,6 +202,7 @@
             </content>
           </TitledPane>
             <Button layoutX="43.0" layoutY="52.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="120.0" text="Abortar Misión" />
+            <Button layoutX="43.0" layoutY="117.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="120.0" text="Ir a Evento" />
          </children>
       </AnchorPane>
    </top>
@@ -214,7 +215,7 @@
                </image>
             </ImageView>
             <TextArea layoutX="14.0" layoutY="30.0" prefHeight="280.0" prefWidth="243.0" promptText="Consola de mando" />
-            <TextArea layoutX="767.0" layoutY="30.0" prefHeight="280.0" prefWidth="243.0" promptText="Consola de mando" text="Lista de Salas:" />
+            <TextArea editable="false" layoutX="767.0" layoutY="30.0" prefHeight="280.0" prefWidth="243.0" promptText="Consola de mando" text="Lista de Salas:&#10;      - Sur:&#10;           - Sala 1&#10;           - Sala 2&#10;           - Sala 3&#10;           - Sala 4&#10;           - Sala 5&#10;           - Sala 6&#10;      - Este:&#10;           - Sala 7&#10;           - Sala 8&#10;           - Sala 9&#10;      - Oeste:&#10;           - Sala 10&#10;           - Sala 11&#10;      - Norte:&#10;           - Sala 12&#10;           - Sala 13&#10;           - Sala 14&#10;           - Sala 15&#10;      - Noroeste:&#10;           - Sala 16" />
          </children></AnchorPane>
    </center>
    <effect>
