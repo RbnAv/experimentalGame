@@ -15,6 +15,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 /**
@@ -98,6 +100,30 @@ public class MainUIController implements Initializable {
 		}
 	}
 
+	public void principal(ActionEvent event) {
+		try {
+			((Node) event.getSource()).getScene().getWindow().hide();
+
+			// se carga el root del archivo fmxl
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(Main.class.getResource("view/rootStage.fxml"));
+			Stage primaryStage = new Stage();
+			BorderPane rootStage = (BorderPane) loader.load();
+			// Muestra la escena que contiene el diseño de la raíz.
+			Scene scene = new Scene(rootStage);
+			primaryStage.setScene(scene);
+			primaryStage.show();
+
+			FXMLLoader fxmlLoader = new FXMLLoader();
+			fxmlLoader.setLocation(Main.class.getResource("view/MainScreen.fxml"));
+			AnchorPane mainScreen = (AnchorPane) fxmlLoader.load();
+			// establece el menú principal en el centro del stage (rootStage)
+			rootStage.setCenter(mainScreen);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
 	public void continuar(ActionEvent event) {
 		try {
 			((Node) event.getSource()).getScene().getWindow().hide();
@@ -111,7 +137,7 @@ public class MainUIController implements Initializable {
 			// TODO: handle exception
 		}
 	}
-	
+
 	public void opciones(ActionEvent event) {
 		try {
 			((Node) event.getSource()).getScene().getWindow().hide();
@@ -125,7 +151,7 @@ public class MainUIController implements Initializable {
 			// TODO: handle exception
 		}
 	}
-	
+
 	public void evento(ActionEvent event) {
 		try {
 			((Node) event.getSource()).getScene().getWindow().hide();
