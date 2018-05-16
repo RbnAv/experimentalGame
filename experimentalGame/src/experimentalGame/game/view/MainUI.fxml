@@ -215,7 +215,7 @@
                </image>
             </ImageView>
             <TextArea layoutX="14.0" layoutY="30.0" prefHeight="280.0" prefWidth="243.0" promptText="Consola de mando" />
-            <TextArea editable="false" layoutX="767.0" layoutY="30.0" prefHeight="280.0" prefWidth="243.0" promptText="Consola de mando" text="Lista de Salas:&#10;      - Sur:&#10;           - Sala 1&#10;           - Sala 2&#10;           - Sala 3&#10;           - Sala 4&#10;           - Sala 5&#10;           - Sala 6&#10;      - Este:&#10;           - Sala 7&#10;           - Sala 8&#10;           - Sala 9&#10;      - Oeste:&#10;           - Sala 10&#10;           - Sala 11&#10;      - Norte:&#10;           - Sala 12&#10;           - Sala 13&#10;           - Sala 14&#10;           - Sala 15&#10;      - Noroeste:&#10;           - Sala 16" />
+            <TextArea editable="false" layoutX="767.0" layoutY="30.0" prefHeight="280.0" prefWidth="243.0" promptText="Consola de mando" text="Lista de Sectores:&#10;      - Sector A:&#10;           - A1&#10;           - A2&#10;           - A3&#10;           - A4&#10;           - A5&#10;           - A6&#10;      - Sector B:&#10;           - B1&#10;           - B2&#10;           - B3&#10;      - Sector C:&#10;           - C1&#10;           - C2&#10;      - Sector D:&#10;           - D1&#10;           - D2&#10;           - D3&#10;           - D4&#10;      - Sector B-D:&#10;           - B-D1" />
          </children></AnchorPane>
    </center>
    <effect>
