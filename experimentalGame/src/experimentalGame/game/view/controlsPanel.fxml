@@ -17,9 +17,9 @@
          </font>
       </Label>
       <Button layoutX="186.0" layoutY="467.0" mnemonicParsing="false" onAction="#opciones" prefHeight="25.0" prefWidth="87.0" text="Atrás" />
-      <Label layoutX="158.0" layoutY="164.0" prefHeight="31.0" prefWidth="142.0" text="Botón izquierdo del ratón:" textFill="WHITE" />
-      <Label layoutX="91.0" layoutY="195.0" prefHeight="31.0" prefWidth="277.0" text="Para pulsar botones y listas desplegables del juego." textFill="WHITE" />
-      <Label layoutX="180.0" layoutY="310.0" prefHeight="31.0" prefWidth="98.0" text="Letras del teclado:" textFill="WHITE" />
-      <Label layoutX="105.0" layoutY="341.0" prefHeight="31.0" prefWidth="248.0" text="Para escribir el comando de escuadrón/sector." textFill="WHITE" />
+      <Label layoutX="141.0" layoutY="164.0" prefHeight="31.0" prefWidth="177.0" text="Botón izquierdo del ratón:" textFill="WHITE" />
+      <Label layoutX="57.0" layoutY="195.0" prefHeight="31.0" prefWidth="345.0" text="Para pulsar botones y listas desplegables del juego." textFill="WHITE" />
+      <Label layoutX="169.0" layoutY="310.0" prefHeight="31.0" prefWidth="122.0" text="Letras del teclado:" textFill="WHITE" />
+      <Label layoutX="75.0" layoutY="341.0" prefHeight="31.0" prefWidth="310.0" text="Para escribir el comando de escuadrón/sector." textFill="WHITE" />
    </children>
 </AnchorPane>
