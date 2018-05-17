@@ -21,10 +21,26 @@
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <Label layoutX="14.0" layoutY="34.0" prefHeight="35.0" prefWidth="484.0" text="Todos los escuadrones llevan su arma reglamentaria, a parte de la" />
-                                    <Label layoutX="14.0" layoutY="69.0" prefHeight="35.0" prefWidth="484.0" text="vestimenta que se les ordenó equiparse en el comienzo de la partida." />
-                                    <Label layoutX="12.0" layoutY="104.0" prefHeight="35.0" prefWidth="484.0" text="Si quieres saber más sobre las habilidades que trae cada una de las" />
-                                    <Label layoutX="14.0" layoutY="139.0" prefHeight="35.0" prefWidth="484.0" text="vestimentas, pulse en la pestaña de &quot;Habilidades&quot;." />
+                                    <Label layoutX="307.0" layoutY="49.0" prefHeight="26.0" prefWidth="82.0" text="Fusil de Asalto:" />
+                                    <Label layoutX="18.0" layoutY="49.0" prefHeight="26.0" prefWidth="129.0" text="Fusil de Silicona Rápida:" />
+                                    <Label layoutX="310.0" layoutY="132.0" prefHeight="26.0" prefWidth="77.0" text="Granada PEM:" />
+                                    <Label layoutX="83.0" layoutY="132.0" prefHeight="26.0" prefWidth="66.0" text="Probióticos:" />
+                                    <ImageView fitHeight="68.0" fitWidth="66.0" layoutX="389.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../Image/PEM.png" />
+                                       </image></ImageView>
+                                    <ImageView fitHeight="66.0" fitWidth="67.0" layoutX="147.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../Image/probioticos.png" />
+                                       </image></ImageView>
+                                    <ImageView fitHeight="47.0" fitWidth="104.0" layoutX="147.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../Image/silicona.png" />
+                                       </image></ImageView>
+                                    <ImageView fitHeight="74.0" fitWidth="103.0" layoutX="389.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../Image/fusil.png" />
+                                       </image></ImageView>
                                  </children></AnchorPane>
                         </content>
                       </Tab>
@@ -32,19 +48,30 @@
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <Label layoutX="27.0" layoutY="45.0" prefHeight="38.0" prefWidth="454.0" text="La habilidad Asalto da un +x a la vida del escuadrón." />
-                                    <Label layoutX="27.0" layoutY="83.0" prefHeight="38.0" prefWidth="454.0" text="La habilidad Reconocimiento da un +x a la agilidad del escuadrón." />
-                                    <Label layoutX="27.0" layoutY="121.0" prefHeight="38.0" prefWidth="454.0" text="La habilidad Apoyo da un +x a la fuerza del escuadrón." />
+                                    <Label layoutX="14.0" layoutY="37.0" prefHeight="38.0" prefWidth="108.0" text="Habilidad de asalto:" />
+                                    <Label layoutX="175.0" layoutY="37.0" prefHeight="38.0" prefWidth="158.0" text="Habilidad de reconocimiento:" />
+                                    <Label layoutX="383.0" layoutY="37.0" prefHeight="38.0" prefWidth="111.0" text="Habilidad de apoyo:" />
+                                    <ImageView fitHeight="74.0" fitWidth="75.0" layoutX="31.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../Image/vitalidad.png" />
+                                       </image></ImageView>
+                                    <ImageView fitHeight="74.0" fitWidth="75.0" layoutX="217.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../Image/agilidad.png" />
+                                       </image></ImageView>
+                                    <ImageView fitHeight="74.0" fitWidth="75.0" layoutX="401.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../Image/fuerza.png" />
+                                       </image></ImageView>
+                                    <Label layoutX="36.0" layoutY="149.0" prefHeight="38.0" prefWidth="65.0" text="+X a la Vida" />
+                                    <Label layoutX="211.0" layoutY="149.0" prefHeight="38.0" prefWidth="87.0" text="+X a la Agilidad" />
+                                    <Label layoutX="399.0" layoutY="149.0" prefHeight="38.0" prefWidth="78.0" text="+X a la Fuerza" />
                                  </children></AnchorPane>
                         </content>
                       </Tab>
                         <Tab text="Inventario">
                            <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                 <children>
-                                    <Label layoutX="34.0" layoutY="92.0" prefHeight="21.0" prefWidth="102.0" text="Pistola Laser:" />
-                                    <ImageView fitHeight="150.0" fitWidth="185.0" layoutX="136.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" />
-                                 </children></AnchorPane>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                            </content>
                         </Tab>
                     </tabs>

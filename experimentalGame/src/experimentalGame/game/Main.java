@@ -45,7 +45,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("ExperimentalGame");
-
+		
 		initRootStage();
 		showMainScreen();
 		// showMainUI();

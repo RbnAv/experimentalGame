@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="457.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experimentalGame.game.view.MainUIController">
+   <children>
+      <VBox layoutX="455.0" layoutY="404.0" spacing="20.0" />
+      <Label layoutX="160.0" layoutY="48.0" prefHeight="45.0" prefWidth="137.0" text="CREDITOS">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Button layoutX="185.0" layoutY="467.0" mnemonicParsing="false" onAction="#principal" prefHeight="25.0" prefWidth="87.0" text="Aceptar" />
+      <Label layoutX="180.0" layoutY="111.0" prefHeight="25.0" prefWidth="98.0" text="Programadores:" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="180.0" layoutY="136.0" prefHeight="25.0" prefWidth="98.0" text="Víctor Roibás Díaz" textAlignment="CENTER" />
+      <Label layoutX="163.0" layoutY="161.0" prefHeight="25.0" prefWidth="131.0" text="Jesús Fernández Zamora" textAlignment="CENTER" />
+      <Label layoutX="180.0" layoutY="186.0" prefHeight="25.0" prefWidth="98.0" text="Rubén Ávila Perez" textAlignment="CENTER" />
+      <Label layoutX="147.0" layoutY="227.0" prefHeight="25.0" prefWidth="164.0" text="Creador de la Base de Datos:" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="163.0" layoutY="252.0" prefHeight="25.0" prefWidth="131.0" text="Jesús Fernández Zamora" textAlignment="CENTER" />
+      <Label layoutX="198.0" layoutY="285.0" prefHeight="25.0" prefWidth="65.0" text="Guionistas:" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="182.0" layoutY="310.0" prefHeight="25.0" prefWidth="98.0" text="Víctor Roibás Díaz" textAlignment="CENTER" />
+      <Label layoutX="134.0" layoutY="335.0" prefHeight="25.0" prefWidth="194.0" text="Jesús Sanchez Pachón (Colaborador)" textAlignment="CENTER" />
+      <Label layoutX="147.0" layoutY="373.0" prefHeight="25.0" prefWidth="164.0" text="Creador de la Banda Sonora:" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="180.0" layoutY="398.0" prefHeight="25.0" prefWidth="98.0" text="Rubén Ávila Perez" textAlignment="CENTER" />
+   </children>
+</AnchorPane>

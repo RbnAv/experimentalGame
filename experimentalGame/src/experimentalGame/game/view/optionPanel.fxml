@@ -20,7 +20,9 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Button layoutX="234.0" layoutY="468.0" mnemonicParsing="false" onAction="#principal" prefHeight="25.0" prefWidth="87.0" text="Aceptar" />
-      <Button layoutX="131.0" layoutY="468.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="87.0" text="Créditos" />
+      <Button layoutX="186.0" layoutY="467.0" mnemonicParsing="false" onAction="#principal" prefHeight="25.0" prefWidth="87.0" text="Aceptar" />
+      <Button layoutX="185.0" layoutY="373.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="87.0" text="Créditos" />
+      <Button layoutX="186.0" layoutY="302.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="87.0" text="Ayuda" />
+      <Button layoutX="185.0" layoutY="338.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="87.0" text="Controles" />
    </children>
 </AnchorPane>
