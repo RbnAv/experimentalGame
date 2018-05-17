@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="457.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experimentalGame.game.view.MainUIController">
+   <children>
+      <VBox layoutX="455.0" layoutY="404.0" spacing="20.0" />
+      <Label layoutX="146.0" layoutY="57.0" prefHeight="45.0" prefWidth="166.0" text="CONTROLES">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Button layoutX="186.0" layoutY="467.0" mnemonicParsing="false" onAction="#principal" prefHeight="25.0" prefWidth="87.0" text="Atrás" />
+      <Label layoutX="158.0" layoutY="164.0" prefHeight="31.0" prefWidth="142.0" text="Botón izquierdo del ratón:" />
+      <Label layoutX="91.0" layoutY="195.0" prefHeight="31.0" prefWidth="277.0" text="Para pulsar botones y listas desplegables del juego." />
+      <Label layoutX="180.0" layoutY="310.0" prefHeight="31.0" prefWidth="98.0" text="Letras del teclado:" />
+      <Label layoutX="105.0" layoutY="341.0" prefHeight="31.0" prefWidth="248.0" text="Para escribir el comando de escuadrón/sector." />
+   </children>
+</AnchorPane>
