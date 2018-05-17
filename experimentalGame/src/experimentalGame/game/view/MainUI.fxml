@@ -21,23 +21,23 @@
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <Label layoutX="307.0" layoutY="49.0" prefHeight="26.0" prefWidth="82.0" text="Fusil de Asalto:" />
-                                    <Label layoutX="18.0" layoutY="49.0" prefHeight="26.0" prefWidth="129.0" text="Fusil de Silicona Rápida:" />
-                                    <Label layoutX="310.0" layoutY="132.0" prefHeight="26.0" prefWidth="77.0" text="Granada PEM:" />
-                                    <Label layoutX="83.0" layoutY="132.0" prefHeight="26.0" prefWidth="66.0" text="Probióticos:" />
-                                    <ImageView fitHeight="68.0" fitWidth="66.0" layoutX="389.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
+                                    <Label layoutX="19.0" layoutY="132.0" prefHeight="26.0" prefWidth="105.0" text="Fusil de Asalto:" />
+                                    <Label layoutX="19.0" layoutY="49.0" prefHeight="26.0" prefWidth="162.0" text="Fusil de Silicona Rápida:" />
+                                    <Label layoutX="324.0" layoutY="132.0" prefHeight="26.0" prefWidth="98.0" text="Granada PEM:" />
+                                    <Label layoutX="338.0" layoutY="49.0" prefHeight="26.0" prefWidth="84.0" text="Probióticos:" />
+                                    <ImageView fitHeight="68.0" fitWidth="66.0" layoutX="421.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../../../Image/PEM.png" />
                                        </image></ImageView>
-                                    <ImageView fitHeight="66.0" fitWidth="67.0" layoutX="147.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="66.0" fitWidth="67.0" layoutX="422.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../../../Image/probioticos.png" />
                                        </image></ImageView>
-                                    <ImageView fitHeight="47.0" fitWidth="104.0" layoutX="147.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="47.0" fitWidth="104.0" layoutX="181.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../../../Image/silicona.png" />
                                        </image></ImageView>
-                                    <ImageView fitHeight="74.0" fitWidth="103.0" layoutX="389.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="74.0" fitWidth="103.0" layoutX="124.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../../../Image/fusil.png" />
                                        </image></ImageView>
@@ -48,24 +48,27 @@
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <Label layoutX="14.0" layoutY="37.0" prefHeight="38.0" prefWidth="108.0" text="Habilidad de asalto:" />
-                                    <Label layoutX="175.0" layoutY="37.0" prefHeight="38.0" prefWidth="158.0" text="Habilidad de reconocimiento:" />
-                                    <Label layoutX="383.0" layoutY="37.0" prefHeight="38.0" prefWidth="111.0" text="Habilidad de apoyo:" />
-                                    <ImageView fitHeight="74.0" fitWidth="75.0" layoutX="31.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+                                    <Label layoutX="23.0" layoutY="18.0" prefHeight="38.0" prefWidth="90.0" text="Habilidad de" />
+                                    <ImageView fitHeight="74.0" fitWidth="75.0" layoutX="31.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../../../Image/vitalidad.png" />
                                        </image></ImageView>
-                                    <ImageView fitHeight="74.0" fitWidth="75.0" layoutX="217.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="74.0" fitWidth="75.0" layoutX="217.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../../../Image/agilidad.png" />
                                        </image></ImageView>
-                                    <ImageView fitHeight="74.0" fitWidth="75.0" layoutX="401.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="74.0" fitWidth="75.0" layoutX="401.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../../../Image/fuerza.png" />
                                        </image></ImageView>
-                                    <Label layoutX="36.0" layoutY="149.0" prefHeight="38.0" prefWidth="65.0" text="+X a la Vida" />
-                                    <Label layoutX="211.0" layoutY="149.0" prefHeight="38.0" prefWidth="87.0" text="+X a la Agilidad" />
-                                    <Label layoutX="399.0" layoutY="149.0" prefHeight="38.0" prefWidth="78.0" text="+X a la Fuerza" />
+                                    <Label layoutX="25.0" layoutY="165.0" prefHeight="24.0" prefWidth="86.0" text="+X a la Vida" />
+                                    <Label layoutX="209.0" layoutY="18.0" prefHeight="38.0" prefWidth="90.0" text="Habilidad de" />
+                                    <Label layoutX="393.0" layoutY="18.0" prefHeight="38.0" prefWidth="90.0" text="Habilidad de" />
+                                    <Label layoutX="46.0" layoutY="46.0" prefHeight="21.0" prefWidth="44.0" text="Asalto" />
+                                    <Label layoutX="199.0" layoutY="46.0" prefHeight="21.0" prefWidth="109.0" text="Reconocimiento" />
+                                    <Label layoutX="415.0" layoutY="46.0" prefHeight="21.0" prefWidth="46.0" text="Apoyo" />
+                                    <Label layoutX="199.0" layoutY="165.0" prefHeight="24.0" prefWidth="110.0" text="+X a la Agilidad" />
+                                    <Label layoutX="391.0" layoutY="165.0" prefHeight="24.0" prefWidth="94.0" text="+X a la Fuerza" />
                                  </children></AnchorPane>
                         </content>
                       </Tab>

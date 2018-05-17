@@ -36,13 +36,13 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="168.0" layoutY="310.0" prefHeight="25.0" prefWidth="122.0" text="Víctor Roibás Díaz" textAlignment="CENTER" />
-      <Label layoutX="119.0" layoutY="335.0" prefHeight="25.0" prefWidth="245.0" text="Jesús Sanchez Pachón (Colaborador)" textAlignment="CENTER" />
-      <Label layoutX="147.0" layoutY="373.0" prefHeight="25.0" prefWidth="257.0" text="Creador de la Banda Sonora:" textAlignment="CENTER">
+      <Label layoutX="168.0" layoutY="310.0" prefHeight="25.0" prefWidth="122.0" text="Víctor Roibás Díaz" textAlignment="CENTER" textFill="WHITE" />
+      <Label layoutX="107.0" layoutY="335.0" prefHeight="25.0" prefWidth="245.0" text="Jesús Sanchez Pachón (Colaborador)" textAlignment="CENTER" textFill="WHITE" />
+      <Label layoutX="147.0" layoutY="373.0" prefHeight="25.0" prefWidth="257.0" text="Creador de la Banda Sonora:" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="168.0" layoutY="398.0" prefHeight="25.0" prefWidth="122.0" text="Rubén Ávila Perez" textAlignment="CENTER" />
+      <Label layoutX="168.0" layoutY="398.0" prefHeight="25.0" prefWidth="122.0" text="Rubén Ávila Perez" textAlignment="CENTER" textFill="WHITE" />
    </children>
 </AnchorPane>
