@@ -46,7 +46,6 @@ public class MainUIController implements Initializable {
 
 	// @FXML
 	// private ImageView img;
-
 	// Reference to the main application.
 	// private Main main;
 	Main main;
