@@ -12,7 +12,7 @@
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="418.0" prefWidth="1278.0">
          <children>
-            <TextArea editable="false" layoutX="630.0" layoutY="60.0" prefHeight="321.0" prefWidth="586.0" text="&#10;12 de Agosto del año 3515&#10;&#10;Nombre de misión: BARAJ&#10;&#10;Descripción: El crucero espacial LUDUS dedicado a investigaciones&#10;biotecnológicas nos ha informado hace una semana de una fuga sospechosa.&#10;Todos los intentos de contactar con la nave han sido inútiles. &#10;&#10;Objetivo: Su misión consiste en dirigir a su escuadrón (LEB) compuesto por 10&#10;personas (sin contarla a usted) al interior del crucero, que visualicen la situación&#10;y retrocedan en caso de peligro, para poder enviar a un equipo más especializado.&#10;">
+            <TextArea editable="false" layoutX="630.0" layoutY="60.0" prefHeight="321.0" prefWidth="586.0" text="&#10;12 de Agosto del año 3515&#10;&#10;Nombre de misión: BARAJ&#10;&#10;Descripción: El crucero espacial LUDUS dedicado a investigaciones&#10;biotecnológicas nos ha informado hace una semana de una fuga sospechosa.&#10;Todos los intentos de contactar con la nave han sido inútiles. &#10;&#10;Objetivo: Su misión consiste en dirigir a su escuadrón (LEB) compuesto por 10&#10;personas (sin contarla a usted) al interior del crucero, que visualicen la situación&#10;y retrocedan en caso de peligro, para poder enviar a un equipo más especializado.&#10;&#10;Misión Aceptada.">
                <effect>
                   <DropShadow />
                </effect>
