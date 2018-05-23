@@ -231,8 +231,7 @@
                   </AnchorPane>
             </content>
           </TitledPane>
-            <Button layoutX="43.0" layoutY="52.0" mnemonicParsing="false" onAction="#abortar" prefHeight="31.0" prefWidth="120.0" text="Abortar Misión" />
-            <Button layoutX="43.0" layoutY="117.0" mnemonicParsing="false" onAction="#evento" prefHeight="31.0" prefWidth="120.0" text="Ir a Evento" />
+            <Button layoutX="42.0" layoutY="52.0" mnemonicParsing="false" onAction="#evento" prefHeight="31.0" prefWidth="120.0" text="Ir a Evento" />
          </children>
       </AnchorPane>
    </top>
