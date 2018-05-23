@@ -124,20 +124,6 @@ public class MainUIController implements Initializable {
 		}
 	}
 
-	public void continuar(ActionEvent event) {
-		try {
-			((Node) event.getSource()).getScene().getWindow().hide();
-
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MainUI.fxml"));
-			Parent root = (Parent) fxmlLoader.load();
-			Stage stage = new Stage();
-			stage.setScene(new Scene(root));
-			stage.show();
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-	}
-
 	public void opciones(ActionEvent event) {
 		try {
 			((Node) event.getSource()).getScene().getWindow().hide();
@@ -151,7 +137,7 @@ public class MainUIController implements Initializable {
 			// TODO: handle exception
 		}
 	}
-	
+
 	public void ayuda(ActionEvent event) {
 		try {
 			((Node) event.getSource()).getScene().getWindow().hide();
@@ -165,7 +151,7 @@ public class MainUIController implements Initializable {
 			// TODO: handle exception
 		}
 	}
-	
+
 	public void creditos(ActionEvent event) {
 		try {
 			((Node) event.getSource()).getScene().getWindow().hide();
@@ -179,7 +165,7 @@ public class MainUIController implements Initializable {
 			// TODO: handle exception
 		}
 	}
-	
+
 	public void controles(ActionEvent event) {
 		try {
 			((Node) event.getSource()).getScene().getWindow().hide();
@@ -193,26 +179,12 @@ public class MainUIController implements Initializable {
 			// TODO: handle exception
 		}
 	}
-	
+
 	public void atras(ActionEvent event) {
 		try {
 			((Node) event.getSource()).getScene().getWindow().hide();
 
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("optionPanel.fxml"));
-			Parent root = (Parent) fxmlLoader.load();
-			Stage stage = new Stage();
-			stage.setScene(new Scene(root));
-			stage.show();
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-	}
-
-	public void evento(ActionEvent event) {
-		try {
-			((Node) event.getSource()).getScene().getWindow().hide();
-
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("eventScreen.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setScene(new Scene(root));

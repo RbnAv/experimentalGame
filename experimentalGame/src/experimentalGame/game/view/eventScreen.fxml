@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.effect.*?>
@@ -8,7 +9,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<SplitPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="800.0" prefWidth="1280.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experimentalGame.game.view.MainUIController">
+<SplitPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="800.0" prefWidth="1280.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experimentalGame.game.view.Evento">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="798.0" prefWidth="1144.0" style="-fx-background-size: 1280 800;" styleClass="interfaz" stylesheets="@style.css">
          <children>
@@ -17,13 +18,21 @@
                   <Image url="@../../../../Image/dead-space-016.jpg" />
                </image>
             </ImageView>
-            <TextArea editable="false" layoutX="659.0" layoutY="14.0" prefHeight="224.0" prefWidth="605.0" text="&#10;" />
-            <Button layoutX="221.0" layoutY="543.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="158.0" text="Piratear" />
-            <TextArea editable="false" layoutX="433.0" layoutY="543.0" prefHeight="200.0" prefWidth="412.0" promptText="Panel de acciones" />
-            <TextArea editable="false" layoutX="659.0" layoutY="256.0" prefHeight="224.0" prefWidth="605.0" />
-            <Button layoutX="221.0" layoutY="620.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="158.0" text="Lanzar" />
-            <Button layoutX="221.0" layoutY="697.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="158.0" text="Salir" />
+            <TextArea fx:id="area1" editable="false" layoutX="659.0" layoutY="14.0" prefHeight="224.0" prefWidth="605.0" text="&#10;" />
+            <Button fx:id="btn1" layoutX="221.0" layoutY="543.0" mnemonicParsing="false" onAction="#btn1" prefHeight="46.0" prefWidth="158.0" text="Piratear" />
+            <TextArea fx:id="area2" editable="false" layoutX="659.0" layoutY="256.0" prefHeight="224.0" prefWidth="605.0" />
+            <Button fx:id="btn2" layoutX="221.0" layoutY="620.0" mnemonicParsing="false" onAction="#btn2" prefHeight="46.0" prefWidth="158.0" text="Lanzar" />
+            <Button fx:id="btn3" layoutX="221.0" layoutY="697.0" mnemonicParsing="false" onAction="#btn3" prefHeight="46.0" prefWidth="158.0" text="Salir" />
             <Button layoutX="900.0" layoutY="620.0" mnemonicParsing="false" onAction="#continuar" prefHeight="46.0" prefWidth="158.0" text="Continuar" />
+            <Label fx:id="lbl1" layoutX="284.0" layoutY="470.0" text="Label" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label fx:id="lbl2" layoutX="438.0" layoutY="556.0" text="Selecciona una opción." textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
          </children>
          <opaqueInsets>
             <Insets />
