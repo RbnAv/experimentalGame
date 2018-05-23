@@ -43,6 +43,7 @@ public class MainUIController implements Initializable {
 
 	@FXML
 	private Label lbl;
+	static String s = "Manolo";
 
 	// @FXML
 	// private ImageView img;

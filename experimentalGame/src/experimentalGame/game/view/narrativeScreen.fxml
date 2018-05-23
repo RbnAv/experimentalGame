@@ -33,6 +33,7 @@
                   <Reflection />
                </effect>
             </Button>
+            <Label fx:id="label" layoutX="886.0" layoutY="308.0" />
          </children>
          <effect>
             <DropShadow />
