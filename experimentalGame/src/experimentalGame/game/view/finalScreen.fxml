@@ -13,7 +13,7 @@
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="418.0" prefWidth="1278.0">
          <children>
-            <TextArea editable="false" layoutX="37.0" layoutY="39.0" prefHeight="214.0" prefWidth="518.0" text="&#10;12 de Agosto del año 3515&#10;&#10;Nombre de misión: BARAJ&#10;&#10;Descripción: El crucero espacial LUDUS dedicado a investigaciones&#10;biotecnológicas nos ha informado hace una semana de una fuga sospechosa.&#10;Todos los intentos de contactar con la nave han sido inútiles. &#10;&#10;Objetivo: Su misión consiste en dirigir a su escuadrón (LEB) compuesto por 10&#10;personas (sin contarla a usted) al interior del crucero, que visualicen la situación&#10;y retrocedan en caso de peligro, para poder enviar a un equipo más especializado.&#10;">
+            <TextArea editable="false" layoutX="37.0" layoutY="39.0" prefHeight="214.0" prefWidth="518.0">
                <effect>
                   <DropShadow />
                </effect>
@@ -22,7 +22,7 @@
                <image>
                   <Image url="@../../../../Image/intro.jpg" />
                </image></ImageView>
-            <TextArea editable="false" layoutX="37.0" layoutY="267.0" prefHeight="503.0" prefWidth="518.0" text="&#10;12 de Agosto del año 3515&#10;&#10;Nombre de misión: BARAJ&#10;&#10;Descripción: El crucero espacial LUDUS dedicado a investigaciones&#10;biotecnológicas nos ha informado hace una semana de una fuga sospechosa.&#10;Todos los intentos de contactar con la nave han sido inútiles. &#10;&#10;Objetivo: Su misión consiste en dirigir a su escuadrón (LEB) compuesto por 10&#10;personas (sin contarla a usted) al interior del crucero, que visualicen la situación&#10;y retrocedan en caso de peligro, para poder enviar a un equipo más especializado.&#10;">
+            <TextArea editable="false" layoutX="37.0" layoutY="267.0" prefHeight="503.0" prefWidth="518.0">
                <effect>
                   <DropShadow />
                </effect>
@@ -32,17 +32,17 @@
                   <Font size="17.0" />
                </font>
             </Label>
-            <Button layoutX="803.0" layoutY="632.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="213.0" text="Ir a Menú Principal">
+            <Button layoutX="803.0" layoutY="632.0" mnemonicParsing="false" onAction="#principal" prefHeight="52.0" prefWidth="213.0" text="Ir a Menú Principal">
                <font>
                   <Font size="17.0" />
                </font>
             </Button>
-            <Button layoutX="803.0" layoutY="561.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="213.0" text="Nueva Partida">
+            <Button layoutX="803.0" layoutY="561.0" mnemonicParsing="false" onAction="#nuevaPartida" prefHeight="52.0" prefWidth="213.0" text="Nueva Partida">
                <font>
                   <Font size="17.0" />
                </font>
             </Button>
-            <Button layoutX="803.0" layoutY="703.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="213.0" text="Salir">
+            <Button layoutX="803.0" layoutY="703.0" mnemonicParsing="false" onAction="#salir" prefHeight="52.0" prefWidth="213.0" text="Salir">
                <font>
                   <Font size="17.0" />
                </font>

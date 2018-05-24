@@ -21,9 +21,6 @@ import javafx.stage.Stage;
 
 /**
  * this class is the controller for the fxml MainUI
- * 
- * @author Ruvek
- *
  */
 
 public class MainUIController implements Initializable {
@@ -41,14 +38,6 @@ public class MainUIController implements Initializable {
 	@FXML
 	private Label fearLabel;
 
-	@FXML
-	private Label lbl;
-	static String s = "Manolo";
-
-	// @FXML
-	// private ImageView img;
-	// Reference to the main application.
-	// private Main main;
 	Main main;
 
 	/**
@@ -73,10 +62,6 @@ public class MainUIController implements Initializable {
 	}
 
 	public void nuevaPartida(ActionEvent event) {
-		// System.out.println("Hola!");
-
-		// Image image = new Image("/img/1.jpg");
-		// img.setImage(image);
 
 		try {
 			// Cerramos esta ventana
