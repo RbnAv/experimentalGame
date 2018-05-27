@@ -16,7 +16,7 @@ import javafx.beans.property.StringProperty;
 public class Squad {
 	
 	private final StringProperty name;
-	private final IntegerProperty constitucion;
+	private final IntegerProperty fortaleza;
 	private final IntegerProperty fuerza;
 	private final IntegerProperty agilidad;
 	private final IntegerProperty percepcion;
@@ -44,7 +44,7 @@ public class Squad {
 	/** dummy data
 	 * 
 	 */
-	this.constitucion = new SimpleIntegerProperty(1);
+	this.fortaleza = new SimpleIntegerProperty(1);
 	this.fuerza = new SimpleIntegerProperty(1);
 	this.agilidad = new SimpleIntegerProperty(1);
 	this.percepcion = new SimpleIntegerProperty(1);
@@ -67,15 +67,15 @@ public class Squad {
 
 
 	public int getConstitucion() {
-		return constitucion.get();
+		return fortaleza.get();
 	}
 
 	public void setConstitucion(int constitucion) {
-		this.constitucion.set(constitucion);
+		this.fortaleza.set(constitucion);
 	}
 	
 	public IntegerProperty constituciontProperty() {
-		return constitucion;
+		return fortaleza;
 	}
 
 	public int getFuerza() {
@@ -169,6 +169,23 @@ public class Squad {
 	public final void setMiedo(final int miedo) {
 		this.miedoProperty().set(miedo);
 	}
+
+	public final IntegerProperty fortalezaProperty() {
+		return this.fortaleza;
+	}
+	
+
+	public final int getFortaleza() {
+		return this.fortalezaProperty().get();
+	}
+	
+
+	public final void setFortaleza(final int fortaleza) {
+		this.fortalezaProperty().set(fortaleza);
+	}
+	
+	
+	
 	
 
 }

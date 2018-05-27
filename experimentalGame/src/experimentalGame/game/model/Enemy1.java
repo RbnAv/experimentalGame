@@ -8,11 +8,12 @@ import javafx.beans.property.StringProperty;
 public class Enemy1 {
 
 	private final StringProperty name;
-	private final IntegerProperty constitucion;
+	private final IntegerProperty fortaleza;
 	private final IntegerProperty fuerza;
 	private final IntegerProperty agilidad;
 	private final IntegerProperty percepcion;
 	private final IntegerProperty voluntad;
+	private final IntegerProperty vitalidad;
 
 	public Enemy1() {
 		this(null);
@@ -25,11 +26,12 @@ public class Enemy1 {
 		 * dummy data
 		 * 
 		 */
-		this.constitucion = new SimpleIntegerProperty(1);
+		this.fortaleza = new SimpleIntegerProperty(1);
 		this.fuerza = new SimpleIntegerProperty(1);
 		this.agilidad = new SimpleIntegerProperty(1);
 		this.percepcion = new SimpleIntegerProperty(1);
 		this.voluntad = new SimpleIntegerProperty(1);
+		this.vitalidad = new SimpleIntegerProperty(350);
 	}
 
 	public final StringProperty nameProperty() {
@@ -42,18 +44,6 @@ public class Enemy1 {
 
 	public final void setName(final String name) {
 		this.nameProperty().set(name);
-	}
-
-	public final IntegerProperty constitucionProperty() {
-		return this.constitucion;
-	}
-
-	public final int getConstitucion() {
-		return this.constitucionProperty().get();
-	}
-
-	public final void setConstitucion(final int constitucion) {
-		this.constitucionProperty().set(constitucion);
 	}
 
 	public final IntegerProperty fuerzaProperty() {
@@ -102,6 +92,30 @@ public class Enemy1 {
 
 	public final void setVoluntad(final int voluntad) {
 		this.voluntadProperty().set(voluntad);
+	}
+
+	public final IntegerProperty fortalezaProperty() {
+		return this.fortaleza;
+	}
+
+	public final int getFortaleza() {
+		return this.fortalezaProperty().get();
+	}
+
+	public final void setFortaleza(final int fortaleza) {
+		this.fortalezaProperty().set(fortaleza);
+	}
+
+	public final IntegerProperty vitalidadProperty() {
+		return this.vitalidad;
+	}
+
+	public final int getVitalidad() {
+		return this.vitalidadProperty().get();
+	}
+
+	public final void setVitalidad(final int vitalidad) {
+		this.vitalidadProperty().set(vitalidad);
 	}
 
 }
