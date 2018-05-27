@@ -7,7 +7,7 @@ import javafx.beans.property.StringProperty;
 
 /** Model class for the squads
  * 
- * @author Ruvek
+ * @author Ruben
  *
  */
 
