@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
 import com.mysql.jdbc.Statement;
 
 import javafx.event.ActionEvent;
@@ -231,13 +232,34 @@ public class Evento implements Initializable {
 
 	public void continuar(ActionEvent event) {
 		try {
+			
 			((Node) event.getSource()).getScene().getWindow().hide();
-
+//			
+//			// create a java mysql database connection
+//		      String myDriver = "org.gjt.mm.mysql.Driver";
+//		      String myUrl = "jdbc:mysql://localhost/rpg";
+//		      Class.forName(myDriver);
+//		      Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
+//		    
+//		      // create the java mysql update preparedstatement
+//		      String query = "update escuadron set vitalidadEscuadron = ? where nombreEscuadron = ?";//222, 
+//		      PreparedStatement preparedStmt = (PreparedStatement) conn.prepareStatement(query);
+//		      //preparedStmt.setInt   (1, 6000);
+//		      preparedStmt.setInt   (1, 12);
+//		      preparedStmt.setString(2, "Reconocimiento");
+//
+//		      // execute the java preparedstatement
+//		      preparedStmt.executeUpdate();
+//		      
+//		      conn.close();
+//			
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MainUI.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setScene(new Scene(root));
 			stage.show();
+			
+			
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
