@@ -13,6 +13,7 @@ public class CombatMethods {
 	private int tirada;
 	private int vitalidadUnidad;
 	private int vitalidadEnemigo;
+	private int restaVitalidad;
 
 	/**
 	 * Este método devuelve el booleano que indica si el combate lo inicia el
@@ -92,16 +93,20 @@ public class CombatMethods {
 
 			case FALLO:
 				vitalidadEnemigo = enemigo1.getVitalidad() - 0;
-				return vitalidadEnemigo;
+				restaVitalidad = vitalidadEnemigo;
+				return restaVitalidad;
 			case ROCE:
 				vitalidadEnemigo = enemigo1.getVitalidad() - 20;
-				return vitalidadEnemigo;
+				restaVitalidad = vitalidadEnemigo;
+				return restaVitalidad;
 			case ACIERTO:
 				vitalidadEnemigo = enemigo1.getVitalidad() - 50;
-				return vitalidadEnemigo;
+				restaVitalidad = vitalidadEnemigo;
+				return restaVitalidad;
 			case CRITICO:
 				vitalidadEnemigo = enemigo1.getVitalidad() - 100;
-				return vitalidadEnemigo;
+				restaVitalidad = vitalidadEnemigo;
+				return restaVitalidad;
 			default:
 				return 0;
 			}
@@ -111,21 +116,25 @@ public class CombatMethods {
 			
 			case FALLO:
 				vitalidadUnidad = unidad1.getVitalidad() - 0;
-				return vitalidadEnemigo;
+				restaVitalidad = vitalidadUnidad;
+				return restaVitalidad;
 			case ROCE:
 				vitalidadUnidad = unidad1.getVitalidad() - 20;
-				return vitalidadEnemigo;
+				restaVitalidad = vitalidadUnidad;
+				return restaVitalidad;
 			case ACIERTO:
 				vitalidadUnidad = unidad1.getVitalidad() - 50;
-				return vitalidadEnemigo;
+				restaVitalidad = vitalidadUnidad;
+				return restaVitalidad;
 			case CRITICO:
 				vitalidadUnidad = unidad1.getVitalidad() - 100;
-				return vitalidadEnemigo;
+				restaVitalidad = vitalidadUnidad;
+				return restaVitalidad;
 			default:
 				return 0;
 			}
 		}
-		return resultado;
+		return restaVitalidad;
 	}
 
 	public int tirada() {
@@ -133,6 +142,13 @@ public class CombatMethods {
 		int numTirada = (int) (Math.random() * 22 + 1);
 		tirada = numTirada;
 		return tirada;
+	}
+	
+	public void restarVida() {
+		
+		vitalidadEnemigo = vitalidadEnemigo - restaVitalidad;
+		vitalidadUnidad = vitalidadUnidad - restaVitalidad;
+		
 	}
 
 	public void curar() {
