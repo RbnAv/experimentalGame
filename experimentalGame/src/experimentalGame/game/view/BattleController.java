@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
 public class BattleController {
@@ -25,6 +26,8 @@ public class BattleController {
 	private Button habilidad2 = new Button();
 	@FXML
 	private Button habilidad3 = new Button();
+	@FXML
+	private TextArea consola = new TextArea();
 
 	public BattleController() {
 
