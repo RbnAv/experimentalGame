@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.PreparedStatement;
 import com.mysql.jdbc.Statement;
 
 import javafx.event.ActionEvent;
@@ -244,6 +243,7 @@ public class Evento implements Initializable {
 //		      // create the java mysql update preparedstatement
 //		      String query = "update escuadron set vitalidadEscuadron = ? where nombreEscuadron = ?";//222, 
 //		      PreparedStatement preparedStmt = (PreparedStatement) conn.prepareStatement(query);
+//		      //preparedStmt.setInt   (1, 6000);
 //		      preparedStmt.setInt   (1, 12);
 //		      preparedStmt.setString(2, "Reconocimiento");
 //

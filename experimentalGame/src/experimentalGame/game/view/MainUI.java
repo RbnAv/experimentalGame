@@ -172,13 +172,25 @@ public class MainUI implements Initializable {
 				sector = s16.toString();
 			}
 
-			((Node) event.getSource()).getScene().getWindow().hide();
+			if (sector.equals("C1") || (sector.equals("A3")
+					|| (sector.equals("B1") || (sector.equals("D1") || (sector.equals("A1")))))) {
+				((Node) event.getSource()).getScene().getWindow().hide();
 
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("eventScreen.fxml"));
-			Parent root = (Parent) fxmlLoader.load();
-			Stage stage = new Stage();
-			stage.setScene(new Scene(root));
-			stage.show();
+				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Battle.fxml"));
+				Parent root = (Parent) fxmlLoader.load();
+				Stage stage = new Stage();
+				stage.setScene(new Scene(root));
+				stage.show();
+			} else {
+
+				((Node) event.getSource()).getScene().getWindow().hide();
+
+				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("eventScreen.fxml"));
+				Parent root = (Parent) fxmlLoader.load();
+				Stage stage = new Stage();
+				stage.setScene(new Scene(root));
+				stage.show();
+			}
 		} catch (Exception e) {
 			// TODO: handle exception
 		}

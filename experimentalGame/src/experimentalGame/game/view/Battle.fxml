@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane prefHeight="768.0" prefWidth="1024.0" style="-fx-background-size: 1200 770;" styleClass="interfaz" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experimentalGame.game.view.BattleController">
+<BorderPane prefHeight="768.0" prefWidth="1024.0" style="-fx-background-size: 1200 770;" styleClass="interfaz" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experimentalGame.game.view.Battle">
    <top>
       <AnchorPane prefHeight="164.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
          <children>
@@ -27,7 +27,7 @@
                               <Label fx:id="energyLabel2" text="x" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                               <Label fx:id="fearLabel2" text="x" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                               <Label text="Fortaleza" GridPane.rowIndex="3" />
-                              <Label text="x" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label fx:id="strengthLabel2" text="x" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                            </children>
                            <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -57,7 +57,7 @@
                               <Label fx:id="energyLabel1" text="x" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                               <Label fx:id="fearLabel1" text="x" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                               <Label text="Fortaleza" GridPane.rowIndex="3" />
-                              <Label text="x" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label fx:id="strengthLabel1" text="x" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                            </children>
                            <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -97,13 +97,14 @@
                               <Label fx:id="energyLabel" text="x" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                               <Label fx:id="fearLabel" text="x" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                               <Label text="Fortaleza" GridPane.rowIndex="3" />
-                              <Label text="x" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label fx:id="strengthLabel" text="x" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                            </children>
                         </GridPane>
                      </children>
                   </AnchorPane>
             </content>
           </TitledPane>
+            <Label fx:id="lbl" layoutX="857.0" layoutY="24.0" text="Label" />
          </children>
       </AnchorPane>
    </top>
