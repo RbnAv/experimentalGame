@@ -85,6 +85,14 @@ public class CombatMethods {
 		return resultadoAtaque;
 	}
 
+	
+	/**
+	 * Este método utiliza el resultadoAtaque del método anterior y dependiendo del caso que fuese le resta a la vitalidad
+	 * del jugador/enemigo la cantidad pertienente
+	 * 
+	 * @return restaVitalidad, la resta que se hará a la vitalidad (se hace así porque el método solo puede devolver un valor, pero puede ser
+	 * resta al jugador o al enemigo
+	 */
 	public int Ataque2() {
 
 		if (turno = true) {
@@ -137,6 +145,11 @@ public class CombatMethods {
 		return restaVitalidad;
 	}
 
+	/**
+	 * Simula la tirada de dados
+	 * @return tirada, el resultado de la tirada
+	 * 
+	 */
 	public int tirada() {
 
 		int numTirada = (int) (Math.random() * 22 + 1);
@@ -144,6 +157,9 @@ public class CombatMethods {
 		return tirada;
 	}
 	
+	/**
+	 * Se lleva a cabo la resta de los ataques sobre la vitalidad total del personaje/enemigo
+	 */
 	public void restarVida() {
 		
 		vitalidadEnemigo = vitalidadEnemigo - restaVitalidad;
