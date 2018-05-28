@@ -20,7 +20,7 @@
             </TextArea>
             <ImageView fitHeight="400.0" fitWidth="669.0" layoutX="577.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../Image/intro.jpg" />
+                  <Image url="@../../../img/intro.jpg" />
                </image></ImageView>
             <TextArea editable="false" layoutX="37.0" layoutY="267.0" prefHeight="503.0" prefWidth="518.0">
                <effect>

@@ -110,7 +110,7 @@
    <left>
       <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <image>
-            <Image url="@../../../../Image/1.jpg" />
+            <Image url="@../../../img/1.jpg" />
          </image>
          <effect>
             <Reflection />

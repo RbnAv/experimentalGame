@@ -178,6 +178,20 @@ public class MainUIController implements Initializable {
 			// TODO: handle exception
 		}
 	}
+	
+	public void option2(ActionEvent event) {
+		try {
+			((Node) event.getSource()).getScene().getWindow().hide();
+
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MainUI.fxml"));
+			Parent root = (Parent) fxmlLoader.load();
+			Stage stage = new Stage();
+			stage.setScene(new Scene(root));
+			stage.show();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
 
 	public void salir(ActionEvent event) {
 		System.exit(0);

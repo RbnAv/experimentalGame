@@ -19,7 +19,9 @@
       <Button layoutX="186.0" layoutY="467.0" mnemonicParsing="false" onAction="#opciones" prefHeight="25.0" prefWidth="87.0" text="Atrás" />
       <Label layoutX="141.0" layoutY="164.0" prefHeight="31.0" prefWidth="177.0" text="Botón izquierdo del ratón:" textFill="WHITE" />
       <Label layoutX="57.0" layoutY="195.0" prefHeight="31.0" prefWidth="345.0" text="Para pulsar botones y listas desplegables del juego." textFill="WHITE" />
-      <Label layoutX="169.0" layoutY="310.0" prefHeight="31.0" prefWidth="122.0" text="Letras del teclado:" textFill="WHITE" />
-      <Label layoutX="75.0" layoutY="341.0" prefHeight="31.0" prefWidth="310.0" text="Para escribir el comando de escuadrón/sector." textFill="WHITE" />
+      <Label layoutX="169.0" layoutY="270.0" prefHeight="31.0" prefWidth="122.0" text="Letras del teclado:" textFill="WHITE" />
+      <Label layoutX="75.0" layoutY="301.0" prefHeight="31.0" prefWidth="310.0" text="Para escribir el comando de escuadrón/sector." textFill="WHITE" />
+      <Label layoutX="65.0" layoutY="332.0" prefHeight="31.0" prefWidth="331.0" text="Se escribe el nombre del escuadrón más el sector." textFill="WHITE" />
+      <Label layoutX="137.0" layoutY="363.0" prefHeight="31.0" prefWidth="183.0" text="Ejemplo: Escuadrón A a B3." textFill="WHITE" />
    </children>
 </AnchorPane>
