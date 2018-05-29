@@ -9,72 +9,24 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane prefHeight="768.0" prefWidth="1024.0" style="-fx-background-size: 1200 770;" styleClass="interfaz" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experimentalGame.game.view.Battle">
+<BorderPane prefHeight="768.0" prefWidth="1024.0" style="-fx-background-size: 1200 350;" styleClass="interfaz" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experimentalGame.game.view.Battle">
    <top>
-      <AnchorPane prefHeight="164.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="0.0" prefWidth="1024.0" styleClass="interfaz" stylesheets="@style.css" BorderPane.alignment="CENTER">
          <children>
             <Accordion layoutX="14.0" layoutY="14.0" />
-            <TitledPane animated="false" layoutX="613.0" layoutY="14.0" text="Estado Escuadrón C">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <GridPane layoutY="45.0" prefHeight="180.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <children>
-                              <Label text="Vitalidad" />
-                              <Label fx:id="vitalityLabel2" text="x" GridPane.columnIndex="1" />
-                              <Label text="Fuerza" GridPane.rowIndex="1" />
-                              <Label text="Agilidad" GridPane.rowIndex="2" />
-                              <Label fx:id="energyLabel2" text="x" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <Label fx:id="fearLabel2" text="x" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <Label text="Fortaleza" GridPane.rowIndex="3" />
-                              <Label fx:id="strengthLabel2" text="x" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                           </children>
-                           <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                           </columnConstraints>
-                           <rowConstraints>
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                           </rowConstraints>
-                        </GridPane>
-                     </children>
-                  </AnchorPane>
-               </content>
-            </TitledPane>
-            <TitledPane animated="false" layoutX="411.0" layoutY="14.0" text="Estado Escuadrón B">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <GridPane layoutY="45.0" prefHeight="180.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <children>
-                              <Label text="Vitalidad" />
-                              <Label fx:id="vitalityLabel1" text="x" GridPane.columnIndex="1" />
-                              <Label text="Fuerza" GridPane.rowIndex="1" />
-                              <Label text="Agilidad" GridPane.rowIndex="2" />
-                              <Label fx:id="energyLabel1" text="x" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <Label fx:id="fearLabel1" text="x" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <Label text="Fortaleza" GridPane.rowIndex="3" />
-                              <Label fx:id="strengthLabel1" text="x" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                           </children>
-                           <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                           </columnConstraints>
-                           <rowConstraints>
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                           </rowConstraints>
-                        </GridPane>
-                     </children>
-                  </AnchorPane>
-               </content>
-            </TitledPane>
-          <TitledPane animated="false" layoutX="209.0" layoutY="14.0" text="Estado Escuadrón A">
+            <ImageView fitHeight="223.0" fitWidth="514.0" layoutX="255.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/batalla.jpg" />
+               </image>
+            </ImageView>
+            <Label fx:id="lbl" layoutX="888.0" layoutY="101.0" text="Label" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <AnchorPane prefHeight="342.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
+         <children>
+          <TitledPane animated="false" layoutX="14.0" layoutY="14.0" text="Estado Escuadrón">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -104,61 +56,149 @@
                   </AnchorPane>
             </content>
           </TitledPane>
-            <Label fx:id="lbl" layoutX="857.0" layoutY="24.0" text="Label" />
-         </children>
-      </AnchorPane>
-   </top>
-   <center>
-      <AnchorPane prefHeight="253.0" prefWidth="725.0" BorderPane.alignment="CENTER">
-         <children>
-            <TextArea fx:id="consola" layoutX="237.0" layoutY="71.0" prefHeight="342.0" prefWidth="674.0" promptText="movidas" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <TitledPane animated="false" layoutX="808.0" layoutY="14.0" text="Estado Enemigo">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane layoutY="45.0" prefHeight="180.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label text="Vitalidad" />
+                              <Label fx:id="vitalityLabel2" text="x" GridPane.columnIndex="1" />
+                              <Label text="Fuerza" GridPane.rowIndex="1" />
+                              <Label text="Agilidad" GridPane.rowIndex="2" />
+                              <Label fx:id="energyLabel2" text="x" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label fx:id="fearLabel2" text="x" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label text="Fortaleza" GridPane.rowIndex="3" />
+                              <Label fx:id="strengthLabel2" text="x" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+            <TextArea fx:id="consola" layoutX="231.0" layoutY="13.0" prefHeight="253.0" prefWidth="561.0" promptText="Consola de batalla" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="231.0" AnchorPane.rightAnchor="232.0" AnchorPane.topAnchor="13.0" />
          </children></AnchorPane>
    </center>
    <effect>
       <DropShadow />
    </effect>
-   <left>
-      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-         <image>
-            <Image url="@../../../img/1.jpg" />
-         </image>
-         <effect>
-            <Reflection />
-         </effect>
-      </ImageView>
-   </left>
-   <right>
-      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
-   </right>
    <bottom>
-      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+      <TabPane prefHeight="247.0" prefWidth="1024.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
         <tabs>
           <Tab text="Equipamiento">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Label layoutX="32.0" layoutY="26.0" prefHeight="26.0" prefWidth="162.0" text="Fusil de Silicona Rápida:" />
-                        <Label layoutX="32.0" layoutY="94.0" prefHeight="26.0" prefWidth="105.0" text="Fusil de Asalto:" />
-                        <Label layoutX="575.0" layoutY="95.0" prefHeight="26.0" prefWidth="98.0" text="Granada PEM:" />
-                        <Label layoutX="582.0" layoutY="26.0" prefHeight="26.0" prefWidth="84.0" text="Probióticos:" />
-                        <Button fx:id="ataque1" layoutX="268.0" layoutY="24.0" mnemonicParsing="false" text="Button" />
-                        <Button fx:id="ataque2" layoutX="268.0" layoutY="92.0" mnemonicParsing="false" text="Button" />
-                        <Button fx:id="botiquin" layoutX="791.0" layoutY="24.0" mnemonicParsing="false" text="Button" />
-                        <Button fx:id="granada" layoutX="791.0" layoutY="92.0" mnemonicParsing="false" text="Button" />
+                        <Label layoutX="46.0" layoutY="110.0" prefHeight="26.0" prefWidth="162.0" text="Fusil de Silicona Rápida:" />
+                        <Label layoutX="343.0" layoutY="110.0" prefHeight="26.0" prefWidth="105.0" text="Fusil de Asalto:" />
+                        <Label layoutX="868.0" layoutY="110.0" prefHeight="26.0" prefWidth="98.0" text="Granada PEM:" />
+                        <Label layoutX="628.0" layoutY="110.0" prefHeight="26.0" prefWidth="81.0" text="Probióticos:" />
+                        <Button fx:id="ataque1" layoutX="358.0" layoutY="151.0" mnemonicParsing="false" text="Disparar" />
+                        <Button fx:id="ataque2" layoutX="89.0" layoutY="151.0" mnemonicParsing="false" text="Disparar" />
+                        <Button fx:id="botiquin" layoutX="637.0" layoutY="151.0" mnemonicParsing="false" text="Tomar" />
+                        <Button fx:id="granada" layoutX="886.0" layoutY="151.0" mnemonicParsing="false" text="Lanzar" />
+                        <ImageView fitHeight="68.0" fitWidth="156.0" layoutX="50.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/silicona.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="121.0" fitWidth="185.0" layoutX="311.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/fusil.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="98.0" fitWidth="110.0" layoutX="621.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/probioticos.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="101.0" fitWidth="102.0" layoutX="868.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/PEM.png" />
+                           </image></ImageView>
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
           <Tab text="Habilidades">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="216.0" prefWidth="1024.0">
                      <children>
-                        <Label layoutX="895.0" layoutY="22.0" prefHeight="21.0" prefWidth="46.0" text="Apoyo" />
-                        <Label layoutX="458.0" layoutY="22.0" prefHeight="21.0" prefWidth="109.0" text="Reconocimiento" />
-                        <Label layoutX="104.0" layoutY="22.0" prefHeight="21.0" prefWidth="44.0" text="Asalto" />
-                        <Button fx:id="habilidad1" layoutX="94.0" layoutY="81.0" mnemonicParsing="false" text="Button" />
-                        <Button fx:id="habilidad2" layoutX="480.0" layoutY="81.0" mnemonicParsing="false" text="Button" />
-                        <Button fx:id="habilidad3" layoutX="886.0" layoutY="81.0" mnemonicParsing="false" text="Button" />
+                        <ImageView fitHeight="128.0" fitWidth="134.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/1.jpg" />
+                           </image>
+                           <effect>
+                              <Reflection />
+                           </effect>
+                        </ImageView>
+                        <Label layoutX="57.0" layoutY="158.0" text="Asalto">
+                           <effect>
+                              <Reflection />
+                           </effect>
+                        </Label>
+                        <Label layoutX="152.0" layoutY="158.0" text="Reconocimiento">
+                           <effect>
+                              <Reflection />
+                           </effect>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </Label>
+                        <Label layoutX="312.0" layoutY="158.0" text="Apoyo">
+                           <effect>
+                              <Reflection />
+                           </effect>
+                        </Label>
+                        <ImageView fitHeight="128.0" fitWidth="134.0" layoutX="142.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <effect>
+                              <Reflection />
+                           </effect>
+                           <image>
+                              <Image url="@../../../img/2.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="128.0" fitWidth="134.0" layoutX="270.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <effect>
+                              <Reflection />
+                           </effect>
+                           <image>
+                              <Image url="@../../../img/3.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="468.0" layoutY="14.0" prefHeight="39.0" prefWidth="477.0" text="¿Quieres más vida? ¿Quieres más agilidad?">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="466.0" layoutY="53.0" prefHeight="39.0" prefWidth="481.0" text="¿Quieres más fuerza para tus escuadrones?">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="481.0" layoutY="103.0" prefHeight="26.0" prefWidth="452.0" text="Si quieres equipar a tus escuadrones con habilidades sorprendentes" />
+                        <Label layoutX="503.0" layoutY="129.0" prefHeight="26.0" prefWidth="130.0" text="reserva ya nuestro" />
+                        <Label layoutX="633.0" layoutY="129.0" prefHeight="26.0" prefWidth="287.0" text="DLC: HABILIDADES SORPRENDENTES.">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="594.0" layoutY="172.0" prefHeight="23.0" prefWidth="156.0" text="Más información en la" />
+                        <Label layoutX="750.0" layoutY="170.0" prefHeight="26.0" prefWidth="65.0" text="TIENDA.">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
                      </children>
                   </AnchorPane>
             </content>

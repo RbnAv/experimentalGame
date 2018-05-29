@@ -61,6 +61,7 @@ public class Battle implements Initializable {
 	int equipo = MainUI.equipo;
 	String sector = MainUI.sector;
 
+
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		try {
@@ -198,25 +199,13 @@ public class Battle implements Initializable {
 			int vitalidad = rs.getInt("vitalidadEscuadron");
 			int fuerza = rs.getInt("fuerzaEscuadron");
 			int agilidad = rs.getInt("agilidadEscuadron");
-			if (idEscuadron == 1) {
+			if (idEscuadron == equipo) {
 				vitalityLabel.setText(String.valueOf(vitalidad));
 				energyLabel.setText(String.valueOf(agilidad));
 				fearLabel.setText(String.valueOf(fuerza));
 				strengthLabel.setText(String.valueOf(constitucion));
 				v = Integer.parseInt(vitalityLabel.getText());
 			}
-			if (idEscuadron == 2) {
-				vitalityLabel1.setText(String.valueOf(vitalidad));
-				energyLabel1.setText(String.valueOf(agilidad));
-				fearLabel1.setText(String.valueOf(fuerza));
-				strengthLabel1.setText(String.valueOf(constitucion));
-			}
-			// if (idEscuadron == 3) {
-			// vitalityLabel2.setText(String.valueOf(vitalidad));
-			// energyLabel2.setText(String.valueOf(agilidad));
-			// fearLabel2.setText(String.valueOf(fuerza));
-			// strengthLabel2.setText(String.valueOf(constitucion));
-			// }
 		}
 		st.close();
 	}
