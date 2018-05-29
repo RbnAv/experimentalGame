@@ -42,5 +42,10 @@
             <Image url="@../../../img/violencia.png" />
          </image>
       </ImageView>
+      <ImageView fitHeight="62.0" fitWidth="52.0" layoutX="178.0" layoutY="684.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/terror.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
