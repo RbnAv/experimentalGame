@@ -48,22 +48,37 @@ public class Evento implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		try {
+			
+			
 			System.out.println(MainUI.equipo);
 			System.out.println(sector);
-
 			escuadron();
+			
+			
 			evento();
-
+			
+			btn1.setDisable(btn1.getText().toString().equals(""));
+			/*if (btn1.getText().isEmpty()) {
+				btn1.setDisable(true);
+				btn1.setText(String.valueOf(btn3.getText().length()));
+			}*/
+			if (btn2.getText().toString().equals("")) {
+				btn2.setDisable(true);
+			}
+			if (btn3.getText().toString().equals("")) {
+				btn3.setDisable(true);
+			}
 		} catch (Exception e) {
-			// TODO: handle exception
+			
 		}
 	}
+
 
 	private void escuadron() throws ClassNotFoundException, SQLException {
 		String myDriver = "org.gjt.mm.mysql.Driver";
 		String myUrl = "jdbc:mysql://localhost/rpg";
 		Class.forName(myDriver);
-		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
+		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
 		String query = "SELECT * FROM escuadron";
 		conn.createStatement();
 		Statement st = (Statement) conn.createStatement();
@@ -85,21 +100,52 @@ public class Evento implements Initializable {
 		String myDriver = "org.gjt.mm.mysql.Driver";
 		String myUrl = "jdbc:mysql://localhost/rpg";
 		Class.forName(myDriver);
-		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
+		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
 		String query = "SELECT * FROM evento";
 		conn.createStatement();
 		Statement st = (Statement) conn.createStatement();
 		ResultSet rs = st.executeQuery(query);
+		
+		String nombreEvento = "";
+		String narrativa = "";
+		String dialogo = "";
+		String accion1 = "";
+		String texto1 = "";
+		String accion2 = "";
+		String texto2 = "";
+		String accion3 = "";
+		String texto3 = "";
+		
+		
 		while (rs.next()) {
-			String nombreEvento = rs.getString("nombreEvento");
-			String narrativa = rs.getString("narrativa");
-			String dialogo = rs.getString("dialogo");
-			String accion1 = rs.getString("accion1");
-			String texto1 = rs.getString("texto1");
-			String accion2 = rs.getString("accion2");
-			String texto2 = rs.getString("texto2");
-			String accion3 = rs.getString("accion3");
-			String texto3 = rs.getString("texto3");
+			if(rs.getString("nombreEvento") != null) {
+				nombreEvento = rs.getString("nombreEvento");
+			}
+			if(rs.getString("narrativa") != null) {
+				narrativa = rs.getString("narrativa");
+			}
+			if(rs.getString("dialogo") != null) {
+				dialogo = rs.getString("dialogo");
+			}
+			if(rs.getString("accion1") != null) {
+				accion1 = rs.getString("accion1");
+			}
+			if(rs.getString("texto1") != null) {
+				texto1 = rs.getString("texto1");
+			}
+			if(rs.getString("accion2") != null) {
+				accion2 = rs.getString("accion2");
+			}
+			if(rs.getString("texto2") != null) {
+				texto2 = rs.getString("texto2");
+			}
+			if(rs.getString("accion3") != null) {
+				accion3 = rs.getString("accion3");
+			}
+			if(rs.getString("texto3") != null) {
+				texto3 = rs.getString("texto3");
+			}
+			
 
 			if (nombreEvento.equals(sector)) {
 				area1.setText(narrativa);
@@ -128,7 +174,7 @@ public class Evento implements Initializable {
 		String myDriver = "org.gjt.mm.mysql.Driver";
 		String myUrl = "jdbc:mysql://localhost/rpg";
 		Class.forName(myDriver);
-		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
+		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
 		String query = "SELECT * FROM evento";
 		conn.createStatement();
 		Statement st = (Statement) conn.createStatement();
@@ -163,7 +209,7 @@ public class Evento implements Initializable {
 		String myDriver = "org.gjt.mm.mysql.Driver";
 		String myUrl = "jdbc:mysql://localhost/rpg";
 		Class.forName(myDriver);
-		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
+		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
 		String query = "SELECT * FROM evento";
 		conn.createStatement();
 		Statement st = (Statement) conn.createStatement();
@@ -198,7 +244,7 @@ public class Evento implements Initializable {
 		String myDriver = "org.gjt.mm.mysql.Driver";
 		String myUrl = "jdbc:mysql://localhost/rpg";
 		Class.forName(myDriver);
-		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
+		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
 		String query = "SELECT * FROM evento";
 		conn.createStatement();
 		Statement st = (Statement) conn.createStatement();

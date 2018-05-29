@@ -275,7 +275,7 @@
                   </AnchorPane>
             </content>
           </TitledPane>
-            <Button layoutX="42.0" layoutY="52.0" mnemonicParsing="false" onAction="#evento" prefHeight="31.0" prefWidth="120.0" text="Ir a Evento" />
+            <Button layoutX="42.0" layoutY="52.0" mnemonicParsing="false" onAction="#evento" prefHeight="31.0" prefWidth="120.0" text="Ir a Sector" />
          </children>
       </AnchorPane>
    </top>

@@ -10,8 +10,10 @@ import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
 
 import experimentalGame.game.model.Posibilidades;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 
@@ -41,14 +43,23 @@ public class Battle implements Initializable {
 	private Label fearLabel2;
 	@FXML
 	private Label strengthLabel2;
+	@FXML
+	private Button ataque1;
+	@FXML
+	private Button ataque2;
+	@FXML
+	private Button botiquin;
+	@FXML
+	private Button granada;
 
 	@FXML
 	private Label lbl;
 	@FXML
 	private TextArea consola;
-	
-	private boolean turno; // si es true comienza el jugador, si no, el enemigo
-	private int resultado;
+
+	boolean turno = false; // si es true comienza el jugador, si no, el enemigo
+	private int resultado1 = 0;
+	private int resultado2 = 0;
 	private Posibilidades resultadoAtaque;
 	private int tirada;
 	private int vitalidadUnidad;
@@ -58,39 +69,79 @@ public class Battle implements Initializable {
 	int v;
 	int v2;
 
+	int numIniciativa = 0;
+
 	int equipo = MainUI.equipo;
 	String sector = MainUI.sector;
-
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		try {
 			escuadron();
 			enemigo();
+			// while (vitalityLabel.getText().toString() != String.valueOf(0)
+			// && vitalityLabel2.getText().toString() != String.valueOf(0)) {
+			iniciativa();
+			// if (turno == true) {
+			//
+			// }
+			// if (turno == false) {
+			// if (vitalityLabel.getText().toString() != String.valueOf(0)) {
+			// atacar1();
+			// }
+			// }
+			// iniciativa();
+			System.out.println(turno);
+			// escuadron();
+			// enemigo();
 			tirada();
-			batalla();
+			// }
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
 
 	}
 
-	private int tirada() {
-		int numTirada = (int) (Math.random() * 22 + 1);
-		tirada = numTirada;
-		return tirada;
+	public void btnAtaque1(ActionEvent event) {
+		if (vitalityLabel.getText().toString() != String.valueOf(0)
+				|| vitalityLabel2.getText().toString() != String.valueOf(0)) {
+			// if ((Integer.parseInt(vitalityLabel.getText()) <= 0) ||
+			// (Integer.parseInt(vitalityLabel2.getText()) <= 0)) {
+			// iniciativa();
+			tirada();
+			atacar1();
+			atacar2();
+		} else {
+			consola.setText("Has perdido so pendeho");
+		}
 	}
 
-	private void batalla() {
-		System.out.println(turno);
-		iniciativa();
-		atacar1();
-		if (turno = false) {
-			atacar1();
-			//System.out.println(resultado);
-			//lbl.setText(String.valueOf(resultado));
+	public void btnAtaque2(ActionEvent event) {
+		if (vitalityLabel.getText().toString() != String.valueOf(0)
+				|| vitalityLabel2.getText().toString() != String.valueOf(0)) {
+			tirada();
+			atacar3();
+			atacar2();
+		} else {
+			consola.setText("Has perdido so pendeho");
 		}
+	}
 
+	public void btnBotiquin(ActionEvent event) {
+		tirada();
+		curacion();
+	}
+
+	public void btnGranada(ActionEvent event) {
+		granadamon();
+		ultragranadamon();
+	}
+
+	private int tirada() {
+		int numTirada = (int) (Math.random() * 22 + 1);
+		System.out.println(tirada);
+		tirada = numTirada;
+		return tirada;
 	}
 
 	// private void atacar1() {
@@ -133,23 +184,83 @@ public class Battle implements Initializable {
 	// return resultadoAtaque;
 	// }
 	private int atacar1() {
-			int dañoUnidad = Integer.parseInt(fearLabel.getText());
-			int defensaEnemigo = Integer.parseInt(strengthLabel.getText());
-			int vitalidadEnemigo = Integer.parseInt(vitalityLabel.getText());
-			resultado = vitalidadEnemigo - ((dañoUnidad - defensaEnemigo) + tirada);
-			System.out.println("vitalidadEnemigo: "+vitalidadEnemigo);
-			System.out.println("dañoUnidad: "+dañoUnidad);
-			System.out.println("defensaEnemigo: "+defensaEnemigo);
-			System.out.println("tirada: "+tirada);
-			System.out.println("resultado: "+resultado);
-			lbl.setText(String.valueOf(resultado));
-			consola.setText(String.valueOf(resultado));
-		return resultado;
+		int dañoUnidad = Integer.parseInt(fearLabel.getText());
+		int defensaEnemigo = Integer.parseInt(strengthLabel2.getText());
+		int vitalidadEnemigo = Integer.parseInt(vitalityLabel2.getText());
+		resultado1 = vitalidadEnemigo - ((dañoUnidad - defensaEnemigo) + tirada);
+		System.out.println("vitalidadEnemigo: " + vitalidadEnemigo);
+		System.out.println("dañoUnidad: " + dañoUnidad);
+		System.out.println("defensaEnemigo: " + defensaEnemigo);
+		System.out.println("tirada: " + tirada);
+		System.out.println("resultado: " + resultado1);
+		lbl.setText(String.valueOf(resultado1));
+		consola.appendText(String.valueOf(resultado1));
+		vitalityLabel2.setText(String.valueOf(resultado1));
+		return resultado1;
+	}
+
+	private int atacar2() {
+		System.out.println("Hola");
+		System.out.println("Hola");
+		int dañoEnemigo = Integer.parseInt(fearLabel2.getText());
+		int defensaUnidad = Integer.parseInt(strengthLabel.getText());
+		int vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
+		resultado2 = vitalidadUnidad - ((dañoEnemigo - defensaUnidad) + tirada);
+		System.out.println("Adiós");
+		System.out.println("vitalidadUnidad: " + vitalidadUnidad);
+		lbl.setText(String.valueOf(resultado2));
+		consola.appendText(String.valueOf(resultado2));
+		vitalityLabel.setText(String.valueOf(resultado2));
+		return resultado2;
+	}
+
+	private int atacar3() {
+		int dañoUnidad = Integer.parseInt(fearLabel.getText());
+		int defensaEnemigo = Integer.parseInt(strengthLabel2.getText());
+		int vitalidadEnemigo = Integer.parseInt(vitalityLabel2.getText());
+		resultado1 = vitalidadEnemigo - ((dañoUnidad - defensaEnemigo) + tirada + 10);
+		vitalityLabel2.setText(String.valueOf(resultado1));
+		return resultado1;
+	}
+
+	private int curacion() {
+		int vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
+		resultado1 = vitalidadUnidad + 30 + tirada;
+		vitalityLabel.setText(String.valueOf(resultado1));
+		return resultado1;
+	}
+	
+	private int granadamon() {
+		int dañoUnidad = Integer.parseInt(fearLabel.getText());
+		int defensaEnemigo = Integer.parseInt(strengthLabel2.getText());
+		int vitalidadEnemigo = Integer.parseInt(vitalityLabel2.getText());
+		resultado1 = vitalidadEnemigo - ((dañoUnidad - defensaEnemigo) + tirada + 40);
+		System.out.println("vitalidadEnemigo: " + vitalidadEnemigo);
+		System.out.println("dañoUnidad: " + dañoUnidad);
+		System.out.println("defensaEnemigo: " + defensaEnemigo);
+		System.out.println("tirada: " + tirada);
+		System.out.println("resultado: " + resultado1);
+		lbl.setText(String.valueOf(resultado1));
+		consola.appendText(String.valueOf(resultado1));
+		vitalityLabel2.setText(String.valueOf(resultado1));
+		return resultado1;
+	}
+	
+	private int ultragranadamon() {
+		int dañoEnemigo = Integer.parseInt(fearLabel2.getText());
+		int defensaUnidad = Integer.parseInt(strengthLabel.getText());
+		int vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
+		resultado2 = vitalidadUnidad - ((dañoEnemigo - defensaUnidad) + tirada + 40);
+		System.out.println("vitalidadUnidad: " + vitalidadUnidad);
+		lbl.setText(String.valueOf(resultado2));
+		consola.appendText(String.valueOf(resultado2));
+		vitalityLabel.setText(String.valueOf(resultado2));
+		return resultado2;
 	}
 
 	private boolean iniciativa() {
-		int numIniciativa = (int) (Math.random() * 10 + 1);
-
+		numIniciativa = (int) (Math.random() * 10 + 1);
+		System.out.println(numIniciativa);
 		if (numIniciativa <= 5) {
 			turno = false;
 		} else {
@@ -162,7 +273,7 @@ public class Battle implements Initializable {
 		String myDriver = "org.gjt.mm.mysql.Driver";
 		String myUrl = "jdbc:mysql://localhost/rpg";
 		Class.forName(myDriver);
-		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
+		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
 		String query = "SELECT * FROM enemigo";
 		conn.createStatement();
 		Statement st = (Statement) conn.createStatement();
@@ -187,7 +298,7 @@ public class Battle implements Initializable {
 		String myDriver = "org.gjt.mm.mysql.Driver";
 		String myUrl = "jdbc:mysql://localhost/rpg";
 		Class.forName(myDriver);
-		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
+		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
 		String query = "SELECT * FROM escuadron";
 		conn.createStatement();
 		Statement st = (Statement) conn.createStatement();

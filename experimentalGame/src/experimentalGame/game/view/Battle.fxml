@@ -103,10 +103,10 @@
                         <Label layoutX="343.0" layoutY="110.0" prefHeight="26.0" prefWidth="105.0" text="Fusil de Asalto:" />
                         <Label layoutX="868.0" layoutY="110.0" prefHeight="26.0" prefWidth="98.0" text="Granada PEM:" />
                         <Label layoutX="628.0" layoutY="110.0" prefHeight="26.0" prefWidth="81.0" text="Probióticos:" />
-                        <Button fx:id="ataque1" layoutX="358.0" layoutY="151.0" mnemonicParsing="false" text="Disparar" />
-                        <Button fx:id="ataque2" layoutX="89.0" layoutY="151.0" mnemonicParsing="false" text="Disparar" />
-                        <Button fx:id="botiquin" layoutX="637.0" layoutY="151.0" mnemonicParsing="false" text="Tomar" />
-                        <Button fx:id="granada" layoutX="886.0" layoutY="151.0" mnemonicParsing="false" text="Lanzar" />
+                        <Button fx:id="ataque2" layoutX="358.0" layoutY="151.0" mnemonicParsing="false" onAction="#btnAtaque2" text="Disparar" />
+                        <Button fx:id="ataque1" layoutX="89.0" layoutY="151.0" mnemonicParsing="false" onAction="#btnAtaque1" text="Disparar" />
+                        <Button fx:id="botiquin" layoutX="637.0" layoutY="151.0" mnemonicParsing="false" onAction="#btnBotiquin" text="Tomar" />
+                        <Button fx:id="granada" layoutX="886.0" layoutY="151.0" mnemonicParsing="false" onAction="#btnGranada" text="Lanzar" />
                         <ImageView fitHeight="68.0" fitWidth="156.0" layoutX="50.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../img/silicona.png" />
