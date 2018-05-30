@@ -131,7 +131,7 @@
                         <Label layoutX="599.0" layoutY="163.0" prefHeight="26.0" prefWidth="140.0" text="Da vida al escuadrón" />
                         <Label layoutX="837.0" layoutY="162.0" prefHeight="26.0" prefWidth="162.0" text="Produce daño alto pero" />
                         <Label layoutX="869.0" layoutY="178.0" prefHeight="26.0" prefWidth="98.0" text="devuelve daño" />
-                        <Label layoutX="603.0" layoutY="179.0" prefHeight="26.0" prefWidth="132.0" text="3 unidades máximo" />
+                        <Label fx:id="lblBotiquin" layoutX="603.0" layoutY="179.0" prefHeight="26.0" prefWidth="132.0" text="3 unidades" />
                      </children>
                   </AnchorPane>
             </content>
