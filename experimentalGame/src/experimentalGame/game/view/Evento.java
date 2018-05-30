@@ -32,11 +32,11 @@ public class Evento implements Initializable {
 	@FXML
 	private Label lbl2;
 	@FXML
-	private Button btn1;
+	private Button btn1= new Button("");
 	@FXML
-	private Button btn2;
+	private Button btn2= new Button("");
 	@FXML
-	private Button btn3;
+	private Button btn3= new Button("");
 
 	String t1;
 	String t2;
@@ -44,6 +44,15 @@ public class Evento implements Initializable {
 
 	int equipo = MainUI.equipo;
 	String sector = MainUI.sector;
+	String nombreEvento = "";
+	String narrativa = "";
+	String dialogo = "";
+	String accion1 = "";
+	String texto1 = "";
+	String accion2 = "";
+	String texto2 = "";
+	String accion3 = "";
+	String texto3 = "";
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -106,15 +115,7 @@ public class Evento implements Initializable {
 		Statement st = (Statement) conn.createStatement();
 		ResultSet rs = st.executeQuery(query);
 		
-		String nombreEvento = "";
-		String narrativa = "";
-		String dialogo = "";
-		String accion1 = "";
-		String texto1 = "";
-		String accion2 = "";
-		String texto2 = "";
-		String accion3 = "";
-		String texto3 = "";
+		
 		
 		
 		while (rs.next()) {
@@ -130,11 +131,17 @@ public class Evento implements Initializable {
 			if(rs.getString("accion1") != null) {
 				accion1 = rs.getString("accion1");
 			}
+			if(rs.getString("accion1") == null) {
+				accion1 = "";
+			}
 			if(rs.getString("texto1") != null) {
 				texto1 = rs.getString("texto1");
 			}
 			if(rs.getString("accion2") != null) {
 				accion2 = rs.getString("accion2");
+			}
+			if(rs.getString("accion2") == null) {
+				accion2 = "";
 			}
 			if(rs.getString("texto2") != null) {
 				texto2 = rs.getString("texto2");
@@ -142,12 +149,18 @@ public class Evento implements Initializable {
 			if(rs.getString("accion3") != null) {
 				accion3 = rs.getString("accion3");
 			}
+			if(rs.getString("accion3") == null) {
+				accion3 = "";
+			}
 			if(rs.getString("texto3") != null) {
 				texto3 = rs.getString("texto3");
 			}
 			
 
 			if (nombreEvento.equals(sector)) {
+				System.out.println(accion1);
+				System.out.println(accion2);
+				System.out.println(accion3);
 				area1.setText(narrativa);
 				area2.setText(dialogo);
 				btn1.setText(accion1);

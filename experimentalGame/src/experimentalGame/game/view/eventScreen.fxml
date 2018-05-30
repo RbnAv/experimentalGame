@@ -24,10 +24,13 @@
             <Button fx:id="btn2" layoutX="221.0" layoutY="620.0" mnemonicParsing="false" onAction="#btn2" prefHeight="46.0" prefWidth="158.0" />
             <Button fx:id="btn3" layoutX="221.0" layoutY="697.0" mnemonicParsing="false" onAction="#btn3" prefHeight="46.0" prefWidth="158.0" />
             <Button layoutX="900.0" layoutY="620.0" mnemonicParsing="false" onAction="#continuar" prefHeight="46.0" prefWidth="158.0" text="Continuar" />
-            <Label fx:id="lbl1" layoutX="268.0" layoutY="470.0" text="Escuadrón" textFill="WHITE">
+            <Label fx:id="lbl1" layoutX="234.0" layoutY="452.0" prefHeight="35.0" prefWidth="132.0" text="Escuadrón A" textFill="WHITE">
                <font>
-                  <Font size="14.0" />
-               </font></Label>
+                  <Font size="24.0" />
+               </font>
+               <effect>
+                  <Reflection />
+               </effect></Label>
             <Label fx:id="lbl2" layoutX="438.0" layoutY="556.0" text="Selecciona una opción." textFill="WHITE">
                <font>
                   <Font size="14.0" />

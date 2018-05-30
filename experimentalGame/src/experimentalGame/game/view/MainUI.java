@@ -173,7 +173,7 @@ public class MainUI implements Initializable {
 			}
 
 			if (sector.equals("C1") || (sector.equals("A3")
-					|| (sector.equals("B1") || (sector.equals("D1") || (sector.equals("A1")))))) {
+					|| (sector.equals("B1") || (sector.equals("D1") || (sector.equals("A1")) || (sector.equals("D4")))))) {
 				((Node) event.getSource()).getScene().getWindow().hide();
 
 				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Battle.fxml"));
