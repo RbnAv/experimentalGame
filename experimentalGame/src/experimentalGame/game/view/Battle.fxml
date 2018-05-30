@@ -86,7 +86,7 @@
                   </AnchorPane>
                </content>
             </TitledPane>
-            <TextArea fx:id="consola" layoutX="231.0" layoutY="13.0" prefHeight="253.0" prefWidth="561.0" promptText="Consola de batalla" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="231.0" AnchorPane.rightAnchor="232.0" AnchorPane.topAnchor="13.0" />
+            <TextArea fx:id="consola" editable="false" layoutX="231.0" layoutY="13.0" prefHeight="253.0" prefWidth="561.0" promptText="Consola de batalla" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="231.0" AnchorPane.rightAnchor="232.0" AnchorPane.topAnchor="13.0" />
          </children></AnchorPane>
    </center>
    <effect>
