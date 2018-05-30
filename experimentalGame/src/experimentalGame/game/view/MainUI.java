@@ -46,9 +46,9 @@ public class MainUI implements Initializable {
 	static int equipo = 0;
 	static String sector = "";
 
-	CharSequence e1 = "Escuadrón 1";
-	CharSequence e2 = "Escuadrón 2";
-	CharSequence e3 = "Escuadrón 3";
+	CharSequence e1 = "Escuadrón A";
+	CharSequence e2 = "Escuadrón B";
+	CharSequence e3 = "Escuadrón C";
 
 	CharSequence s1 = "A1";
 	CharSequence s2 = "A2";

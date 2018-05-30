@@ -53,9 +53,9 @@ public class Battle implements Initializable {
 	private Button granada;
 
 	@FXML
-	private Label lbl;
-	@FXML
 	private TextArea consola;
+	
+	Thread t;
 
 	boolean turno = false; // si es true comienza el jugador, si no, el enemigo
 	private int resultado1 = 0;
@@ -110,12 +110,18 @@ public class Battle implements Initializable {
 			// iniciativa();
 			tirada();
 			atacar1();
-			try {
-				Thread.sleep (5000);
-				atacar2();
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+			t = new Thread() {
+				public void run() {
+					super.run();
+					try {
+						Thread.sleep (2000);
+						atacar2();
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+			};
+			t.start();
 			
 		} else {
 			consola.setText("ERROR");
@@ -127,9 +133,21 @@ public class Battle implements Initializable {
 				|| vitalityLabel2.getText().toString() != String.valueOf(0)) {
 			tirada();
 			atacar3();
-			atacar4();
+			t = new Thread() {
+				public void run() {
+					super.run();
+					try {
+						Thread.sleep (2000);
+						atacar4();
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+			};
+			t.start();
+			
 		} else {
-			consola.setText("Has perdido so pendeho");
+			consola.setText("ERROR");
 		}
 	}
 
@@ -140,7 +158,19 @@ public class Battle implements Initializable {
 
 	public void btnGranada(ActionEvent event) {
 		granadamon();
-		ultragranadamon();
+		t = new Thread() {
+			public void run() {
+				super.run();
+				try {
+					Thread.sleep (2000);
+					ultragranadamon();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+		};
+		t.start();
+		
 	}
 
 	private int tirada() {
@@ -199,7 +229,6 @@ public class Battle implements Initializable {
 		System.out.println("defensaEnemigo: " + defensaEnemigo);
 		System.out.println("tirada: " + tirada);
 		System.out.println("resultado: " + resultado1);
-		lbl.setText(String.valueOf(resultado1));
 		consola.appendText(String.valueOf("¡Disparad disparad! ¡Pam pam pam!\n- El escuadrón usó el fusil de silicona, ha hecho "+((dañoUnidad - defensaEnemigo) + tirada)+" puntos de daño.\n"
 				+ "   Ha dejado al enemigo con "+resultado1+" puntos de vida.\n\n"));
 		vitalityLabel2.setText(String.valueOf(resultado1));
@@ -211,11 +240,11 @@ public class Battle implements Initializable {
 		int vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
 		resultado2 = vitalidadUnidad - ((dañoEnemigo - defensaUnidad) + tirada);
 		System.out.println("vitalidadUnidad: " + vitalidadUnidad);
-		lbl.setText(String.valueOf(resultado2));
 		consola.appendText(String.valueOf("¡Grrrrraaaaahhhh!\n- El enemigo lanzó ácido por la boca y ha hecho "+((dañoEnemigo - defensaUnidad) + tirada)+" puntos de daño.\n"
 				+ "   Ha dejado al escuadrón con "+resultado2+" puntos de vida."
 				+ "\n\n--------------------------------------------------------------------------------------\n\n"));
 		vitalityLabel.setText(String.valueOf(resultado2));
+		t.stop();
 		return resultado2;
 	}
 
@@ -236,11 +265,11 @@ public class Battle implements Initializable {
 		int vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
 		resultado2 = vitalidadUnidad - ((dañoEnemigo - defensaUnidad) + tirada);
 		System.out.println("vitalidadUnidad: " + vitalidadUnidad);
-		lbl.setText(String.valueOf(resultado2));
 		consola.appendText(String.valueOf("¡Grrrrraaaaahhhh!\n- El enemigo lanzó ácido por la boca y ha hecho "+((dañoEnemigo - defensaUnidad) + tirada)+" puntos de daño.\n"
 				+ "   Ha dejado al escuadrón con "+resultado2+" puntos de vida."
 				+ "\n\n--------------------------------------------------------------------------------------\n\n"));
 		vitalityLabel.setText(String.valueOf(resultado2));
+		t.stop();
 		return resultado2;
 	}
 
@@ -248,7 +277,8 @@ public class Battle implements Initializable {
 		int vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
 		resultado1 = (vitalidadUnidad + 30 + tirada);
 		vitalityLabel.setText(String.valueOf(resultado1));
-		consola.appendText(String.valueOf("¡Necesitamos curación!\n- El escadrón usó un botiquín y ha sanado "+(vitalidadUnidad + 30 + tirada)+" puntos de salud.\n"
+		consola.appendText(String.valueOf("¡Necesitamos curación!\n- El escadrón usó un botiquín y ha sanado "+30+" puntos de salud.\n"
+				+ "Ahora el escuadrón tiene "+resultado1+" puntos de vida."
 				+ "\n\n--------------------------------------------------------------------------------------\n\n"));
 		return resultado1;
 	}
@@ -263,10 +293,9 @@ public class Battle implements Initializable {
 		System.out.println("defensaEnemigo: " + defensaEnemigo);
 		System.out.println("tirada: " + tirada);
 		System.out.println("resultado: " + resultado1);
-		lbl.setText(String.valueOf(resultado1));
 		vitalityLabel2.setText(String.valueOf(resultado1));
 		consola.appendText(String.valueOf("¡Granada va! ¡Buuummm!\n- El escuadrón lanzó una granada y ha hecho "+((dañoUnidad - defensaEnemigo) + tirada+ 40)+" puntos de daño.\n"
-				+ "   Ha dejado al escuadrón con "+resultado1+" puntos de vida.\n\n"));
+				+ "   Ha dejado al enemigo con "+resultado1+" puntos de vida.\n\n"));
 		return resultado1;
 	}
 	
@@ -276,12 +305,12 @@ public class Battle implements Initializable {
 		int vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
 		resultado2 = vitalidadUnidad - ((dañoEnemigo - defensaUnidad) + tirada + 20);
 		System.out.println("vitalidadUnidad: " + vitalidadUnidad);
-		lbl.setText(String.valueOf(resultado2));
 		vitalityLabel.setText(String.valueOf(resultado2));
 		consola.appendText(String.valueOf("- La explosión es tan fuerte que hace daño al escuadrón.\n"
 				+ "   Ha hecho "+((dañoEnemigo - defensaUnidad) + tirada+ 20)+" puntos de daño.\n"
 				+ "   El escuadrón se ha quedado con "+resultado2+" puntos de vida."
 				+ "\n\n--------------------------------------------------------------------------------------\n\n"));
+		t.stop();
 		return resultado2;
 	}
 
@@ -311,8 +340,10 @@ public class Battle implements Initializable {
 			int constitucion = rs.getInt("constitucionEnemigo");
 			int vitalidad = rs.getInt("vitalidadEnemigo");
 			int fuerza = rs.getInt("fuerzaEnemigo");
+			int agilidad = rs.getInt("agilidadEnemigo");
 			if (idEnemigo == 1) {
 				vitalityLabel2.setText(String.valueOf(vitalidad));
+				energyLabel2.setText(String.valueOf(agilidad));
 				fearLabel2.setText(String.valueOf(fuerza));
 				strengthLabel2.setText(String.valueOf(constitucion));
 				v2 = Integer.parseInt(vitalityLabel2.getText());

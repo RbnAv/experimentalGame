@@ -19,7 +19,7 @@
             </TextArea>
             <ImageView fitHeight="321.0" fitWidth="528.0" layoutX="69.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../img/intro.jpg" />
+                  <Image url="/img/intro.jpg" />
                </image></ImageView>
             <TextArea fx:id="area2" editable="false" layoutX="209.0" layoutY="419.0" prefHeight="251.0" prefWidth="861.0" />
             <Button layoutX="597.0" layoutY="713.0" mnemonicParsing="false" onAction="#continuar" text="Continuar">
