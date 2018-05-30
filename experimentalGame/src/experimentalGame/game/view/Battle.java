@@ -11,7 +11,6 @@ import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 import com.mysql.jdbc.Statement;
 
-import experimentalGame.game.model.Posibilidades;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -72,7 +71,6 @@ public class Battle implements Initializable {
 	boolean turno = false; // si es true comienza el jugador, si no, el enemigo
 	private int resultado1 = 0;
 	private int resultado2 = 0;
-	private Posibilidades resultadoAtaque;
 	private int tirada;
 	private int vitalidadUnidad = 0;
 	private int vitalidadEnemigo = 0;

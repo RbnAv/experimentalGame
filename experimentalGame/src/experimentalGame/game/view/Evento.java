@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
 import com.mysql.jdbc.Statement;
 
 import javafx.event.ActionEvent;
@@ -32,11 +33,13 @@ public class Evento implements Initializable {
 	@FXML
 	private Label lbl2;
 	@FXML
-	private Button btn1= new Button("");
+	private Button btn1 = new Button("");
 	@FXML
-	private Button btn2= new Button("");
+	private Button btn2 = new Button("");
 	@FXML
-	private Button btn3= new Button("");
+	private Button btn3 = new Button("");
+	@FXML
+	private Button btnContinuar = new Button("");
 
 	String t1;
 	String t2;
@@ -57,20 +60,19 @@ public class Evento implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		try {
-			
-			
+			btnContinuar.setDisable(true);
+
 			System.out.println(MainUI.equipo);
 			System.out.println(sector);
 			escuadron();
-			
-			
+
 			evento();
-			
+
 			btn1.setDisable(btn1.getText().toString().equals(""));
-			/*if (btn1.getText().isEmpty()) {
-				btn1.setDisable(true);
-				btn1.setText(String.valueOf(btn3.getText().length()));
-			}*/
+			/*
+			 * if (btn1.getText().isEmpty()) { btn1.setDisable(true);
+			 * btn1.setText(String.valueOf(btn3.getText().length())); }
+			 */
 			if (btn2.getText().toString().equals("")) {
 				btn2.setDisable(true);
 			}
@@ -78,10 +80,9 @@ public class Evento implements Initializable {
 				btn3.setDisable(true);
 			}
 		} catch (Exception e) {
-			
+
 		}
 	}
-
 
 	private void escuadron() throws ClassNotFoundException, SQLException {
 		String myDriver = "org.gjt.mm.mysql.Driver";
@@ -114,48 +115,44 @@ public class Evento implements Initializable {
 		conn.createStatement();
 		Statement st = (Statement) conn.createStatement();
 		ResultSet rs = st.executeQuery(query);
-		
-		
-		
-		
+
 		while (rs.next()) {
-			if(rs.getString("nombreEvento") != null) {
+			if (rs.getString("nombreEvento") != null) {
 				nombreEvento = rs.getString("nombreEvento");
 			}
-			if(rs.getString("narrativa") != null) {
+			if (rs.getString("narrativa") != null) {
 				narrativa = rs.getString("narrativa");
 			}
-			if(rs.getString("dialogo") != null) {
+			if (rs.getString("dialogo") != null) {
 				dialogo = rs.getString("dialogo");
 			}
-			if(rs.getString("accion1") != null) {
+			if (rs.getString("accion1") != null) {
 				accion1 = rs.getString("accion1");
 			}
-			if(rs.getString("accion1") == null) {
+			if (rs.getString("accion1") == null) {
 				accion1 = "";
 			}
-			if(rs.getString("texto1") != null) {
+			if (rs.getString("texto1") != null) {
 				texto1 = rs.getString("texto1");
 			}
-			if(rs.getString("accion2") != null) {
+			if (rs.getString("accion2") != null) {
 				accion2 = rs.getString("accion2");
 			}
-			if(rs.getString("accion2") == null) {
+			if (rs.getString("accion2") == null) {
 				accion2 = "";
 			}
-			if(rs.getString("texto2") != null) {
+			if (rs.getString("texto2") != null) {
 				texto2 = rs.getString("texto2");
 			}
-			if(rs.getString("accion3") != null) {
+			if (rs.getString("accion3") != null) {
 				accion3 = rs.getString("accion3");
 			}
-			if(rs.getString("accion3") == null) {
+			if (rs.getString("accion3") == null) {
 				accion3 = "";
 			}
-			if(rs.getString("texto3") != null) {
+			if (rs.getString("texto3") != null) {
 				texto3 = rs.getString("texto3");
 			}
-			
 
 			if (nombreEvento.equals(sector)) {
 				System.out.println(accion1);
@@ -213,11 +210,51 @@ public class Evento implements Initializable {
 				if (btn1.getText().equals(accion3)) {
 					lbl2.setText(texto3);
 				}
+				
+				if (nombreEvento.equals("A5")) {
+					muerte();
+				}
+				if (nombreEvento.equals("B2")) {
+					muerte();
+				}
+				if (nombreEvento.equals("C2")) {
+					muerte();
+				}
+				if (nombreEvento.equals("D3")) {
+					muerte();
+				}
 			}
+			
 		}
+
+		btn1.setDisable(true);
+		btn2.setDisable(true);
+		btn3.setDisable(true);
+		btnContinuar.setDisable(false);
 		st.close();
 	}
-	
+
+	private void muerte() throws ClassNotFoundException, SQLException {
+
+		// create a java mysql database connection
+		String myDriver = "org.gjt.mm.mysql.Driver";
+		String myUrl = "jdbc:mysql://localhost/rpg";
+		Class.forName(myDriver);
+		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
+
+		// create the java mysql update preparedstatement
+		String query = "update escuadron set vitalidadEscuadron = ? where nombreEscuadron = ?";
+		PreparedStatement preparedStmt = (PreparedStatement) conn.prepareStatement(query);
+		// preparedStmt.setInt (1, 6000);
+		preparedStmt.setInt(1, 0);
+		preparedStmt.setString(2, lbl1.getText());
+
+		// execute the java preparedstatement
+		preparedStmt.executeUpdate();
+
+		conn.close();
+	}
+
 	public void btn2(ActionEvent event) throws ClassNotFoundException, SQLException {
 		String myDriver = "org.gjt.mm.mysql.Driver";
 		String myUrl = "jdbc:mysql://localhost/rpg";
@@ -248,11 +285,27 @@ public class Evento implements Initializable {
 				if (btn2.getText().equals(accion3)) {
 					lbl2.setText(texto3);
 				}
+				
+				if (nombreEvento.equals("A2")) {
+					muerte();
+				}
+				if (nombreEvento.equals("B2")) {
+					muerte();
+				}
+				if (nombreEvento.equals("D2")) {
+					muerte();
+				}
 			}
+			
 		}
+
+		btn1.setDisable(true);
+		btn2.setDisable(true);
+		btn3.setDisable(true);
+		btnContinuar.setDisable(false);
 		st.close();
 	}
-	
+
 	public void btn3(ActionEvent event) throws ClassNotFoundException, SQLException {
 		String myDriver = "org.gjt.mm.mysql.Driver";
 		String myUrl = "jdbc:mysql://localhost/rpg";
@@ -283,41 +336,52 @@ public class Evento implements Initializable {
 				if (btn3.getText().equals(accion3)) {
 					lbl2.setText(texto3);
 				}
+				
+				if (nombreEvento.equals("C2")) {
+					muerte();
+				}
 			}
 		}
+		
+		btn1.setDisable(true);
+		btn2.setDisable(true);
+		btn3.setDisable(true);
+		btnContinuar.setDisable(false);
 		st.close();
 	}
 
 	public void continuar(ActionEvent event) {
 		try {
-			
+
 			((Node) event.getSource()).getScene().getWindow().hide();
-//			
-//			// create a java mysql database connection
-//		      String myDriver = "org.gjt.mm.mysql.Driver";
-//		      String myUrl = "jdbc:mysql://localhost/rpg";
-//		      Class.forName(myDriver);
-//		      Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
-//		    
-//		      // create the java mysql update preparedstatement
-//		      String query = "update escuadron set vitalidadEscuadron = ? where nombreEscuadron = ?";//222, 
-//		      PreparedStatement preparedStmt = (PreparedStatement) conn.prepareStatement(query);
-//		      //preparedStmt.setInt   (1, 6000);
-//		      preparedStmt.setInt   (1, 12);
-//		      preparedStmt.setString(2, "Reconocimiento");
-//
-//		      // execute the java preparedstatement
-//		      preparedStmt.executeUpdate();
-//		      
-//		      conn.close();
-//			
+			//
+			// // create a java mysql database connection
+			// String myDriver = "org.gjt.mm.mysql.Driver";
+			// String myUrl = "jdbc:mysql://localhost/rpg";
+			// Class.forName(myDriver);
+			// Connection conn = (Connection) DriverManager.getConnection(myUrl, "root",
+			// "studium2017");
+			//
+			// // create the java mysql update preparedstatement
+			// String query = "update escuadron set vitalidadEscuadron = ? where
+			// nombreEscuadron = ?";//222,
+			// PreparedStatement preparedStmt = (PreparedStatement)
+			// conn.prepareStatement(query);
+			// //preparedStmt.setInt (1, 6000);
+			// preparedStmt.setInt (1, 12);
+			// preparedStmt.setString(2, "Reconocimiento");
+			//
+			// // execute the java preparedstatement
+			// preparedStmt.executeUpdate();
+			//
+			// conn.close();
+			//
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MainUI.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setScene(new Scene(root));
 			stage.show();
-			
-			
+
 		} catch (Exception e) {
 			// TODO: handle exception
 		}

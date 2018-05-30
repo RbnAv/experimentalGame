@@ -1,7 +1,11 @@
 package experimentalGame.game.view;
 
 import java.net.URL;
+import java.sql.DriverManager;
 import java.util.ResourceBundle;
+
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
 
 import experimentalGame.game.Main;
 import experimentalGame.game.model.Squad;
@@ -64,6 +68,21 @@ public class MainUIController implements Initializable {
 	public void nuevaPartida(ActionEvent event) {
 
 		try {
+			// create a java mysql database connection
+			String myDriver = "org.gjt.mm.mysql.Driver";
+			String myUrl = "jdbc:mysql://localhost/rpg";
+			Class.forName(myDriver);
+			Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
+
+			// create the java mysql update preparedstatement
+			String query = "update escuadron set vitalidadEscuadron = ?";
+			PreparedStatement preparedStmt = (PreparedStatement) conn.prepareStatement(query);
+			preparedStmt.setInt(1, 236);
+
+			// execute the java preparedstatement
+			preparedStmt.executeUpdate();
+			conn.close();
+			
 			// Cerramos esta ventana
 			((Node) event.getSource()).getScene().getWindow().hide();
 

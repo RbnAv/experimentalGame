@@ -15,7 +15,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
@@ -41,6 +43,14 @@ public class MainUI implements Initializable {
 	private Label energyLabel2;
 	@FXML
 	private Label fearLabel2;
+	@FXML
+	private Button btnEvento;
+	@FXML
+	private Label lbl;
+	@FXML
+	private MenuItem mOpciones;
+	@FXML
+	private MenuItem mSalir;
 
 	String txt = "";
 	static int equipo = 0;
@@ -74,6 +84,7 @@ public class MainUI implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		try {
+			lbl.setText("");
 			String myDriver = "org.gjt.mm.mysql.Driver";
 			String myUrl = "jdbc:mysql://localhost/rpg";
 			Class.forName(myDriver);
@@ -108,89 +119,111 @@ public class MainUI implements Initializable {
 			// TODO: handle exception
 		}
 	}
+	public void opciones(ActionEvent event) {
+		try {
+			((Node) event.getSource()).getScene().getWindow().hide();
 
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("optionPanel2.fxml"));
+			Parent root = (Parent) fxmlLoader.load();
+			Stage stage = new Stage();
+			stage.setScene(new Scene(root));
+			stage.show();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
 	public void evento(ActionEvent event) {
 		try {
 			txt = comando.getText();
-			// Equipo
-			if (txt.contains(e1)) {
-				equipo = 1;
-			}
-			if (txt.contains(e2)) {
-				equipo = 2;
-			}
-			if (txt.contains(e3)) {
-				equipo = 3;
-			}
-			// Sector
-			if (txt.contains(s1)) {
-				sector = s1.toString();
-			}
-			if (txt.contains(s2)) {
-				sector = s2.toString();
-			}
-			if (txt.contains(s3)) {
-				sector = s3.toString();
-			}
-			if (txt.contains(s4)) {
-				sector = s4.toString();
-			}
-			if (txt.contains(s5)) {
-				sector = s5.toString();
-			}
-			if (txt.contains(s6)) {
-				sector = s6.toString();
-			}
-			if (txt.contains(s7)) {
-				sector = s7.toString();
-			}
-			if (txt.contains(s8)) {
-				sector = s8.toString();
-			}
-			if (txt.contains(s9)) {
-				sector = s9.toString();
-			}
-			if (txt.contains(s10)) {
-				sector = s10.toString();
-			}
-			if (txt.contains(s11)) {
-				sector = s11.toString();
-			}
-			if (txt.contains(s12)) {
-				sector = s12.toString();
-			}
-			if (txt.contains(s13)) {
-				sector = s13.toString();
-			}
-			if (txt.contains(s14)) {
-				sector = s14.toString();
-			}
-			if (txt.contains(s15)) {
-				sector = s15.toString();
-			}
-			if (txt.contains(s16)) {
-				sector = s16.toString();
-			}
+			if ((txt.contains(s1) || txt.contains(s2) || txt.contains(s3) || txt.contains(s4) || txt.contains(s5)
+					|| txt.contains(s6) || txt.contains(s7) || txt.contains(s8) || txt.contains(s9) || txt.contains(s10)
+					|| txt.contains(s11) || txt.contains(s12) || txt.contains(s13) || txt.contains(s14)
+					|| txt.contains(s15) || txt.contains(s16))
+					&& (txt.contains(e1) || txt.contains(e2) || txt.contains(e3))) {
+				// Equipo
+				if (txt.contains(e1)) {
+					equipo = 1;
+				}
+				if (txt.contains(e2)) {
+					equipo = 2;
+				}
+				if (txt.contains(e3)) {
+					equipo = 3;
+				}
+				// Sector
+				if (txt.contains(s1)) {
+					sector = s1.toString();
+				}
+				if (txt.contains(s2)) {
+					sector = s2.toString();
+				}
+				if (txt.contains(s3)) {
+					sector = s3.toString();
+				}
+				if (txt.contains(s4)) {
+					sector = s4.toString();
+				}
+				if (txt.contains(s5)) {
+					sector = s5.toString();
+				}
+				if (txt.contains(s6)) {
+					sector = s6.toString();
+				}
+				if (txt.contains(s7)) {
+					sector = s7.toString();
+				}
+				if (txt.contains(s8)) {
+					sector = s8.toString();
+				}
+				if (txt.contains(s9)) {
+					sector = s9.toString();
+				}
+				if (txt.contains(s10)) {
+					sector = s10.toString();
+				}
+				if (txt.contains(s11)) {
+					sector = s11.toString();
+				}
+				if (txt.contains(s12)) {
+					sector = s12.toString();
+				}
+				if (txt.contains(s13)) {
+					sector = s13.toString();
+				}
+				if (txt.contains(s14)) {
+					sector = s14.toString();
+				}
+				if (txt.contains(s15)) {
+					sector = s15.toString();
+				}
+				if (txt.contains(s16)) {
+					sector = s16.toString();
+				}
 
-			if (sector.equals("C1") || (sector.equals("A3") || (sector.equals("B1")
-					|| (sector.equals("D1") || (sector.equals("A1")) || (sector.equals("D4")))))) {
-				((Node) event.getSource()).getScene().getWindow().hide();
+				if (sector.equals("C1") || (sector.equals("A3") || (sector.equals("B1")
+						|| (sector.equals("D1") || (sector.equals("A1")) || (sector.equals("D4")))))) {
+					((Node) event.getSource()).getScene().getWindow().hide();
 
-				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Battle.fxml"));
-				Parent root = (Parent) fxmlLoader.load();
-				Stage stage = new Stage();
-				stage.setScene(new Scene(root));
-				stage.show();
-			} else {
+					FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Battle.fxml"));
+					Parent root = (Parent) fxmlLoader.load();
+					Stage stage = new Stage();
+					stage.setScene(new Scene(root));
+					stage.show();
+				} else {
 
-				((Node) event.getSource()).getScene().getWindow().hide();
+					((Node) event.getSource()).getScene().getWindow().hide();
 
-				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("eventScreen.fxml"));
-				Parent root = (Parent) fxmlLoader.load();
-				Stage stage = new Stage();
-				stage.setScene(new Scene(root));
-				stage.show();
+					FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("eventScreen.fxml"));
+					Parent root = (Parent) fxmlLoader.load();
+					Stage stage = new Stage();
+					stage.setScene(new Scene(root));
+					stage.show();
+				}
 			}
+			else {
+				lbl.setText("Escribe escuadrón y sector correctamente");
+			}
+			
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
