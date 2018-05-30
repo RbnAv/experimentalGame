@@ -85,8 +85,8 @@
                   </AnchorPane>
                </content>
             </TitledPane>
-            <TextArea fx:id="consola" editable="false" layoutX="231.0" layoutY="13.0" prefHeight="208.0" prefWidth="561.0" promptText="Consola de batalla" AnchorPane.bottomAnchor="78.0" AnchorPane.leftAnchor="231.0" AnchorPane.rightAnchor="232.0" AnchorPane.topAnchor="13.0" />
-            <Button fx:id="fin" layoutX="477.0" layoutY="241.0" mnemonicParsing="false" onAction="#muerte" text="Continuar" />
+            <TextArea fx:id="consola" editable="false" layoutX="231.0" layoutY="13.0" prefHeight="214.0" prefWidth="561.0" promptText="Consola de batalla" AnchorPane.bottomAnchor="72.0" AnchorPane.leftAnchor="231.0" AnchorPane.rightAnchor="232.0" AnchorPane.topAnchor="13.0" />
+            <Button fx:id="fin" layoutX="422.0" layoutY="251.0" mnemonicParsing="false" onAction="#muerte" prefHeight="34.0" prefWidth="180.0" text="Continuar" />
          </children></AnchorPane>
    </center>
    <effect>
@@ -132,7 +132,7 @@
                         <Label layoutX="599.0" layoutY="163.0" prefHeight="26.0" prefWidth="140.0" text="Da vida al escuadrón" />
                         <Label layoutX="837.0" layoutY="162.0" prefHeight="26.0" prefWidth="162.0" text="Produce daño alto pero" />
                         <Label layoutX="869.0" layoutY="178.0" prefHeight="26.0" prefWidth="98.0" text="devuelve daño" />
-                        <Label fx:id="lblBotiquin" layoutX="603.0" layoutY="179.0" prefHeight="26.0" prefWidth="132.0" text="3 unidades" />
+                        <Label fx:id="lblBotiquin" layoutX="631.0" layoutY="181.0" prefHeight="26.0" prefWidth="75.0" text="3 unidades" />
                      </children>
                   </AnchorPane>
             </content>
