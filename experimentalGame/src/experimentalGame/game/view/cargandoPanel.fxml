@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="326.0" prefWidth="805.0" styleClass="interfaz" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experimentalGame.game.view.MainUIController">
+   <children>
+      <VBox layoutX="455.0" layoutY="404.0" spacing="20.0" />
+      <ImageView fitHeight="310.0" fitWidth="626.0" layoutX="111.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/img/cargando2.gif" />
+         </image>
+      </ImageView>
+      <Button layoutX="726.0" layoutY="14.0" mnemonicParsing="false" onAction="#nuevaPartida" text="Button" />
+   </children>
+</AnchorPane>
