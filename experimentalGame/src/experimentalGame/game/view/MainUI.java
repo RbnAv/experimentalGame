@@ -19,6 +19,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 public class MainUI implements Initializable {
@@ -156,48 +158,61 @@ public class MainUI implements Initializable {
 				}
 				if (txt.contains(s2)) {
 					sector = s2.toString();
+//					IMAGEN
+//					Image img = new Image(getClass().getResourceAsStream("/img/img A2, D3.jpg")); 
+//					ImageView imgEvent = new ImageView(); 
+//					imgEvent.setView(img);
 				}
 				if (txt.contains(s3)) {
 					sector = s3.toString();
 				}
 				if (txt.contains(s4)) {
 					sector = s4.toString();
+					//IMAGEN
 				}
 				if (txt.contains(s5)) {
 					sector = s5.toString();
+					//IMAGEN
 				}
 				if (txt.contains(s6)) {
 					sector = s6.toString();
+					//IMAGEN
 				}
 				if (txt.contains(s7)) {
 					sector = s7.toString();
 				}
 				if (txt.contains(s8)) {
 					sector = s8.toString();
+					//IMAGEN
 				}
 				if (txt.contains(s9)) {
 					sector = s9.toString();
+					//IMAGEN
 				}
 				if (txt.contains(s10)) {
 					sector = s10.toString();
 				}
 				if (txt.contains(s11)) {
 					sector = s11.toString();
+					//IMAGEN
 				}
 				if (txt.contains(s12)) {
 					sector = s12.toString();
 				}
 				if (txt.contains(s13)) {
 					sector = s13.toString();
+					//IMAGEN
 				}
 				if (txt.contains(s14)) {
 					sector = s14.toString();
+					//IMAGEN
 				}
 				if (txt.contains(s15)) {
 					sector = s15.toString();
 				}
 				if (txt.contains(s16)) {
 					sector = s16.toString();
+					//IMAGEN
 				}
 
 				if (sector.equals("C1") || (sector.equals("A3") || (sector.equals("B1")

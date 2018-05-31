@@ -16,7 +16,7 @@
             <Accordion layoutX="14.0" layoutY="14.0" />
             <ImageView fitHeight="223.0" fitWidth="514.0" layoutX="255.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../img/batalla.jpg" />
+                  <Image url="/img/batalla.png" />
                </image>
             </ImageView>
          </children>
