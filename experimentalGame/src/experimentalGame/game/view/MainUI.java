@@ -3,6 +3,8 @@ package experimentalGame.game.view;
 import java.net.URL;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import com.mysql.jdbc.Connection;
@@ -81,6 +83,16 @@ public class MainUI implements Initializable {
 
 	CharSequence s16 = "B-D1";
 
+	int contador = -1;
+
+	String[] myArray = new String[20];
+	List<String> palabra = Arrays.asList(myArray);
+
+	String[] array = new String[] { (String) s1, (String) s2, (String) s3, (String) s4, (String) s5, (String) s6,
+			(String) s7, (String) s8, (String) s9, (String) s10, (String) s11, (String) s12, (String) s13, (String) s14,
+			(String) s15, (String) s16 };
+	List<String> lista = Arrays.asList(array);
+
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		try {
@@ -119,6 +131,7 @@ public class MainUI implements Initializable {
 			// TODO: handle exception
 		}
 	}
+
 	public void opciones(ActionEvent event) {
 		try {
 			((Node) event.getSource()).getScene().getWindow().hide();
@@ -133,14 +146,29 @@ public class MainUI implements Initializable {
 			// TODO: handle exception
 		}
 	}
+
 	public void evento(ActionEvent event) {
 		try {
+			// myArray[contador] = "hola";
+			// contador++;
+
+			System.out.println(palabra);
+			System.out.println(lista);
 			txt = comando.getText();
-			if ((txt.contains(s1) || txt.contains(s2) || txt.contains(s3) || txt.contains(s4) || txt.contains(s5)
-					|| txt.contains(s6) || txt.contains(s7) || txt.contains(s8) || txt.contains(s9) || txt.contains(s10)
-					|| txt.contains(s11) || txt.contains(s12) || txt.contains(s13) || txt.contains(s14)
-					|| txt.contains(s15) || txt.contains(s16))
-					&& (txt.contains(e1) || txt.contains(e2) || txt.contains(e3))) {
+			// for (int i = 0; i < lista.size(); i++) {
+			// System.out.println(lista.get(i));
+			// }
+			if (txt.contains(array[0]) || txt.contains(array[1]) || txt.contains(array[2]) || txt.contains(array[3])
+					|| txt.contains(array[4]) || txt.contains(array[5]) || txt.contains(array[6])
+					|| txt.contains(array[7]) || txt.contains(array[8]) || txt.contains(array[9])
+					|| txt.contains(array[10]) || txt.contains(array[11]) || txt.contains(array[12])
+					|| txt.contains(array[13]) || txt.contains(array[14])
+					|| txt.contains(array[15]) && (txt.contains(e1) || txt.contains(e2) || txt.contains(e3))) {
+				// if(array[0].contains((CharSequence) lista)) {
+				// System.out.println("Ya es nuestroooooooo");
+				// }
+				contador++;
+				System.out.println(contador);
 				// Equipo
 				if (txt.contains(e1)) {
 					equipo = 1;
@@ -154,64 +182,81 @@ public class MainUI implements Initializable {
 				// Sector
 				if (txt.contains(s1)) {
 					sector = s1.toString();
+					myArray[contador] = (String) s1;
+					System.out.println(palabra);
 				}
 				if (txt.contains(s2)) {
 					sector = s2.toString();
-//					IMAGEN
-//					Image img = new Image(getClass().getResourceAsStream("/img/img A2, D3.jpg")); 
-//					ImageView imgEvent = new ImageView(); 
-//					imgEvent.setView(img);
+					myArray[contador] = (String) s2;
+					// IMAGEN
+					// Image img = new Image(getClass().getResourceAsStream("/img/img A2, D3.jpg"));
+					// ImageView imgEvent = new ImageView();
+					// imgEvent.setView(img);
 				}
 				if (txt.contains(s3)) {
 					sector = s3.toString();
+					myArray[contador] = (String) s3;
 				}
 				if (txt.contains(s4)) {
 					sector = s4.toString();
-					//IMAGEN
+					myArray[contador] = (String) s4;
+					// IMAGEN
 				}
 				if (txt.contains(s5)) {
 					sector = s5.toString();
-					//IMAGEN
+					myArray[contador] = (String) s5;
+					// IMAGEN
 				}
 				if (txt.contains(s6)) {
 					sector = s6.toString();
-					//IMAGEN
+					myArray[contador] = (String) s6;
+					// IMAGEN
 				}
 				if (txt.contains(s7)) {
 					sector = s7.toString();
+					myArray[contador] = (String) s7;
 				}
 				if (txt.contains(s8)) {
 					sector = s8.toString();
-					//IMAGEN
+					myArray[contador] = (String) s8;
+					// IMAGEN
 				}
 				if (txt.contains(s9)) {
 					sector = s9.toString();
-					//IMAGEN
+					myArray[contador] = (String) s9;
+					// IMAGEN
 				}
 				if (txt.contains(s10)) {
 					sector = s10.toString();
+					myArray[contador] = (String) s10;
 				}
 				if (txt.contains(s11)) {
 					sector = s11.toString();
-					//IMAGEN
+					myArray[contador] = (String) s11;
+					// IMAGEN
 				}
 				if (txt.contains(s12)) {
 					sector = s12.toString();
+					myArray[contador] = (String) s12;
 				}
 				if (txt.contains(s13)) {
 					sector = s13.toString();
-					//IMAGEN
+					myArray[contador] = (String) s13;
+					// IMAGEN
 				}
 				if (txt.contains(s14)) {
 					sector = s14.toString();
-					//IMAGEN
+					myArray[contador] = (String) s14;
+					// IMAGEN
 				}
 				if (txt.contains(s15)) {
 					sector = s15.toString();
+					myArray[contador] = (String) s15;
 				}
 				if (txt.contains(s16)) {
 					sector = s16.toString();
-					//IMAGEN
+					myArray[contador] = (String) s16;
+					// IMAGEN
 				}
 
 				if (sector.equals("C1") || (sector.equals("A3") || (sector.equals("B1")
@@ -235,11 +280,10 @@ public class MainUI implements Initializable {
 					stage.setResizable(false);
 					stage.show();
 				}
-			}
-			else {
+			} else {
 				lbl.setText("Escribe escuadrón y sector\ncorrectamente.");
 			}
-			
+
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
