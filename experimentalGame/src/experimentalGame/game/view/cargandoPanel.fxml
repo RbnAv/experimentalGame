@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="326.0" prefWidth="805.0" styleClass="interfaz" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experimentalGame.game.view.MainUIController">
+<AnchorPane prefHeight="326.0" prefWidth="805.0" styleClass="interfaz" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experimentalGame.game.view.MainUIController">
    <children>
       <VBox layoutX="455.0" layoutY="404.0" spacing="20.0" />
       <ImageView fitHeight="310.0" fitWidth="626.0" layoutX="111.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">

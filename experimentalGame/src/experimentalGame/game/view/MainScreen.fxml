@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" styleClass="interfaz" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experimentalGame.game.view.MainUIController">
+<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1024.0" styleClass="interfaz" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experimentalGame.game.view.MainUIController">
    <children>
       <VBox layoutX="455.0" layoutY="403.0" spacing="20.0">
          <children>
-            <Button layoutX="480.0" layoutY="486.0" mnemonicParsing="false" onAction="#cargando" prefHeight="31.0" prefWidth="115.0" text="Nueva Partida" />
+            <Button layoutX="480.0" layoutY="486.0" mnemonicParsing="false" onAction="#nuevaPartida" prefHeight="31.0" prefWidth="115.0" text="Nueva Partida" />
             <Button layoutX="480.0" layoutY="616.0" mnemonicParsing="false" onAction="#opciones" prefHeight="31.0" prefWidth="115.0" text="Opciones" />
             <Button layoutX="480.0" layoutY="670.0" mnemonicParsing="false" onAction="#salir" prefHeight="31.0" prefWidth="115.0" text="Salir" />
          </children>

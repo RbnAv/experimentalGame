@@ -333,10 +333,10 @@ public class Battle implements Initializable {
 		defensaUnidad = Integer.parseInt(strengthLabel.getText());
 		vitalidadEnemigo = Integer.parseInt(vitalityLabel2.getText());
 		vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
-		resultado2 = vitalidadUnidad - ((dañoEnemigo - defensaUnidad) + tirada);
+		resultado2 = vitalidadUnidad - ((dañoEnemigo - defensaUnidad) + tirada + 5);
 		System.out.println("vitalidadUnidad: " + vitalidadUnidad);
 		consola.appendText(String.valueOf("¡Grrrrraaaaahhhh!\n- El enemigo lanzó ácido por la boca y ha hecho "
-				+ ((dañoEnemigo - defensaUnidad) + tirada) + " puntos de daño.\n" + "   Ha dejado al escuadrón con "
+				+ ((dañoEnemigo - defensaUnidad) + tirada + 5) + " puntos de daño.\n" + "   Ha dejado al escuadrón con "
 				+ resultado2 + " puntos de vida."
 				+ "\n\n--------------------------------------------------------------------------------------\n\n"));
 		vitalityLabel.setText(String.valueOf(resultado2));
