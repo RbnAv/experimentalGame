@@ -249,6 +249,10 @@ public class Battle implements Initializable {
 			equi = "Escuadrón C";
 		}
 
+		if (v <= 0) {
+			v = 0;
+		}
+
 		// create a java mysql database connection
 		String myDriver = "org.gjt.mm.mysql.Driver";
 		String myUrl = "jdbc:mysql://localhost/rpg";

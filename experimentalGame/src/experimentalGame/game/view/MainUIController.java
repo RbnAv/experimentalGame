@@ -2,6 +2,8 @@ package experimentalGame.game.view;
 
 import java.net.URL;
 import java.sql.DriverManager;
+import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import com.mysql.jdbc.Connection;
@@ -45,6 +47,10 @@ public class MainUIController implements Initializable {
 	Main main;
 
 	static int cont = 0;
+	
+	static String[] myArray = new String[20];
+	static List<String> palabra = Arrays.asList(myArray);
+	static int c = -1;
 
 	/**
 	 * The constructor. The constructor is called before the initialize() method.

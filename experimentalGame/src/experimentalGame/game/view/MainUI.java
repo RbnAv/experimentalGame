@@ -83,11 +83,7 @@ public class MainUI implements Initializable {
 
 	CharSequence s16 = "B-D1";
 
-	int contador = -1;
 	static String img;
-
-	String[] myArray = new String[20];
-	List<String> palabra = Arrays.asList(myArray);
 
 	String[] array = new String[] { (String) s1, (String) s2, (String) s3, (String) s4, (String) s5, (String) s6,
 			(String) s7, (String) s8, (String) s9, (String) s10, (String) s11, (String) s12, (String) s13, (String) s14,
@@ -150,36 +146,19 @@ public class MainUI implements Initializable {
 
 	public void evento(ActionEvent event) {
 		try {
-			// myArray[contador] = "hola";
-			// contador++;
 			txt = "";
-			System.out.println(palabra);
 			System.out.println(lista);
 			txt = comando.getText();
-			// for (int i = 0; i < lista.size(); i++) {
-			// System.out.println(lista.get(i));
-			// }
-
-			// if ((txt.contains(array[0]) || txt.contains(array[1]) ||
-			// txt.contains(array[2]) || txt.contains(array[3])
-			// || txt.contains(array[4]) || txt.contains(array[5]) || txt.contains(array[6])
-			// || txt.contains(array[7]) || txt.contains(array[8]) || txt.contains(array[9])
-			// || txt.contains(array[10]) || txt.contains(array[11]) ||
-			// txt.contains(array[12])
-			// || txt.contains(array[13]) || txt.contains(array[14])
-			// || txt.contains(array[15]) && (txt.contains(e1) || txt.contains(e2) ||
-			// txt.contains(e3)))) {
 
 			if ((txt.contains(s1) || txt.contains(s2) || txt.contains(s3) || txt.contains(s4) || txt.contains(s5)
 					|| txt.contains(s6) || txt.contains(s7) || txt.contains(s8) || txt.contains(s9) || txt.contains(s10)
 					|| txt.contains(s11) || txt.contains(s12) || txt.contains(s13) || txt.contains(s14)
 					|| txt.contains(s15) || txt.contains(s16))
-					&& (txt.contains(e1) || txt.contains(e2) || txt.contains(e3))) {
-				// if(array[0].contains((CharSequence) lista)) {
-				// System.out.println("Ya es nuestroooooooo");
-				// }
-				contador++;
-				System.out.println(contador);
+					&& (txt.contains(e1) || txt.contains(e2) || txt.contains(e3))
+					&& (!vitalityLabel.getText().equals("0") || !vitalityLabel1.getText().equals("0")
+							|| !vitalityLabel2.getText().equals("0"))) {
+				MainUIController.c++;
+				System.out.println(MainUIController.c);
 				// Equipo
 				if (txt.contains(e1)) {
 					equipo = 1;
@@ -193,116 +172,143 @@ public class MainUI implements Initializable {
 				// Sector
 				if (txt.contains(s1)) {
 					sector = s1.toString();
-					myArray[contador] = (String) s1;
-					System.out.println(palabra);
 				}
 				if (txt.contains(s2)) {
 					sector = s2.toString();
-					myArray[contador] = (String) s2;
-					img = "/imgEvent/img A2, D3.png";
-					// IMAGEN
-					// Image img = new Image(getClass().getResourceAsStream("/img/img A2, D3.jpg"));
-					// ImageView imgEvent = new ImageView();
-					// imgEvent.setView(img);
-
+					img = "/imgEvent/img A2, D3.png"; // IMAGEN
 				}
 				if (txt.contains(s3)) {
 					sector = s3.toString();
-					myArray[contador] = (String) s3;
 				}
 				if (txt.contains(s4)) {
 					sector = s4.toString();
-					myArray[contador] = (String) s4;
-					img = "/imgEvent/img B-D1, A4.png";
-					// IMAGEN
+					img = "/imgEvent/img B-D1, A4.png"; // IMAGEN
 				}
 				if (txt.contains(s5)) {
 					sector = s5.toString();
-					myArray[contador] = (String) s5;
-					img = "/imgEvent/img A5, A6.png";
-					// IMAGEN
+					img = "/imgEvent/img A5, A6.png"; // IMAGEN
 				}
 				if (txt.contains(s6)) {
 					sector = s6.toString();
-					myArray[contador] = (String) s6;
-					img = "/imgEvent/img A5, A6.png";
-					// IMAGEN
+					img = "/imgEvent/img A5, A6.png"; // IMAGEN
 				}
 				if (txt.contains(s7)) {
 					sector = s7.toString();
-					myArray[contador] = (String) s7;
 				}
 				if (txt.contains(s8)) {
 					sector = s8.toString();
-					myArray[contador] = (String) s8;
-					img = "/imgEvent/img B2.png";
-					// IMAGEN
+					img = "/imgEvent/img B2.png"; // IMAGEN
 				}
 				if (txt.contains(s9)) {
 					sector = s9.toString();
-					myArray[contador] = (String) s9;
-					img = "/imgEvent/img B3.png";
-					// IMAGEN
+					img = "/imgEvent/img B3.png"; // IMAGEN
 				}
 				if (txt.contains(s10)) {
 					sector = s10.toString();
-					myArray[contador] = (String) s10;
 				}
 				if (txt.contains(s11)) {
 					sector = s11.toString();
-					myArray[contador] = (String) s11;
-					img = "/imgEvent/img C2.png";
-					// IMAGEN
+					img = "/imgEvent/img C2.png"; // IMAGEN
 				}
 				if (txt.contains(s12)) {
 					sector = s12.toString();
-					myArray[contador] = (String) s12;
 				}
 				if (txt.contains(s13)) {
 					sector = s13.toString();
-					myArray[contador] = (String) s13;
-					img = "/imgEvent/img D2.png";
-					// IMAGEN
+					img = "/imgEvent/img D2.png"; // IMAGEN
 				}
 				if (txt.contains(s14)) {
 					sector = s14.toString();
-					myArray[contador] = (String) s14;
-					img = "/imgEvent/img A2, D3.png";
-					// IMAGEN
+					img = "/imgEvent/img A2, D3.png"; // IMAGEN
 				}
 				if (txt.contains(s15)) {
 					sector = s15.toString();
-					myArray[contador] = (String) s15;
 				}
 				if (txt.contains(s16)) {
 					sector = s16.toString();
-					myArray[contador] = (String) s16;
-					img = "/imgEvent/img B-D1, A4.png";
-					// IMAGEN
+					img = "/imgEvent/img B-D1, A4.png"; // IMAGEN
 				}
 
-				if (sector.equals("C1") || (sector.equals("A3") || (sector.equals("B1")
-						|| (sector.equals("D1") || (sector.equals("A1")) || (sector.equals("D4")))))) {
-					((Node) event.getSource()).getScene().getWindow().hide();
+				////////////////////////////////////////////////////////////////////////////
 
-					FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Battle.fxml"));
-					Parent root = (Parent) fxmlLoader.load();
-					Stage stage = new Stage();
-					stage.setScene(new Scene(root));
-					stage.setResizable(false);
-					stage.show();
+				if (vitalityLabel.getText().equals("0")
+						&& (!MainUIController.palabra.contains(String.valueOf(equipo)))) {
+					MainUIController.c++;
+					lbl.setText("Escribe otro escuadrón.");
+					MainUIController.myArray[MainUIController.c] = "1";
+				}
+				if (vitalityLabel1.getText().equals("0")
+						&& (!MainUIController.palabra.contains(String.valueOf(equipo)))) {
+					MainUIController.c++;
+					lbl.setText("Escribe otro escuadrón.");
+					MainUIController.myArray[MainUIController.c] = "2";
+				}
+				if (vitalityLabel2.getText().equals("0")
+						&& (!MainUIController.palabra.contains(String.valueOf(equipo)))) {
+					MainUIController.c++;
+					lbl.setText("Escribe otro escuadrón.");
+					MainUIController.myArray[MainUIController.c] = "3";
+				}
+
+				////////////////////////////////////////////////////////////////////////////
+
+				if (MainUIController.palabra.contains(String.valueOf(equipo))) {
+					
+					MainUIController.c--;
+					System.out.println(MainUIController.c);
+					lbl.setText("Escribe otro escuadrón.");
+					System.out.println("CONTIENE ESCUADRÓN");
+					System.out.println(MainUIController.palabra);
 				} else {
+					System.out.println(MainUIController.c);
+					// MainUIController.myArray[MainUIController.c] = String.valueOf(equipo);
+					System.out.println("NO CONTIENE ESCUADRÓN");
+					System.out.println(MainUIController.palabra);
+					if (MainUIController.palabra.contains(sector)) {
+						MainUIController.c--;
+						lbl.setText("Escribe otro sector.");
+						System.out.println("CONTIENE");
+						System.out.println(MainUIController.palabra);
 
-					((Node) event.getSource()).getScene().getWindow().hide();
+						// if (vitalityLabel.getText().equals("0")) {
+						//
+						// }
+					} else {
+						// MainUIController.c++;
+						MainUIController.myArray[MainUIController.c] = sector;
+						System.out.println("NO LO CONTIENE");
+						System.out.println(MainUIController.palabra);
 
-					FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("eventScreen.fxml"));
-					Parent root = (Parent) fxmlLoader.load();
-					Stage stage = new Stage();
-					stage.setScene(new Scene(root));
-					stage.setResizable(false);
-					stage.show();
+						if (sector.equals("C1") || (sector.equals("A3") || (sector.equals("B1")
+								|| (sector.equals("D1") || (sector.equals("A1")) || (sector.equals("D4")))))) {
+							((Node) event.getSource()).getScene().getWindow().hide();
+
+							FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Battle.fxml"));
+							Parent root = (Parent) fxmlLoader.load();
+							Stage stage = new Stage();
+							stage.setScene(new Scene(root));
+							stage.setResizable(false);
+							stage.show();
+						} else {
+							((Node) event.getSource()).getScene().getWindow().hide();
+
+							FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("eventScreen.fxml"));
+							Parent root = (Parent) fxmlLoader.load();
+							Stage stage = new Stage();
+							stage.setScene(new Scene(root));
+							stage.setResizable(false);
+							stage.show();
+						}
+					}
 				}
-			} else {
+
+			}
+			// else if ((vitalityLabel.getText().equals("0") &&
+			// vitalityLabel1.getText().equals("0")
+			// && vitalityLabel2.getText().equals("0"))) {
+			//
+			// }
+			else {
 				lbl.setText("Escribe escuadrón y sector\ncorrectamente.");
 			}
 
