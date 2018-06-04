@@ -31,7 +31,10 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="imgEvent" layoutX="208.0" layoutY="202.0" prefHeight="108.0" prefWidth="185.0" />
+            <ImageView fx:id="imgEvent" fitHeight="357.0" fitWidth="560.0" layoutX="20.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="/img/3.png" />
+               </image></ImageView>
          </children>
          <opaqueInsets>
             <Insets />

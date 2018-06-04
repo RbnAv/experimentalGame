@@ -44,6 +44,8 @@ public class MainUIController implements Initializable {
 
 	Main main;
 
+	static int cont = 0;
+
 	/**
 	 * The constructor. The constructor is called before the initialize() method.
 	 */
@@ -82,7 +84,7 @@ public class MainUIController implements Initializable {
 			// execute the java preparedstatement
 			preparedStmt.executeUpdate();
 			conn.close();
-			
+
 			// Cerramos esta ventana
 			((Node) event.getSource()).getScene().getWindow().hide();
 
@@ -96,9 +98,9 @@ public class MainUIController implements Initializable {
 			// Dentro del Stage añadimos la escena que anteriormente hemos leído y metido en
 			// root
 			stage.setScene(new Scene(root));
-			
+
 			stage.setResizable(false);
-			
+
 			// Mostramos la ventana
 			stage.show();
 		} catch (Exception e) {
@@ -205,7 +207,7 @@ public class MainUIController implements Initializable {
 			// TODO: handle exception
 		}
 	}
-	
+
 	public void option2(ActionEvent event) {
 		try {
 			((Node) event.getSource()).getScene().getWindow().hide();
@@ -220,7 +222,7 @@ public class MainUIController implements Initializable {
 			// TODO: handle exception
 		}
 	}
-	
+
 	public void cargando(ActionEvent event) {
 		try {
 			((Node) event.getSource()).getScene().getWindow().hide();

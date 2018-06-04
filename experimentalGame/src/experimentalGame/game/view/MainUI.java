@@ -84,6 +84,7 @@ public class MainUI implements Initializable {
 	CharSequence s16 = "B-D1";
 
 	int contador = -1;
+	static String img;
 
 	String[] myArray = new String[20];
 	List<String> palabra = Arrays.asList(myArray);
@@ -151,19 +152,29 @@ public class MainUI implements Initializable {
 		try {
 			// myArray[contador] = "hola";
 			// contador++;
-
+			txt = "";
 			System.out.println(palabra);
 			System.out.println(lista);
 			txt = comando.getText();
 			// for (int i = 0; i < lista.size(); i++) {
 			// System.out.println(lista.get(i));
 			// }
-			if (txt.contains(array[0]) || txt.contains(array[1]) || txt.contains(array[2]) || txt.contains(array[3])
-					|| txt.contains(array[4]) || txt.contains(array[5]) || txt.contains(array[6])
-					|| txt.contains(array[7]) || txt.contains(array[8]) || txt.contains(array[9])
-					|| txt.contains(array[10]) || txt.contains(array[11]) || txt.contains(array[12])
-					|| txt.contains(array[13]) || txt.contains(array[14])
-					|| txt.contains(array[15]) && (txt.contains(e1) || txt.contains(e2) || txt.contains(e3))) {
+
+			// if ((txt.contains(array[0]) || txt.contains(array[1]) ||
+			// txt.contains(array[2]) || txt.contains(array[3])
+			// || txt.contains(array[4]) || txt.contains(array[5]) || txt.contains(array[6])
+			// || txt.contains(array[7]) || txt.contains(array[8]) || txt.contains(array[9])
+			// || txt.contains(array[10]) || txt.contains(array[11]) ||
+			// txt.contains(array[12])
+			// || txt.contains(array[13]) || txt.contains(array[14])
+			// || txt.contains(array[15]) && (txt.contains(e1) || txt.contains(e2) ||
+			// txt.contains(e3)))) {
+
+			if ((txt.contains(s1) || txt.contains(s2) || txt.contains(s3) || txt.contains(s4) || txt.contains(s5)
+					|| txt.contains(s6) || txt.contains(s7) || txt.contains(s8) || txt.contains(s9) || txt.contains(s10)
+					|| txt.contains(s11) || txt.contains(s12) || txt.contains(s13) || txt.contains(s14)
+					|| txt.contains(s15) || txt.contains(s16))
+					&& (txt.contains(e1) || txt.contains(e2) || txt.contains(e3))) {
 				// if(array[0].contains((CharSequence) lista)) {
 				// System.out.println("Ya es nuestroooooooo");
 				// }
@@ -188,10 +199,12 @@ public class MainUI implements Initializable {
 				if (txt.contains(s2)) {
 					sector = s2.toString();
 					myArray[contador] = (String) s2;
+					img = "/imgEvent/img A2, D3.png";
 					// IMAGEN
 					// Image img = new Image(getClass().getResourceAsStream("/img/img A2, D3.jpg"));
 					// ImageView imgEvent = new ImageView();
 					// imgEvent.setView(img);
+
 				}
 				if (txt.contains(s3)) {
 					sector = s3.toString();
@@ -200,16 +213,19 @@ public class MainUI implements Initializable {
 				if (txt.contains(s4)) {
 					sector = s4.toString();
 					myArray[contador] = (String) s4;
+					img = "/imgEvent/img B-D1, A4.png";
 					// IMAGEN
 				}
 				if (txt.contains(s5)) {
 					sector = s5.toString();
 					myArray[contador] = (String) s5;
+					img = "/imgEvent/img A5, A6.png";
 					// IMAGEN
 				}
 				if (txt.contains(s6)) {
 					sector = s6.toString();
 					myArray[contador] = (String) s6;
+					img = "/imgEvent/img A5, A6.png";
 					// IMAGEN
 				}
 				if (txt.contains(s7)) {
@@ -219,11 +235,13 @@ public class MainUI implements Initializable {
 				if (txt.contains(s8)) {
 					sector = s8.toString();
 					myArray[contador] = (String) s8;
+					img = "/imgEvent/img B2.png";
 					// IMAGEN
 				}
 				if (txt.contains(s9)) {
 					sector = s9.toString();
 					myArray[contador] = (String) s9;
+					img = "/imgEvent/img B3.png";
 					// IMAGEN
 				}
 				if (txt.contains(s10)) {
@@ -233,6 +251,7 @@ public class MainUI implements Initializable {
 				if (txt.contains(s11)) {
 					sector = s11.toString();
 					myArray[contador] = (String) s11;
+					img = "/imgEvent/img C2.png";
 					// IMAGEN
 				}
 				if (txt.contains(s12)) {
@@ -242,11 +261,13 @@ public class MainUI implements Initializable {
 				if (txt.contains(s13)) {
 					sector = s13.toString();
 					myArray[contador] = (String) s13;
+					img = "/imgEvent/img D2.png";
 					// IMAGEN
 				}
 				if (txt.contains(s14)) {
 					sector = s14.toString();
 					myArray[contador] = (String) s14;
+					img = "/imgEvent/img A2, D3.png";
 					// IMAGEN
 				}
 				if (txt.contains(s15)) {
@@ -256,6 +277,7 @@ public class MainUI implements Initializable {
 				if (txt.contains(s16)) {
 					sector = s16.toString();
 					myArray[contador] = (String) s16;
+					img = "/imgEvent/img B-D1, A4.png";
 					// IMAGEN
 				}
 

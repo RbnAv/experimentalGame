@@ -20,6 +20,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 public class Evento implements Initializable {
@@ -41,6 +43,9 @@ public class Evento implements Initializable {
 	@FXML
 	private Button btnContinuar = new Button("");
 
+	@FXML
+	private ImageView imgEvent;
+
 	String t1;
 	String t2;
 	String t3;
@@ -57,15 +62,24 @@ public class Evento implements Initializable {
 	String accion3 = "";
 	String texto3 = "";
 
+	int idEscuadron;
+	int vitalidad;
+	String v = "";
+	String v2 = "";
+	String v3 = "";
+
+	static int c = 0;
+
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		try {
+			// Image image = new Image("/img/fusil.png");
+			Image image = new Image(MainUI.img);
+			imgEvent.setImage(image);
+
 			btnContinuar.setDisable(true);
 
-			System.out.println(MainUI.equipo);
-			System.out.println(sector);
 			escuadron();
-
 			evento();
 
 			btn1.setDisable(btn1.getText().toString().equals(""));
@@ -94,9 +108,9 @@ public class Evento implements Initializable {
 		Statement st = (Statement) conn.createStatement();
 		ResultSet rs = st.executeQuery(query);
 		while (rs.next()) {
-			int idEscuadron = rs.getInt("idEscuadron");
+			idEscuadron = rs.getInt("idEscuadron");
 			String nombre = rs.getString("nombreEscuadron");
-			// int vitalidad = rs.getInt("vitalidadEscuadron");
+			// vitalidad = rs.getInt("vitalidadEscuadron");
 			// int constitucion = rs.getInt("constitucionEscuadron");
 			// int fuerza = rs.getInt("fuerzaEscuadron");
 			if (idEscuadron == equipo) {
@@ -167,15 +181,6 @@ public class Evento implements Initializable {
 				t2 = texto2;
 				t3 = texto3;
 			}
-			// if(btn1.getText().equals(null)) {
-			// btn1.setDisable(true);
-			// }
-			// if(btn2.getText().isEmpty()) {
-			// btn2.setDisable(true);
-			// }
-			// if(btn3.getText().isEmpty()) {
-			// btn3.setDisable(true);
-			// }
 		}
 		st.close();
 	}
@@ -210,7 +215,7 @@ public class Evento implements Initializable {
 				if (btn1.getText().equals(accion3)) {
 					lbl2.setText(texto3);
 				}
-				
+
 				if (nombreEvento.equals("A5")) {
 					muerte();
 				}
@@ -224,7 +229,7 @@ public class Evento implements Initializable {
 					muerte();
 				}
 			}
-			
+
 		}
 
 		btn1.setDisable(true);
@@ -285,7 +290,7 @@ public class Evento implements Initializable {
 				if (btn2.getText().equals(accion3)) {
 					lbl2.setText(texto3);
 				}
-				
+
 				if (nombreEvento.equals("A2")) {
 					muerte();
 				}
@@ -296,7 +301,7 @@ public class Evento implements Initializable {
 					muerte();
 				}
 			}
-			
+
 		}
 
 		btn1.setDisable(true);
@@ -336,13 +341,13 @@ public class Evento implements Initializable {
 				if (btn3.getText().equals(accion3)) {
 					lbl2.setText(texto3);
 				}
-				
+
 				if (nombreEvento.equals("C2")) {
 					muerte();
 				}
 			}
 		}
-		
+
 		btn1.setDisable(true);
 		btn2.setDisable(true);
 		btn3.setDisable(true);
@@ -352,37 +357,84 @@ public class Evento implements Initializable {
 
 	public void continuar(ActionEvent event) {
 		try {
+			MainUIController.cont++;
+			System.out.println(MainUIController.cont);
+			String myDriver = "org.gjt.mm.mysql.Driver";
+			String myUrl = "jdbc:mysql://localhost/rpg";
+			Class.forName(myDriver);
+			Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
+			String query = "SELECT * FROM escuadron";
+			conn.createStatement();
+			Statement st = (Statement) conn.createStatement();
+			ResultSet rs = st.executeQuery(query);
+			while (rs.next()) {
+				idEscuadron = rs.getInt("idEscuadron");
+				String nombre = rs.getString("nombreEscuadron");
+				vitalidad = rs.getInt("vitalidadEscuadron");
+				if (nombre.equals("Escuadrón A")) {
+					v = String.valueOf(vitalidad);
+					System.out.println(v);
+				}
+				if (nombre.equals("Escuadrón B")) {
+					v2 = String.valueOf(vitalidad);
+					System.out.println(v2);
+				}
+				if (nombre.equals("Escuadrón C")) {
+					v3 = String.valueOf(vitalidad);
+					System.out.println(v3);
+				}
+			}
+			st.close();
 
-			((Node) event.getSource()).getScene().getWindow().hide();
-			//
-			// // create a java mysql database connection
-			// String myDriver = "org.gjt.mm.mysql.Driver";
-			// String myUrl = "jdbc:mysql://localhost/rpg";
-			// Class.forName(myDriver);
-			// Connection conn = (Connection) DriverManager.getConnection(myUrl, "root",
-			// "studium2017");
-			//
-			// // create the java mysql update preparedstatement
-			// String query = "update escuadron set vitalidadEscuadron = ? where
-			// nombreEscuadron = ?";//222,
-			// PreparedStatement preparedStmt = (PreparedStatement)
-			// conn.prepareStatement(query);
-			// //preparedStmt.setInt (1, 6000);
-			// preparedStmt.setInt (1, 12);
-			// preparedStmt.setString(2, "Reconocimiento");
-			//
-			// // execute the java preparedstatement
-			// preparedStmt.executeUpdate();
-			//
-			// conn.close();
-			//
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MainUI.fxml"));
-			Parent root = (Parent) fxmlLoader.load();
-			Stage stage = new Stage();
-			stage.setScene(new Scene(root));
-			stage.setResizable(false);
-			stage.show();
-
+			if (v.equals("0") && v2.equals("0") && v3.equals("0")) {
+				System.out.println("raveeeeeeeeeeeee");
+				c = 3;
+				((Node) event.getSource()).getScene().getWindow().hide();
+				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("finalScreen.fxml"));
+				Parent root = (Parent) fxmlLoader.load();
+				Stage stage = new Stage();
+				stage.setScene(new Scene(root));
+				stage.setResizable(false);
+				stage.show();
+			} else if (MainUIController.cont == 8) {
+				if ((v.equals("0") && v2.equals("0"))
+						|| ((v.equals("0") && v3.equals("0")) || ((v2.equals("0") && v3.equals("0"))))) {
+					c = 2;
+					((Node) event.getSource()).getScene().getWindow().hide();
+					FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("finalScreen.fxml"));
+					Parent root = (Parent) fxmlLoader.load();
+					Stage stage = new Stage();
+					stage.setScene(new Scene(root));
+					stage.setResizable(false);
+					stage.show();
+				} else if (v.equals("0") || v2.equals("0") || v3.equals("0")) {
+					c = 1;
+					((Node) event.getSource()).getScene().getWindow().hide();
+					FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("finalScreen.fxml"));
+					Parent root = (Parent) fxmlLoader.load();
+					Stage stage = new Stage();
+					stage.setScene(new Scene(root));
+					stage.setResizable(false);
+					stage.show();
+				} else if (!v.equals("0") && !v2.equals("0") && !v3.equals("0")) {
+					c = 4;
+					((Node) event.getSource()).getScene().getWindow().hide();
+					FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("finalScreen.fxml"));
+					Parent root = (Parent) fxmlLoader.load();
+					Stage stage = new Stage();
+					stage.setScene(new Scene(root));
+					stage.setResizable(false);
+					stage.show();
+				}
+			} else {
+				((Node) event.getSource()).getScene().getWindow().hide();
+				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MainUI.fxml"));
+				Parent root = (Parent) fxmlLoader.load();
+				Stage stage = new Stage();
+				stage.setScene(new Scene(root));
+				stage.setResizable(false);
+				stage.show();
+			}
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
