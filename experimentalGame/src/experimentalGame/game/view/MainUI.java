@@ -19,8 +19,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 public class MainUI implements Initializable {
@@ -129,6 +127,7 @@ public class MainUI implements Initializable {
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setScene(new Scene(root));
+			stage.setResizable(false);
 			stage.show();
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -223,6 +222,7 @@ public class MainUI implements Initializable {
 					Parent root = (Parent) fxmlLoader.load();
 					Stage stage = new Stage();
 					stage.setScene(new Scene(root));
+					stage.setResizable(false);
 					stage.show();
 				} else {
 
@@ -232,6 +232,7 @@ public class MainUI implements Initializable {
 					Parent root = (Parent) fxmlLoader.load();
 					Stage stage = new Stage();
 					stage.setScene(new Scene(root));
+					stage.setResizable(false);
 					stage.show();
 				}
 			}

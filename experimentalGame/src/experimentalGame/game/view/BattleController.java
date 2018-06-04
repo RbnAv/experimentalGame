@@ -40,6 +40,7 @@ public class BattleController {
 			root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setScene(new Scene(root));
+			stage.setResizable(false);
 			stage.show();
 		} catch (IOException e) {
 

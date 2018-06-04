@@ -96,7 +96,9 @@ public class MainUIController implements Initializable {
 			// Dentro del Stage añadimos la escena que anteriormente hemos leído y metido en
 			// root
 			stage.setScene(new Scene(root));
-
+			
+			stage.setResizable(false);
+			
 			// Mostramos la ventana
 			stage.show();
 		} catch (Exception e) {
@@ -116,6 +118,7 @@ public class MainUIController implements Initializable {
 			// Muestra la escena que contiene el diseño de la raíz.
 			Scene scene = new Scene(rootStage);
 			primaryStage.setScene(scene);
+			primaryStage.setResizable(false);
 			primaryStage.show();
 
 			FXMLLoader fxmlLoader = new FXMLLoader();
@@ -136,6 +139,7 @@ public class MainUIController implements Initializable {
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setScene(new Scene(root));
+			stage.setResizable(false);
 			stage.show();
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -150,6 +154,7 @@ public class MainUIController implements Initializable {
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setScene(new Scene(root));
+			stage.setResizable(false);
 			stage.show();
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -164,6 +169,7 @@ public class MainUIController implements Initializable {
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setScene(new Scene(root));
+			stage.setResizable(false);
 			stage.show();
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -178,6 +184,7 @@ public class MainUIController implements Initializable {
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setScene(new Scene(root));
+			stage.setResizable(false);
 			stage.show();
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -192,6 +199,7 @@ public class MainUIController implements Initializable {
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setScene(new Scene(root));
+			stage.setResizable(false);
 			stage.show();
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -206,6 +214,7 @@ public class MainUIController implements Initializable {
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setScene(new Scene(root));
+			stage.setResizable(false);
 			stage.show();
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -220,6 +229,7 @@ public class MainUIController implements Initializable {
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setScene(new Scene(root));
+			stage.setResizable(false);
 			stage.show();
 		} catch (Exception e) {
 			// TODO: handle exception

@@ -85,6 +85,7 @@ public class Narrative implements Initializable {
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setScene(new Scene(root));
+			stage.setResizable(false);
 			stage.show();
 			t.stop();
 		} catch (Exception e) {

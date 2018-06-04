@@ -45,7 +45,6 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("ExperimentalGame");
-		
 		initRootStage();
 		showMainScreen();
 		// showMainUI();
@@ -70,6 +69,7 @@ public class Main extends Application {
 			// Muestra la escena que contiene el diseño de la raíz.
 			Scene scene = new Scene(rootStage);
 			primaryStage.setScene(scene);
+			primaryStage.setResizable(false);
 			primaryStage.show();
 		} catch (IOException e) {
 			e.printStackTrace();

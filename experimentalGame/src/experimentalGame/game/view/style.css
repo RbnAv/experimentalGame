@@ -1,6 +1,6 @@
 .interfaz{
     -fx-background-image: url("/img/fondo.jpg");
     -fx-background-repeat: stretch;
-    -fx-background-size: 1280 745;
+    -fx-background-size: 1280 800;
     -fx-background-position: center center;
 }

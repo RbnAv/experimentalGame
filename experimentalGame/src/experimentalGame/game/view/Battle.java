@@ -273,6 +273,7 @@ public class Battle implements Initializable {
 		Parent root = (Parent) fxmlLoader.load();
 		Stage stage = new Stage();
 		stage.setScene(new Scene(root));
+		stage.setResizable(false);
 		stage.show();
 	}
 
