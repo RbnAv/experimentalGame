@@ -223,8 +223,8 @@ public class Battle implements Initializable {
 						+ ((dañoUnidad - defensaEnemigo) + tirada) + " puntos de daño.\n"
 						+ "   Ha dejado al enemigo con " + resultado1 + " puntos de vida.\n\n"));
 		vitalityLabel2.setText(String.valueOf(resultado1));
-		System.out.println("Raveeeeeeeeeeeeeeeeeeeeeee: " + vitalidadUnidad);
-		System.out.println("Raveeeeeeeeeeeeeeeeeeeeeee: " + vitalidadEnemigo);
+		vitalidadEnemigo = Integer.parseInt(vitalityLabel2.getText());
+		vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
 		if (vitalidadUnidad <= 0 || vitalidadEnemigo <= 0) {
 			ataque1.setDisable(true);
 			ataque2.setDisable(true);
@@ -253,7 +253,7 @@ public class Battle implements Initializable {
 		String myDriver = "org.gjt.mm.mysql.Driver";
 		String myUrl = "jdbc:mysql://localhost/rpg";
 		Class.forName(myDriver);
-		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
+		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
 
 		// create the java mysql update preparedstatement
 		String query = "update escuadron set vitalidadEscuadron = ? where nombreEscuadron = ?";
@@ -289,8 +289,8 @@ public class Battle implements Initializable {
 				+ "\n\n--------------------------------------------------------------------------------------\n\n"));
 		vitalityLabel.setText(String.valueOf(resultado2));
 		// t.stop();
-		System.out.println("Raveeeeeeeeeeeeeeeeeeeeeee: " + vitalidadUnidad);
-		System.out.println("Raveeeeeeeeeeeeeeeeeeeeeee: " + vitalidadEnemigo);
+		vitalidadEnemigo = Integer.parseInt(vitalityLabel2.getText());
+		vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
 		if (vitalidadUnidad <= 0 || vitalidadEnemigo <= 0) {
 			ataque1.setDisable(true);
 			ataque2.setDisable(true);
@@ -314,8 +314,8 @@ public class Battle implements Initializable {
 				"¡Utilizad el fusil de asalto! ¡Bam bam bam!\n- El escadrón disparó contra el enemigo y ha hecho "
 						+ ((dañoUnidad - defensaEnemigo) + tirada + 10) + " puntos de daño.\n"
 						+ "   Ha dejado al enemigo con " + resultado1 + " puntos de vida.\n\n"));
-		System.out.println("Raveeeeeeeeeeeeeeeeeeeeeee: " + vitalidadUnidad);
-		System.out.println("Raveeeeeeeeeeeeeeeeeeeeeee: " + vitalidadEnemigo);
+		vitalidadEnemigo = Integer.parseInt(vitalityLabel2.getText());
+		vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
 		if (vitalidadUnidad <= 0 || vitalidadEnemigo <= 0) {
 			ataque1.setDisable(true);
 			ataque2.setDisable(true);
@@ -341,8 +341,8 @@ public class Battle implements Initializable {
 				+ "\n\n--------------------------------------------------------------------------------------\n\n"));
 		vitalityLabel.setText(String.valueOf(resultado2));
 		// t.stop();
-		System.out.println("Raveeeeeeeeeeeeeeeeeeeeeee: " + vitalidadUnidad);
-		System.out.println("Raveeeeeeeeeeeeeeeeeeeeeee: " + vitalidadEnemigo);
+		vitalidadEnemigo = Integer.parseInt(vitalityLabel2.getText());
+		vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
 		if (vitalidadUnidad <= 0 || vitalidadEnemigo <= 0) {
 			ataque1.setDisable(true);
 			ataque2.setDisable(true);
@@ -366,8 +366,8 @@ public class Battle implements Initializable {
 		if (contadorBot == 0) {
 			botiquin.setDisable(true);
 		}
-		System.out.println("Raveeeeeeeeeeeeeeeeeeeeeee: " + vitalidadUnidad);
-		System.out.println("Raveeeeeeeeeeeeeeeeeeeeeee: " + vitalidadEnemigo);
+		vitalidadEnemigo = Integer.parseInt(vitalityLabel2.getText());
+		vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
 		if (vitalidadUnidad <= 0 || vitalidadEnemigo <= 0) {
 			ataque1.setDisable(true);
 			ataque2.setDisable(true);
@@ -396,8 +396,8 @@ public class Battle implements Initializable {
 		consola.appendText(String.valueOf("¡Granada va! ¡Buuummm!\n- El escuadrón lanzó una granada y ha hecho "
 				+ ((dañoUnidad - defensaEnemigo) + tirada + 40) + " puntos de daño.\n" + "   Ha dejado al enemigo con "
 				+ resultado1 + " puntos de vida.\n\n"));
-		System.out.println("Raveeeeeeeeeeeeeeeeeeeeeee: " + vitalidadUnidad);
-		System.out.println("Raveeeeeeeeeeeeeeeeeeeeeee: " + vitalidadEnemigo);
+		vitalidadEnemigo = Integer.parseInt(vitalityLabel2.getText());
+		vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
 		if (vitalidadUnidad <= 0 || vitalidadEnemigo <= 0) {
 			ataque1.setDisable(true);
 			ataque2.setDisable(true);
@@ -423,8 +423,8 @@ public class Battle implements Initializable {
 				+ "   El escuadrón se ha quedado con " + resultado2 + " puntos de vida."
 				+ "\n\n--------------------------------------------------------------------------------------\n\n"));
 		// t.stop();
-		System.out.println("Raveeeeeeeeeeeeeeeeeeeeeee: " + vitalidadUnidad);
-		System.out.println("Raveeeeeeeeeeeeeeeeeeeeeee: " + vitalidadEnemigo);
+		vitalidadEnemigo = Integer.parseInt(vitalityLabel2.getText());
+		vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
 		if (vitalidadUnidad <= 0 || vitalidadEnemigo <= 0) {
 			ataque1.setDisable(true);
 			ataque2.setDisable(true);
@@ -452,7 +452,7 @@ public class Battle implements Initializable {
 		String myDriver = "org.gjt.mm.mysql.Driver";
 		String myUrl = "jdbc:mysql://localhost/rpg";
 		Class.forName(myDriver);
-		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
+		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
 		String query = "SELECT * FROM enemigo";
 		conn.createStatement();
 		Statement st = (Statement) conn.createStatement();
@@ -479,7 +479,7 @@ public class Battle implements Initializable {
 		String myDriver = "org.gjt.mm.mysql.Driver";
 		String myUrl = "jdbc:mysql://localhost/rpg";
 		Class.forName(myDriver);
-		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
+		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
 		String query = "SELECT * FROM escuadron";
 		conn.createStatement();
 		Statement st = (Statement) conn.createStatement();
