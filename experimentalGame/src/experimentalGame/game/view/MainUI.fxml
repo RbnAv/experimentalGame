@@ -110,7 +110,7 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <AnchorPane layoutX="-7.0" prefHeight="242.0" prefWidth="514.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-7.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <AnchorPane layoutX="-6.0" prefHeight="242.0" prefWidth="513.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-6.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <HBox layoutX="37.0" layoutY="14.0">
                            <children>
@@ -158,25 +158,25 @@
                               <Reflection />
                            </effect>
                         </Label>
-                        <Label layoutX="526.0" layoutY="14.0" prefHeight="39.0" prefWidth="477.0" text="¿Quieres más vida? ¿Quieres más agilidad?">
+                        <Label alignment="CENTER" layoutX="526.0" layoutY="14.0" prefHeight="39.0" prefWidth="477.0" text="¿Quieres más vida? ¿Quieres más agilidad?">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
                         </Label>
-                        <Label layoutX="524.0" layoutY="53.0" prefHeight="39.0" prefWidth="481.0" text="¿Quieres más fuerza para tus escuadrones?">
+                        <Label alignment="CENTER" layoutX="524.0" layoutY="53.0" prefHeight="39.0" prefWidth="481.0" text="¿Quieres más fuerza para tus escuadrones?">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
                         </Label>
-                        <Label layoutX="539.0" layoutY="117.0" prefHeight="26.0" prefWidth="452.0" text="Si quieres equipar a tus escuadrones con habilidades sorprendentes" />
-                        <Label layoutX="557.0" layoutY="143.0" prefHeight="26.0" prefWidth="130.0" text="reserva ya nuestro" />
-                        <Label layoutX="687.0" layoutY="143.0" prefHeight="26.0" prefWidth="287.0" text="DLC: HABILIDADES SORPRENDENTES.">
+                        <Label alignment="CENTER" layoutX="539.0" layoutY="117.0" prefHeight="26.0" prefWidth="452.0" text="Si quieres equipar a tus escuadrones con habilidades sorprendentes" />
+                        <Label alignment="CENTER" layoutX="557.0" layoutY="143.0" prefHeight="26.0" prefWidth="130.0" text="reserva ya nuestro" />
+                        <Label alignment="CENTER" layoutX="687.0" layoutY="143.0" prefHeight="26.0" prefWidth="287.0" text="DLC: HABILIDADES SORPRENDENTES.">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
-                        <Label layoutX="632.0" layoutY="199.0" prefHeight="23.0" prefWidth="156.0" text="Más información en la" />
-                        <Label layoutX="788.0" layoutY="198.0" prefHeight="26.0" prefWidth="65.0" text="TIENDA.">
+                        <Label alignment="CENTER" layoutX="632.0" layoutY="199.0" prefHeight="23.0" prefWidth="156.0" text="Más información en la" />
+                        <Label contentDisplay="CENTER" layoutX="788.0" layoutY="198.0" prefHeight="26.0" prefWidth="65.0" text="TIENDA.">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>

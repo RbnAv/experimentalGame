@@ -203,25 +203,25 @@
                               <Image url="/img/3.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="468.0" layoutY="14.0" prefHeight="39.0" prefWidth="477.0" text="¿Quieres más vida? ¿Quieres más agilidad?">
+                        <Label alignment="CENTER" layoutX="468.0" layoutY="14.0" prefHeight="39.0" prefWidth="477.0" text="¿Quieres más vida? ¿Quieres más agilidad?">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
                         </Label>
-                        <Label layoutX="466.0" layoutY="53.0" prefHeight="39.0" prefWidth="481.0" text="¿Quieres más fuerza para tus escuadrones?">
+                        <Label alignment="CENTER" layoutX="466.0" layoutY="53.0" prefHeight="39.0" prefWidth="481.0" text="¿Quieres más fuerza para tus escuadrones?">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
                         </Label>
-                        <Label layoutX="481.0" layoutY="103.0" prefHeight="26.0" prefWidth="452.0" text="Si quieres equipar a tus escuadrones con habilidades sorprendentes" />
-                        <Label layoutX="503.0" layoutY="129.0" prefHeight="26.0" prefWidth="130.0" text="reserva ya nuestro" />
-                        <Label layoutX="633.0" layoutY="129.0" prefHeight="26.0" prefWidth="287.0" text="DLC: HABILIDADES SORPRENDENTES.">
+                        <Label alignment="CENTER" layoutX="481.0" layoutY="103.0" prefHeight="26.0" prefWidth="452.0" text="Si quieres equipar a tus escuadrones con habilidades sorprendentes" />
+                        <Label alignment="CENTER" layoutX="503.0" layoutY="129.0" prefHeight="26.0" prefWidth="130.0" text="reserva ya nuestro" />
+                        <Label alignment="CENTER" layoutX="633.0" layoutY="129.0" prefHeight="26.0" prefWidth="287.0" text="DLC: HABILIDADES SORPRENDENTES.">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
-                        <Label layoutX="594.0" layoutY="172.0" prefHeight="23.0" prefWidth="156.0" text="Más información en la" />
-                        <Label layoutX="750.0" layoutY="170.0" prefHeight="26.0" prefWidth="65.0" text="TIENDA.">
+                        <Label alignment="CENTER" layoutX="592.0" layoutY="172.0" prefHeight="23.0" prefWidth="156.0" text="Más información en la" />
+                        <Label alignment="CENTER" layoutX="748.0" layoutY="170.0" prefHeight="26.0" prefWidth="65.0" text="TIENDA.">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
