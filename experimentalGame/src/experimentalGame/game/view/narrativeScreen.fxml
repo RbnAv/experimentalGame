@@ -22,10 +22,14 @@
                   <Image url="/img/intro.jpg" />
                </image></ImageView>
             <TextArea fx:id="area2" editable="false" layoutX="209.0" layoutY="419.0" prefHeight="251.0" prefWidth="861.0" />
-            <Button layoutX="597.0" layoutY="713.0" mnemonicParsing="false" onAction="#continuar" text="Continuar">
+            <Button layoutX="597.0" layoutY="713.0" mnemonicParsing="false" onAction="#continuar" stylesheets="@style.css" text="Continuar" textFill="WHITE">
                <effect>
                   <Reflection />
                </effect>
+               <styleClass>
+                  <String fx:value="color" />
+                  <String fx:value="border" />
+               </styleClass>
             </Button>
          </children>
          <opaqueInsets>

@@ -4,3 +4,17 @@
     -fx-background-size: 1280 800;
     -fx-background-position: center center;
 }
+
+.color{
+	-fx-background-color: #595757;
+}
+
+.border{
+   -fx-border-color: #9A9696;
+   -fx-border-width: 1px;
+   -fx-border-style: solid;
+}
+
+
+
+
