@@ -3,6 +3,7 @@ package experimentalGame.game;
 import java.io.IOException;
 
 import experimentalGame.game.model.Squad;
+import experimentalGame.game.view.MainUIController;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -43,7 +44,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
-		this.primaryStage.setTitle("HORIZON");
+		this.primaryStage.setTitle("ExperimentalGame");
 		initRootStage();
 		showMainScreen();
 		// showMainUI();
@@ -93,6 +94,30 @@ public class Main extends Application {
 		}
 	}
 
+	public void showMainUI() {
+		try {
+			// Load person overview.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(Main.class.getResource("view/MainUI.fxml"));
+			AnchorPane personOverview = (AnchorPane) loader.load();
+
+			// Set person overview into the center of root layout.
+			rootStage.setCenter(personOverview);
+
+			// Give the controller access to the main app.
+			MainUIController controller = loader.getController();
+			controller.setMain(this);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Devuelve el stage principal.
+	 * 
+	 * @return
+	 */
 
 	public Stage getPrimaryStage() {
 		return primaryStage;

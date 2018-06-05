@@ -1,16 +1,17 @@
 package experimentalGame.game.view;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 import com.mysql.jdbc.Statement;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,6 +22,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 
 public class Battle implements Initializable {
@@ -93,6 +95,12 @@ public class Battle implements Initializable {
 	int equipo = MainUI.equipo;
 	String equi;
 	String sector = MainUI.sector;
+	
+	String explosion = "/experimentalGame/src/Sounds/explosion-1.wav";
+	Media sonidoExplosion = new Media(new File(explosion).toURI().toString());
+	MediaPlayer sonidoExplosion2 = new MediaPlayer(sonidoExplosion);
+	
+	
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -161,6 +169,8 @@ public class Battle implements Initializable {
 	public void btnGranada(ActionEvent event) {
 		granadamon();
 		ultragranadamon();
+		
+		sonidoExplosion2.play();
 	}
 
 	private int tirada() {
