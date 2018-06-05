@@ -188,12 +188,6 @@
       <AnchorPane prefHeight="164.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
          <children>
             <Accordion layoutX="14.0" layoutY="14.0" />
-            <MenuButton layoutX="862.0" layoutY="52.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="120.0" text="Menú">
-              <items>
-                  <MenuItem fx:id="mOpciones" mnemonicParsing="false" text="Opciones" />
-                  <MenuItem fx:id="mSalir" mnemonicParsing="false" text="Salir de la Partida" />
-              </items>
-            </MenuButton>
             <TitledPane animated="false" layoutX="613.0" layoutY="14.0" text="Estado Escuadrón C">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
@@ -275,7 +269,9 @@
                   </AnchorPane>
             </content>
           </TitledPane>
-            <Button fx:id="btnEvento" layoutX="42.0" layoutY="52.0" mnemonicParsing="false" onAction="#evento" prefHeight="31.0" prefWidth="120.0" text="Ir a Sector" />
+            <Button fx:id="btnEvento" layoutX="37.0" layoutY="52.0" mnemonicParsing="false" onAction="#evento" prefHeight="31.0" prefWidth="136.0" text="Ir a Sector" />
+            <Button layoutX="857.0" layoutY="52.0" mnemonicParsing="false" onAction="#mOption" prefHeight="31.0" prefWidth="136.0" text="Opciones" />
+            <Button layoutX="857.0" layoutY="105.0" mnemonicParsing="false" onAction="#salir" prefHeight="31.0" prefWidth="136.0" text="Salir de la Partida" />
          </children>
       </AnchorPane>
    </top>

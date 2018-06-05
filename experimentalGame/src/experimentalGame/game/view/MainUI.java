@@ -97,7 +97,7 @@ public class MainUI implements Initializable {
 			String myDriver = "org.gjt.mm.mysql.Driver";
 			String myUrl = "jdbc:mysql://localhost/rpg";
 			Class.forName(myDriver);
-			Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
+			Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
 			String query = "SELECT * FROM escuadron";
 			conn.createStatement();
 			Statement st = (Statement) conn.createStatement();
@@ -124,21 +124,7 @@ public class MainUI implements Initializable {
 				}
 			}
 			st.close();
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-	}
-
-	public void opciones(ActionEvent event) {
-		try {
-			((Node) event.getSource()).getScene().getWindow().hide();
-
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("optionPanel2.fxml"));
-			Parent root = (Parent) fxmlLoader.load();
-			Stage stage = new Stage();
-			stage.setScene(new Scene(root));
-			stage.setResizable(false);
-			stage.show();
+			System.out.println(MainUIController.palabra);
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
@@ -315,5 +301,24 @@ public class MainUI implements Initializable {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
+	}
+	
+	public void mOption(ActionEvent event) {
+		try {
+			((Node) event.getSource()).getScene().getWindow().hide();
+
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("optionPanel2.fxml"));
+			Parent root = (Parent) fxmlLoader.load();
+			Stage stage = new Stage();
+			stage.setScene(new Scene(root));
+			stage.setResizable(false);
+			stage.show();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+	
+	public void salir(ActionEvent event) {
+		System.exit(0);
 	}
 }

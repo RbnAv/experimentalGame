@@ -17,8 +17,8 @@
          </font>
       </Label>
       <Button layoutX="186.0" layoutY="429.0" mnemonicParsing="false" onAction="#option2" prefHeight="25.0" prefWidth="87.0" text="Aceptar" />
-      <Button layoutX="185.0" layoutY="301.0" mnemonicParsing="false" onAction="#creditos" prefHeight="25.0" prefWidth="87.0" text="Créditos" />
-      <Button layoutX="186.0" layoutY="212.0" mnemonicParsing="false" onAction="#ayuda" prefHeight="25.0" prefWidth="87.0" text="Ayuda" />
-      <Button layoutX="185.0" layoutY="256.0" mnemonicParsing="false" onAction="#controles" prefHeight="25.0" prefWidth="87.0" text="Controles" />
+      <Button layoutX="185.0" layoutY="301.0" mnemonicParsing="false" onAction="#mCreditos" prefHeight="25.0" prefWidth="87.0" text="Créditos" />
+      <Button layoutX="186.0" layoutY="212.0" mnemonicParsing="false" onAction="#mAyuda" prefHeight="25.0" prefWidth="87.0" text="Ayuda" />
+      <Button layoutX="185.0" layoutY="256.0" mnemonicParsing="false" onAction="#mControles" prefHeight="25.0" prefWidth="87.0" text="Controles" />
    </children>
 </AnchorPane>

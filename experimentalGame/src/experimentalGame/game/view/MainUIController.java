@@ -48,7 +48,7 @@ public class MainUIController implements Initializable {
 
 	static int cont = 0;
 	
-	static String[] myArray = new String[20];
+	static String[] myArray = new String[100];
 	static List<String> palabra = Arrays.asList(myArray);
 	static int c = -1;
 
@@ -80,7 +80,7 @@ public class MainUIController implements Initializable {
 			String myDriver = "org.gjt.mm.mysql.Driver";
 			String myUrl = "jdbc:mysql://localhost/rpg";
 			Class.forName(myDriver);
-			Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
+			Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
 
 			// create the java mysql update preparedstatement
 			String query = "update escuadron set vitalidadEscuadron = ?";
@@ -168,12 +168,42 @@ public class MainUIController implements Initializable {
 			// TODO: handle exception
 		}
 	}
+	
+	public void mAyuda(ActionEvent event) {
+		try {
+			((Node) event.getSource()).getScene().getWindow().hide();
+
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("helpPanel2.fxml"));
+			Parent root = (Parent) fxmlLoader.load();
+			Stage stage = new Stage();
+			stage.setScene(new Scene(root));
+			stage.setResizable(false);
+			stage.show();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
 
 	public void creditos(ActionEvent event) {
 		try {
 			((Node) event.getSource()).getScene().getWindow().hide();
 
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("creditsPanel.fxml"));
+			Parent root = (Parent) fxmlLoader.load();
+			Stage stage = new Stage();
+			stage.setScene(new Scene(root));
+			stage.setResizable(false);
+			stage.show();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+	
+	public void mCreditos(ActionEvent event) {
+		try {
+			((Node) event.getSource()).getScene().getWindow().hide();
+
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("creditsPanel2.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setScene(new Scene(root));
@@ -198,6 +228,21 @@ public class MainUIController implements Initializable {
 			// TODO: handle exception
 		}
 	}
+	
+	public void mControles(ActionEvent event) {
+		try {
+			((Node) event.getSource()).getScene().getWindow().hide();
+
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("controlsPanel2.fxml"));
+			Parent root = (Parent) fxmlLoader.load();
+			Stage stage = new Stage();
+			stage.setScene(new Scene(root));
+			stage.setResizable(false);
+			stage.show();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
 
 	public void atras(ActionEvent event) {
 		try {
@@ -213,12 +258,12 @@ public class MainUIController implements Initializable {
 			// TODO: handle exception
 		}
 	}
-
-	public void option2(ActionEvent event) {
+	
+	public void mAtras(ActionEvent event) {
 		try {
 			((Node) event.getSource()).getScene().getWindow().hide();
 
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MainUI.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("optionPanel2.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setScene(new Scene(root));
@@ -229,11 +274,11 @@ public class MainUIController implements Initializable {
 		}
 	}
 
-	public void cargando(ActionEvent event) {
+	public void option2(ActionEvent event) {
 		try {
 			((Node) event.getSource()).getScene().getWindow().hide();
 
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("cargandoPanel.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MainUI.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setScene(new Scene(root));
