@@ -96,9 +96,6 @@ public class Battle implements Initializable {
 	String equi;
 	String sector = MainUI.sector;
 	
-	String explosion = "/experimentalGame/src/Sounds/explosion-1.wav";
-	Media sonidoExplosion = new Media(new File(explosion).toURI().toString());
-	MediaPlayer sonidoExplosion2 = new MediaPlayer(sonidoExplosion);
 	
 	
 
@@ -151,7 +148,15 @@ public class Battle implements Initializable {
 			consola.setText("ERROR");
 		}
 	}
-
+	
+	/**
+	 * Este método es invocado cuando el jugador pulsa el botón del ataque secundario.
+	 * Cuando se pulsa el botón se ejecutan tres métodos diferentes:
+	 * 	- La tirada que determinará el daño final del ataque
+	 * 	- El ataque del jugador (calculado mediante una serie de operaciones matemáticas)
+	 * 	- El ataque del enemigo (calculado mediante una serie de operaciones matemáticas)
+	 * @param event
+	 */
 	public void btnAtaque2(ActionEvent event) {
 		if (vitalityLabel.getText().toString() != String.valueOf(0)
 				|| vitalityLabel2.getText().toString() != String.valueOf(0)) {
@@ -164,6 +169,12 @@ public class Battle implements Initializable {
 		}
 	}
 
+	/**
+	 * Cuando se pulsa el botón del botiquín dos métodos son invocados
+	 * 	- El método tirada
+	 * 	- Y el método de curación encargado de sumar vitalidad al escuadrón
+	 * @param event
+	 */
 	public void btnBotiquin(ActionEvent event) {
 		if (contadorBot == 0) {
 			botiquin.setDisable(true);
@@ -175,13 +186,24 @@ public class Battle implements Initializable {
 		}
 	}
 
+	/**
+	 * Cuando se pulsa el botón de la granada dos métodos son invocados
+	 * 	- granadamon
+	 * 	- ultragranadamon
+	 * @param event
+	 */
 	public void btnGranada(ActionEvent event) {
 		granadamon();
 		ultragranadamon();
 		
-		sonidoExplosion2.play();
+		
 	}
 
+	/**
+	 * Este método produce un número aleatorio entre 0 y 23.
+	 * Guarda el valor aleatorio en la variable "tirada"
+	 * @return tirada
+	 */
 	private int tirada() {
 		int numTirada = (int) (Math.random() * 22 + 1);
 		System.out.println(tirada);
@@ -189,6 +211,16 @@ public class Battle implements Initializable {
 		return tirada;
 	}
 
+	/**
+	 * Método encargado de calcular el ataque principal del jugador.
+	 * Obtiene los valores de defensa y vitalidad del enemigo.
+	 * Obtiene los valores de daño y vitalidad del jugador.
+	 * Se calcula mediante una sencilla fórmula un resultado que se guarda en la variable "resultado1"
+	 * Este método se encarga además de mostrar en pantalla lo que está sucediendo durante el ataque en ese turno.
+	 * Los botones de habilidades también se desabilitan en caso de no estar disponibles.
+	 * 
+	 * @return resultado1
+	 */
 	private int atacar1() {
 		dañoUnidad = Integer.parseInt(fearLabel.getText());
 		defensaEnemigo = Integer.parseInt(strengthLabel2.getText());
@@ -270,6 +302,16 @@ public class Battle implements Initializable {
 		stage.show();
 	}
 
+	/**
+	 * Método encargado de calcular el ataque principal del enemigo.
+	 * Obtiene los valores de defensa y vitalidad del jugador.
+	 * Obtiene los valores de daño y vitalidad del enemigo.
+	 * Se calcula mediante una sencilla fórmula un resultado que se guarda en la variable "resultado2"
+	 * Este método se encarga además de mostrar en pantalla lo que está sucediendo durante el ataque en ese turno.
+	 * Los botones de habilidades también se desabilitan en caso de no estar disponibles.
+	 * 
+	 * @return resultado2
+	 */
 	private int atacar2() {
 		dañoEnemigo = Integer.parseInt(fearLabel2.getText());
 		defensaUnidad = Integer.parseInt(strengthLabel.getText());
@@ -297,6 +339,17 @@ public class Battle implements Initializable {
 		return resultado2;
 	}
 
+
+	/**
+	 * Método encargado de calcular el ataque secundario del jugador.
+	 * Obtiene los valores de defensa y vitalidad del enemigo.
+	 * Obtiene los valores de daño y vitalidad del jugador.
+	 * Se calcula mediante una sencilla fórmula un resultado que se guarda en la variable "resultado1"
+	 * Este método se encarga además de mostrar en pantalla lo que está sucediendo durante el ataque en ese turno.
+	 * Los botones de habilidades también se desabilitan en caso de no estar disponibles.
+	 * 
+	 * @return resultado1
+	 */
 	private int atacar3() {
 		dañoUnidad = Integer.parseInt(fearLabel.getText());
 		defensaEnemigo = Integer.parseInt(strengthLabel2.getText());
@@ -322,6 +375,17 @@ public class Battle implements Initializable {
 		return resultado1;
 	}
 
+	
+	/**
+	 * Método encargado de calcular el ataque secundario del enemigo.
+	 * Obtiene los valores de defensa y vitalidad del jugador.
+	 * Obtiene los valores de daño y vitalidad del enemigo.
+	 * Se calcula mediante una sencilla fórmula un resultado que se guarda en la variable "resultado2"
+	 * Este método se encarga además de mostrar en pantalla lo que está sucediendo durante el ataque en ese turno.
+	 * Los botones de habilidades también se desabilitan en caso de no estar disponibles.
+	 * 
+	 * @return resultado2
+	 */
 	private int atacar4() {
 		dañoEnemigo = Integer.parseInt(fearLabel2.getText());
 		defensaUnidad = Integer.parseInt(strengthLabel.getText());
@@ -349,6 +413,12 @@ public class Battle implements Initializable {
 		return resultado2;
 	}
 
+	
+	/**
+	 * Método encargado de calcular la cantidad de vitalidad que un escuadrón puede recuperar.
+	 * 
+	 * @return
+	 */
 	private int curacion() {
 		vitalidadEnemigo = Integer.parseInt(vitalityLabel2.getText());
 		vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
