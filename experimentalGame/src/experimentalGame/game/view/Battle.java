@@ -131,6 +131,15 @@ public class Battle implements Initializable {
 
 	}
 
+	
+	/**
+	 * Este método es invocado cuando el jugador pulsa el botón del ataque principal.
+	 * Cuando se pulsa el botón se ejecutan tres métodos diferentes:
+	 * 	- La tirada que determinará el daño final del ataque
+	 * 	- El ataque del jugador (calculado mediante una serie de operaciones matemáticas)
+	 * 	- El ataque del enemigo (calculado mediante una serie de operaciones matemáticas)
+	 * @param event
+	 */
 	public void btnAtaque1(ActionEvent event) {
 		if (vitalityLabel.getText().toString() != String.valueOf(0)
 				|| vitalityLabel2.getText().toString() != String.valueOf(0)) {
