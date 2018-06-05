@@ -172,7 +172,11 @@ public class Sounds {
 	public void setSonidoCuracionMPlayer(MediaPlayer sonidoCuracionMPlayer) {
 		this.sonidoCuracionMPlayer = sonidoCuracionMPlayer;
 	}
-	
-	
-
 }
+
+
+
+
+
+
+
