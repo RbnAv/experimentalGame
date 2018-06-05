@@ -14,11 +14,27 @@
     <AnchorPane prefHeight="798.0" prefWidth="1144.0" style="-fx-background-size: 1400 900;" styleClass="interfaz" stylesheets="@style.css">
          <children>
             <TextArea fx:id="area1" editable="false" layoutX="659.0" layoutY="14.0" prefHeight="224.0" prefWidth="605.0" text="&#10;" />
-            <Button fx:id="btn1" layoutX="221.0" layoutY="543.0" mnemonicParsing="false" onAction="#btn1" prefHeight="46.0" prefWidth="158.0" />
+            <Button fx:id="btn1" layoutX="221.0" layoutY="543.0" mnemonicParsing="false" onAction="#btn1" prefHeight="46.0" prefWidth="158.0" stylesheets="@style.css" textFill="WHITE">
+               <styleClass>
+                  <String fx:value="color" />
+                  <String fx:value="border" />
+               </styleClass></Button>
             <TextArea fx:id="area2" editable="false" layoutX="659.0" layoutY="256.0" prefHeight="224.0" prefWidth="605.0" />
-            <Button fx:id="btn2" layoutX="221.0" layoutY="620.0" mnemonicParsing="false" onAction="#btn2" prefHeight="46.0" prefWidth="158.0" />
-            <Button fx:id="btn3" layoutX="221.0" layoutY="697.0" mnemonicParsing="false" onAction="#btn3" prefHeight="46.0" prefWidth="158.0" />
-            <Button fx:id="btnContinuar" layoutX="900.0" layoutY="620.0" mnemonicParsing="false" onAction="#continuar" prefHeight="46.0" prefWidth="158.0" text="Continuar" />
+            <Button fx:id="btn2" layoutX="221.0" layoutY="620.0" mnemonicParsing="false" onAction="#btn2" prefHeight="46.0" prefWidth="158.0" stylesheets="@style.css" textFill="WHITE">
+               <styleClass>
+                  <String fx:value="color" />
+                  <String fx:value="border" />
+               </styleClass></Button>
+            <Button fx:id="btn3" layoutX="221.0" layoutY="697.0" mnemonicParsing="false" onAction="#btn3" prefHeight="46.0" prefWidth="158.0" stylesheets="@style.css" textFill="WHITE">
+               <styleClass>
+                  <String fx:value="color" />
+                  <String fx:value="border" />
+               </styleClass></Button>
+            <Button fx:id="btnContinuar" layoutX="900.0" layoutY="620.0" mnemonicParsing="false" onAction="#continuar" prefHeight="46.0" prefWidth="158.0" stylesheets="@style.css" text="Continuar" textFill="WHITE">
+               <styleClass>
+                  <String fx:value="color" />
+                  <String fx:value="border" />
+               </styleClass></Button>
             <Label fx:id="lbl1" layoutX="234.0" layoutY="452.0" prefHeight="35.0" prefWidth="132.0" text="Escuadrón A" textFill="WHITE">
                <font>
                   <Font size="24.0" />
