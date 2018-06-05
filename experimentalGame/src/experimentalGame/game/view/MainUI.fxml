@@ -192,7 +192,7 @@
       <AnchorPane prefHeight="164.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
          <children>
             <Accordion layoutX="14.0" layoutY="14.0" />
-            <TitledPane animated="false" layoutX="613.0" layoutY="14.0" text="Estado Escuadrón C">
+            <TitledPane animated="false" layoutX="613.0" layoutY="14.0" styleClass="borderImg" stylesheets="@style.css" text="Estado Escuadrón C">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -219,7 +219,7 @@
                   </AnchorPane>
                </content>
             </TitledPane>
-            <TitledPane animated="false" layoutX="411.0" layoutY="14.0" text="Estado Escuadrón B">
+            <TitledPane animated="false" layoutX="411.0" layoutY="14.0" styleClass="borderImg" stylesheets="@style.css" text="Estado Escuadrón B">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -246,7 +246,7 @@
                   </AnchorPane>
                </content>
             </TitledPane>
-          <TitledPane animated="false" layoutX="209.0" layoutY="14.0" text="Estado Escuadrón A">
+          <TitledPane animated="false" layoutX="209.0" layoutY="14.0" styleClass="borderImg" stylesheets="@style.css" text="Estado Escuadrón A">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
