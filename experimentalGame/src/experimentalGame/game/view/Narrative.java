@@ -22,12 +22,12 @@ public class Narrative implements Initializable {
 	private TextArea area2;
 	@FXML
 	private Label label;
-	
+
 	Thread t;
-	
-	
+
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+
 		t = new Thread() {
 			public void run() {
 				super.run();

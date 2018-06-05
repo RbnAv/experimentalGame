@@ -93,11 +93,12 @@ public class MainUI implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		try {
+			System.out.println("Contador: "+MainUIController.cont);
 			lbl.setText("");
 			String myDriver = "org.gjt.mm.mysql.Driver";
 			String myUrl = "jdbc:mysql://localhost/rpg";
 			Class.forName(myDriver);
-			Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
+			Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
 			String query = "SELECT * FROM escuadron";
 			conn.createStatement();
 			Statement st = (Statement) conn.createStatement();

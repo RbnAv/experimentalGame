@@ -3,7 +3,6 @@ package experimentalGame.game;
 import java.io.IOException;
 
 import experimentalGame.game.model.Squad;
-import experimentalGame.game.view.MainUIController;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

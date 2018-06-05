@@ -80,8 +80,12 @@ public class Battle implements Initializable {
 	private int dañoUnidad;
 	private int defensaEnemigo;
 
-	int v;
-	int v2;
+	
+	static int vit = 0;
+	static int vit2 = 0;
+	
+	int v = 0;
+	int v2 = 0;
 	int contadorBot = 3;
 
 	int numIniciativa = 0;
@@ -197,7 +201,13 @@ public class Battle implements Initializable {
 	}
 
 	public void muerte(ActionEvent event) throws IOException, ClassNotFoundException, SQLException {
-		int v = Integer.parseInt(vitalityLabel.getText());
+		MainUIController.cont++;
+		System.out.println("Contador: "+MainUIController.cont);
+		v = Integer.parseInt(vitalityLabel.getText());
+		v2 = Integer.parseInt(vitalityLabel2.getText());
+		vit = v;
+		vit2 = v2;
+		
 		if (equipo == 1) {
 			equi = "Escuadrón A";
 		}
@@ -210,13 +220,14 @@ public class Battle implements Initializable {
 
 		if (v <= 0) {
 			v = 0;
+			vit = 0;
 		}
 
 		// create a java mysql database connection
 		String myDriver = "org.gjt.mm.mysql.Driver";
 		String myUrl = "jdbc:mysql://localhost/rpg";
 		Class.forName(myDriver);
-		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
+		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
 
 		// create the java mysql update preparedstatement
 		String query = "update escuadron set vitalidadEscuadron = ? where nombreEscuadron = ?";
@@ -232,7 +243,7 @@ public class Battle implements Initializable {
 
 		((Node) event.getSource()).getScene().getWindow().hide();
 
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MainUI.fxml"));
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("alertPanel.fxml"));
 		Parent root = (Parent) fxmlLoader.load();
 		Stage stage = new Stage();
 		stage.setScene(new Scene(root));
@@ -416,7 +427,7 @@ public class Battle implements Initializable {
 		String myDriver = "org.gjt.mm.mysql.Driver";
 		String myUrl = "jdbc:mysql://localhost/rpg";
 		Class.forName(myDriver);
-		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
+		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
 		String query = "SELECT * FROM enemigo";
 		conn.createStatement();
 		Statement st = (Statement) conn.createStatement();
@@ -443,7 +454,7 @@ public class Battle implements Initializable {
 		String myDriver = "org.gjt.mm.mysql.Driver";
 		String myUrl = "jdbc:mysql://localhost/rpg";
 		Class.forName(myDriver);
-		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
+		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
 		String query = "SELECT * FROM escuadron";
 		conn.createStatement();
 		Statement st = (Statement) conn.createStatement();
