@@ -1,14 +1,11 @@
 package experimentalGame.game.view;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 import com.mysql.jdbc.Statement;
@@ -22,7 +19,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 
 public class Battle implements Initializable {
@@ -82,10 +78,9 @@ public class Battle implements Initializable {
 	private int dañoUnidad;
 	private int defensaEnemigo;
 
-	
 	static int vit = 0;
 	static int vit2 = 0;
-	
+
 	int v = 0;
 	int v2 = 0;
 	int contadorBot = 3;
@@ -95,8 +90,12 @@ public class Battle implements Initializable {
 	int equipo = MainUI.equipo;
 	String equi;
 	String sector = MainUI.sector;
-	
-	
+
+	private String sonido1;
+	private String sonido2;
+	private String sonido3;
+	private String sonido4;
+
 	
 
 	@Override
@@ -117,6 +116,9 @@ public class Battle implements Initializable {
 			// }
 			// }
 			// iniciativa();
+			
+			
+		
 			System.out.println(turno);
 			// escuadron();
 			// enemigo();
@@ -128,16 +130,22 @@ public class Battle implements Initializable {
 
 	}
 
-	
 	/**
-	 * Este método es invocado cuando el jugador pulsa el botón del ataque principal.
-	 * Cuando se pulsa el botón se ejecutan tres métodos diferentes:
-	 * 	- La tirada que determinará el daño final del ataque
-	 * 	- El ataque del jugador (calculado mediante una serie de operaciones matemáticas)
-	 * 	- El ataque del enemigo (calculado mediante una serie de operaciones matemáticas)
+	 * Este método es invocado cuando el jugador pulsa el botón del ataque
+	 * principal. Cuando se pulsa el botón se ejecutan tres métodos diferentes: - La
+	 * tirada que determinará el daño final del ataque - El ataque del jugador
+	 * (calculado mediante una serie de operaciones matemáticas) - El ataque del
+	 * enemigo (calculado mediante una serie de operaciones matemáticas)
+	 * 
 	 * @param event
 	 */
 	public void btnAtaque1(ActionEvent event) {
+		
+		//estático
+			//Sounds.explosionPlay();
+		//no estatico
+			//Sounds sonido = new Sounds();
+			//sonido.ataque1Play();
 		if (vitalityLabel.getText().toString() != String.valueOf(0)
 				|| vitalityLabel2.getText().toString() != String.valueOf(0)) {
 			tirada();
@@ -148,13 +156,14 @@ public class Battle implements Initializable {
 			consola.setText("ERROR");
 		}
 	}
-	
+
 	/**
-	 * Este método es invocado cuando el jugador pulsa el botón del ataque secundario.
-	 * Cuando se pulsa el botón se ejecutan tres métodos diferentes:
-	 * 	- La tirada que determinará el daño final del ataque
-	 * 	- El ataque del jugador (calculado mediante una serie de operaciones matemáticas)
-	 * 	- El ataque del enemigo (calculado mediante una serie de operaciones matemáticas)
+	 * Este método es invocado cuando el jugador pulsa el botón del ataque
+	 * secundario. Cuando se pulsa el botón se ejecutan tres métodos diferentes: -
+	 * La tirada que determinará el daño final del ataque - El ataque del jugador
+	 * (calculado mediante una serie de operaciones matemáticas) - El ataque del
+	 * enemigo (calculado mediante una serie de operaciones matemáticas)
+	 * 
 	 * @param event
 	 */
 	public void btnAtaque2(ActionEvent event) {
@@ -170,9 +179,9 @@ public class Battle implements Initializable {
 	}
 
 	/**
-	 * Cuando se pulsa el botón del botiquín dos métodos son invocados
-	 * 	- El método tirada
-	 * 	- Y el método de curación encargado de sumar vitalidad al escuadrón
+	 * Cuando se pulsa el botón del botiquín dos métodos son invocados - El método
+	 * tirada - Y el método de curación encargado de sumar vitalidad al escuadrón
+	 * 
 	 * @param event
 	 */
 	public void btnBotiquin(ActionEvent event) {
@@ -187,21 +196,21 @@ public class Battle implements Initializable {
 	}
 
 	/**
-	 * Cuando se pulsa el botón de la granada dos métodos son invocados
-	 * 	- granadamon
-	 * 	- ultragranadamon
+	 * Cuando se pulsa el botón de la granada dos métodos son invocados - granadamon
+	 * - ultragranadamon
+	 * 
 	 * @param event
 	 */
 	public void btnGranada(ActionEvent event) {
 		granadamon();
 		ultragranadamon();
-		
-		
+
 	}
 
 	/**
-	 * Este método produce un número aleatorio entre 0 y 23.
-	 * Guarda el valor aleatorio en la variable "tirada"
+	 * Este método produce un número aleatorio entre 0 y 23. Guarda el valor
+	 * aleatorio en la variable "tirada"
+	 * 
 	 * @return tirada
 	 */
 	private int tirada() {
@@ -212,12 +221,13 @@ public class Battle implements Initializable {
 	}
 
 	/**
-	 * Método encargado de calcular el ataque principal del jugador.
-	 * Obtiene los valores de defensa y vitalidad del enemigo.
-	 * Obtiene los valores de daño y vitalidad del jugador.
-	 * Se calcula mediante una sencilla fórmula un resultado que se guarda en la variable "resultado1"
-	 * Este método se encarga además de mostrar en pantalla lo que está sucediendo durante el ataque en ese turno.
-	 * Los botones de habilidades también se desabilitan en caso de no estar disponibles.
+	 * Método encargado de calcular el ataque principal del jugador. Obtiene los
+	 * valores de defensa y vitalidad del enemigo. Obtiene los valores de daño y
+	 * vitalidad del jugador. Se calcula mediante una sencilla fórmula un resultado
+	 * que se guarda en la variable "resultado1" Este método se encarga además de
+	 * mostrar en pantalla lo que está sucediendo durante el ataque en ese turno.
+	 * Los botones de habilidades también se desabilitan en caso de no estar
+	 * disponibles.
 	 * 
 	 * @return resultado1
 	 */
@@ -253,12 +263,12 @@ public class Battle implements Initializable {
 
 	public void muerte(ActionEvent event) throws IOException, ClassNotFoundException, SQLException {
 		MainUIController.cont++;
-		System.out.println("Contador: "+MainUIController.cont);
+		System.out.println("Contador: " + MainUIController.cont);
 		v = Integer.parseInt(vitalityLabel.getText());
 		v2 = Integer.parseInt(vitalityLabel2.getText());
 		vit = v;
 		vit2 = v2;
-		
+
 		if (equipo == 1) {
 			equi = "Escuadrón A";
 		}
@@ -303,12 +313,13 @@ public class Battle implements Initializable {
 	}
 
 	/**
-	 * Método encargado de calcular el ataque principal del enemigo.
-	 * Obtiene los valores de defensa y vitalidad del jugador.
-	 * Obtiene los valores de daño y vitalidad del enemigo.
-	 * Se calcula mediante una sencilla fórmula un resultado que se guarda en la variable "resultado2"
-	 * Este método se encarga además de mostrar en pantalla lo que está sucediendo durante el ataque en ese turno.
-	 * Los botones de habilidades también se desabilitan en caso de no estar disponibles.
+	 * Método encargado de calcular el ataque principal del enemigo. Obtiene los
+	 * valores de defensa y vitalidad del jugador. Obtiene los valores de daño y
+	 * vitalidad del enemigo. Se calcula mediante una sencilla fórmula un resultado
+	 * que se guarda en la variable "resultado2" Este método se encarga además de
+	 * mostrar en pantalla lo que está sucediendo durante el ataque en ese turno.
+	 * Los botones de habilidades también se desabilitan en caso de no estar
+	 * disponibles.
 	 * 
 	 * @return resultado2
 	 */
@@ -339,14 +350,14 @@ public class Battle implements Initializable {
 		return resultado2;
 	}
 
-
 	/**
-	 * Método encargado de calcular el ataque secundario del jugador.
-	 * Obtiene los valores de defensa y vitalidad del enemigo.
-	 * Obtiene los valores de daño y vitalidad del jugador.
-	 * Se calcula mediante una sencilla fórmula un resultado que se guarda en la variable "resultado1"
-	 * Este método se encarga además de mostrar en pantalla lo que está sucediendo durante el ataque en ese turno.
-	 * Los botones de habilidades también se desabilitan en caso de no estar disponibles.
+	 * Método encargado de calcular el ataque secundario del jugador. Obtiene los
+	 * valores de defensa y vitalidad del enemigo. Obtiene los valores de daño y
+	 * vitalidad del jugador. Se calcula mediante una sencilla fórmula un resultado
+	 * que se guarda en la variable "resultado1" Este método se encarga además de
+	 * mostrar en pantalla lo que está sucediendo durante el ataque en ese turno.
+	 * Los botones de habilidades también se desabilitan en caso de no estar
+	 * disponibles.
 	 * 
 	 * @return resultado1
 	 */
@@ -375,14 +386,14 @@ public class Battle implements Initializable {
 		return resultado1;
 	}
 
-	
 	/**
-	 * Método encargado de calcular el ataque secundario del enemigo.
-	 * Obtiene los valores de defensa y vitalidad del jugador.
-	 * Obtiene los valores de daño y vitalidad del enemigo.
-	 * Se calcula mediante una sencilla fórmula un resultado que se guarda en la variable "resultado2"
-	 * Este método se encarga además de mostrar en pantalla lo que está sucediendo durante el ataque en ese turno.
-	 * Los botones de habilidades también se desabilitan en caso de no estar disponibles.
+	 * Método encargado de calcular el ataque secundario del enemigo. Obtiene los
+	 * valores de defensa y vitalidad del jugador. Obtiene los valores de daño y
+	 * vitalidad del enemigo. Se calcula mediante una sencilla fórmula un resultado
+	 * que se guarda en la variable "resultado2" Este método se encarga además de
+	 * mostrar en pantalla lo que está sucediendo durante el ataque en ese turno.
+	 * Los botones de habilidades también se desabilitan en caso de no estar
+	 * disponibles.
 	 * 
 	 * @return resultado2
 	 */
@@ -413,9 +424,9 @@ public class Battle implements Initializable {
 		return resultado2;
 	}
 
-	
 	/**
-	 * Método encargado de calcular la cantidad de vitalidad que un escuadrón puede recuperar.
+	 * Método encargado de calcular la cantidad de vitalidad que un escuadrón puede
+	 * recuperar.
 	 * 
 	 * @return
 	 */
@@ -567,3 +578,207 @@ public class Battle implements Initializable {
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

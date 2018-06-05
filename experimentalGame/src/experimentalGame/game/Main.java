@@ -2,6 +2,7 @@ package experimentalGame.game;
 
 import java.io.IOException;
 
+import experimentalGame.game.model.Sounds;
 import experimentalGame.game.model.Squad;
 import experimentalGame.game.view.MainUIController;
 import javafx.application.Application;
@@ -53,6 +54,7 @@ public class Main extends Application {
 
 	public static void main(String[] args) {
 		launch(args);
+		
 	}
 
 	/**
