@@ -24,7 +24,8 @@ public class Narrative implements Initializable {
 	private Label label;
 	
 	Thread t;
-
+	
+	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		t = new Thread() {
