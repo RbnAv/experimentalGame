@@ -7,7 +7,7 @@ import javafx.scene.media.MediaPlayer;
 
 public class Sounds {
 
-	String explosion = "/experimentalGame/src/Sounds/explosion-1.wav";
+	String explosion = "./src/Sounds/explosion-1.wav";
 	Media sonidoExplosionMedia;
 	static MediaPlayer sonidoExplosionMPlayer;
 

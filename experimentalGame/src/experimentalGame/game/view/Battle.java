@@ -1,14 +1,17 @@
 package experimentalGame.game.view;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 import com.mysql.jdbc.Statement;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +22,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 public class Battle implements Initializable {
@@ -96,8 +101,6 @@ public class Battle implements Initializable {
 	private String sonido3;
 	private String sonido4;
 
-	
-
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		try {
@@ -116,9 +119,7 @@ public class Battle implements Initializable {
 			// }
 			// }
 			// iniciativa();
-			
-			
-		
+
 			System.out.println(turno);
 			// escuadron();
 			// enemigo();
@@ -140,12 +141,20 @@ public class Battle implements Initializable {
 	 * @param event
 	 */
 	public void btnAtaque1(ActionEvent event) {
-		
-		//estático
-			//Sounds.explosionPlay();
-		//no estatico
-			//Sounds sonido = new Sounds();
-			//sonido.ataque1Play();
+
+		// estático
+		// Sounds.explosionPlay();
+		// no estatico
+		// Sounds sonido = new Sounds();
+		// sonido.ataque1Play();
+
+		// Música 
+		String musicFile = "./src/Sounds/explosion-1.wav"; 
+
+		Media sound = new Media(new File(musicFile).toURI().toString());
+		MediaPlayer mediaPlayer = new MediaPlayer(sound);
+		mediaPlayer.play();
+
 		if (vitalityLabel.getText().toString() != String.valueOf(0)
 				|| vitalityLabel2.getText().toString() != String.valueOf(0)) {
 			tirada();
@@ -288,7 +297,7 @@ public class Battle implements Initializable {
 		String myDriver = "org.gjt.mm.mysql.Driver";
 		String myUrl = "jdbc:mysql://localhost/rpg";
 		Class.forName(myDriver);
-		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
+		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
 
 		// create the java mysql update preparedstatement
 		String query = "update escuadron set vitalidadEscuadron = ? where nombreEscuadron = ?";
@@ -527,7 +536,7 @@ public class Battle implements Initializable {
 		String myDriver = "org.gjt.mm.mysql.Driver";
 		String myUrl = "jdbc:mysql://localhost/rpg";
 		Class.forName(myDriver);
-		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
+		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
 		String query = "SELECT * FROM enemigo";
 		conn.createStatement();
 		Statement st = (Statement) conn.createStatement();
@@ -554,7 +563,7 @@ public class Battle implements Initializable {
 		String myDriver = "org.gjt.mm.mysql.Driver";
 		String myUrl = "jdbc:mysql://localhost/rpg";
 		Class.forName(myDriver);
-		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
+		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
 		String query = "SELECT * FROM escuadron";
 		conn.createStatement();
 		Statement st = (Statement) conn.createStatement();
@@ -578,7 +587,3 @@ public class Battle implements Initializable {
 	}
 
 }
-
-
-
-
