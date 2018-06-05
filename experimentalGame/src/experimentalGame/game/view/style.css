@@ -14,3 +14,9 @@
    -fx-border-width: 1px;
    -fx-border-style: solid;
 }
+
+.borderImg{
+   -fx-border-color: #848080;
+   -fx-border-width: 3px;
+   -fx-border-style: solid;
+}
