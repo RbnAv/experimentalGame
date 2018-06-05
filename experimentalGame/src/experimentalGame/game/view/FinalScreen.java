@@ -93,8 +93,11 @@ public class FinalScreen implements Initializable {
 	
 	public void fPrincipal(ActionEvent event) {
 		try {
+			MainUIController.c=-1;
+			for (int i = 0; i < MainUIController.myArray.length; i++) {
+				MainUIController.myArray[i]=null;
+			}
 			((Node) event.getSource()).getScene().getWindow().hide();
-
 			// se carga el root del archivo fmxl
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(Main.class.getResource("view/rootStage.fxml"));
@@ -119,6 +122,10 @@ public class FinalScreen implements Initializable {
 	public void fNuevaPartida(ActionEvent event) {
 
 		try {
+			MainUIController.c=-1;
+			for (int i = 0; i < MainUIController.myArray.length; i++) {
+				MainUIController.myArray[i]=null;
+			}
 			// create a java mysql database connection
 			String myDriver = "org.gjt.mm.mysql.Driver";
 			String myUrl = "jdbc:mysql://localhost/rpg";

@@ -122,24 +122,9 @@ public class Battle implements Initializable {
 	public void btnAtaque1(ActionEvent event) {
 		if (vitalityLabel.getText().toString() != String.valueOf(0)
 				|| vitalityLabel2.getText().toString() != String.valueOf(0)) {
-			// if ((Integer.parseInt(vitalityLabel.getText()) <= 0) ||
-			// (Integer.parseInt(vitalityLabel2.getText()) <= 0)) {
-			// iniciativa();
 			tirada();
 			atacar1();
 			atacar2();
-			// t = new Thread() {
-			// public void run() {
-			// super.run();
-			// try {
-			// Thread.sleep(500);
-			// atacar2();
-			// } catch (InterruptedException e) {
-			// e.printStackTrace();
-			// }
-			// }
-			// };
-			// t.start();
 
 		} else {
 			consola.setText("ERROR");
@@ -152,18 +137,6 @@ public class Battle implements Initializable {
 			tirada();
 			atacar3();
 			atacar4();
-			// t = new Thread() {
-			// public void run() {
-			// super.run();
-			// try {
-			// Thread.sleep(2000);
-			// atacar4();
-			// } catch (InterruptedException e) {
-			// e.printStackTrace();
-			// }
-			// }
-			// };
-			// t.start();
 
 		} else {
 			consola.setText("ERROR");
@@ -176,7 +149,6 @@ public class Battle implements Initializable {
 		} else {
 			contadorBot -= 1;
 			lblBotiquin.setText(contadorBot + " unidades");
-
 			tirada();
 			curacion();
 		}
@@ -185,19 +157,6 @@ public class Battle implements Initializable {
 	public void btnGranada(ActionEvent event) {
 		granadamon();
 		ultragranadamon();
-		// t = new Thread() {
-		// public void run() {
-		// super.run();
-		// try {
-		// Thread.sleep(2000);
-		// ultragranadamon();
-		// } catch (InterruptedException e) {
-		// e.printStackTrace();
-		// }
-		// }
-		// };
-		// t.start();
-
 	}
 
 	private int tirada() {

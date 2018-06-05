@@ -55,7 +55,7 @@
                   </AnchorPane>
             </content>
           </TitledPane>
-            <TitledPane animated="false" layoutX="808.0" layoutY="14.0" text="Estado Enemigo">
+            <TitledPane animated="false" layoutX="819.0" layoutY="14.0" text="Estado Enemigo">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -85,7 +85,7 @@
                   </AnchorPane>
                </content>
             </TitledPane>
-            <TextArea fx:id="consola" editable="false" layoutX="231.0" layoutY="13.0" prefHeight="214.0" prefWidth="561.0" promptText="Consola de batalla" AnchorPane.bottomAnchor="72.0" AnchorPane.leftAnchor="231.0" AnchorPane.rightAnchor="232.0" AnchorPane.topAnchor="13.0" />
+            <TextArea fx:id="consola" editable="false" layoutX="231.0" layoutY="13.0" prefHeight="200.0" prefWidth="562.0" promptText="Consola de batalla" AnchorPane.bottomAnchor="72.0" AnchorPane.leftAnchor="231.0" AnchorPane.rightAnchor="231.0" AnchorPane.topAnchor="13.0" />
             <Button fx:id="fin" layoutX="422.0" layoutY="251.0" mnemonicParsing="false" onAction="#muerte" prefHeight="34.0" prefWidth="180.0" text="Continuar" />
          </children></AnchorPane>
    </center>
