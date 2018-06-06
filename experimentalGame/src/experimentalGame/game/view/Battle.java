@@ -151,12 +151,7 @@ public class Battle implements Initializable {
 		// sonido.ataque1Play();
 
 		// Música 
-		String musicFile = "./src/Sounds/explosion-1.wav"; 
-
-		Media sound = new Media(new File(musicFile).toURI().toString());
-		MediaPlayer mediaPlayer = new MediaPlayer(sound);
-		mediaPlayer.play();
-
+		
 		if (vitalityLabel.getText().toString() != String.valueOf(0)
 				|| vitalityLabel2.getText().toString() != String.valueOf(0)) {
 			tirada();
@@ -179,11 +174,10 @@ public class Battle implements Initializable {
 	 */
 	public void btnAtaque2(ActionEvent event) {
 		
-		String musicFile = "./src/Sounds/explosion-1.wav"; 
+	
 
-		Media sound = new Media(new File(musicFile).toURI().toString());
-		MediaPlayer mediaPlayer = new MediaPlayer(sound);
-		mediaPlayer.play();
+	
+
 		
 		if (vitalityLabel.getText().toString() != String.valueOf(0)
 				|| vitalityLabel2.getText().toString() != String.valueOf(0)) {
@@ -204,11 +198,19 @@ public class Battle implements Initializable {
 	 */
 	public void btnBotiquin(ActionEvent event) {
 		
-		String musicFile = "./src/Sounds/explosion-1.wav"; 
-
-		Media sound = new Media(new File(musicFile).toURI().toString());
-		MediaPlayer mediaPlayer = new MediaPlayer(sound);
-		mediaPlayer.play();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		if (contadorBot == 0) {
 			botiquin.setDisable(true);
@@ -227,11 +229,22 @@ public class Battle implements Initializable {
 	 */
 	public void btnGranada(ActionEvent event) {
 		
-		String musicFile = "./src/Sounds/explosion-1.wav"; 
-
-		Media sound = new Media(new File(musicFile).toURI().toString());
-		MediaPlayer mediaPlayer = new MediaPlayer(sound);
-		mediaPlayer.play();
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		tirada();
 		granadamon();
 		ultragranadamon();
