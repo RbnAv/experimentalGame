@@ -1,5 +1,6 @@
 package experimentalGame.game;
 
+import java.io.File;
 import java.io.IOException;
 
 import experimentalGame.game.model.Squad;
@@ -11,6 +12,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -30,6 +33,7 @@ public class Main extends Application {
 		squadData.add(new Squad("Asalto"));
 		squadData.add(new Squad("Reconocimiento"));
 		squadData.add(new Squad("Apoyo"));
+		
 	}
 
 	/**
@@ -48,6 +52,11 @@ public class Main extends Application {
 		initRootStage();
 		showMainScreen();
 		// showMainUI();
+		//String musicFile = "./src/Sounds/explosion-1.wav"; 
+
+		//Media sound = new Media(new File(musicFile).toURI().toString());
+		//MediaPlayer mediaPlayer = new MediaPlayer(sound);
+		//mediaPlayer.play();
 
 	}
 
