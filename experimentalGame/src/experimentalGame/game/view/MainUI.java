@@ -299,6 +299,8 @@ public class MainUI implements Initializable {
 			stage.setScene(new Scene(root));
 			stage.setResizable(false);
 			stage.show();
+			
+			
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
