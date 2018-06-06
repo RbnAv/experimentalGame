@@ -70,6 +70,8 @@ public class Battle implements Initializable {
 	private TextArea consola;
 
 	ActionEvent event;
+	int random = 0;
+    int num = 0;
 
 	boolean turno = false; // si es true comienza el jugador, si no, el enemigo
 	private int resultado1 = 0;
@@ -105,6 +107,8 @@ public class Battle implements Initializable {
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		try {
 			fin.setDisable(true);
+			random = (int) (Math.random() * 3 + 1);
+			num = random;
 			escuadron();
 			enemigo();
 			// while (vitalityLabel.getText().toString() != String.valueOf(0)
@@ -557,30 +561,31 @@ public class Battle implements Initializable {
 	}
 
 	private void enemigo() throws ClassNotFoundException, SQLException {
-		String myDriver = "org.gjt.mm.mysql.Driver";
-		String myUrl = "jdbc:mysql://localhost/rpg";
-		Class.forName(myDriver);
-		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
-		String query = "SELECT * FROM enemigo";
-		conn.createStatement();
-		Statement st = (Statement) conn.createStatement();
-		ResultSet rs = st.executeQuery(query);
-		while (rs.next()) {
-			int idEnemigo = rs.getInt("idEnemigo");
-			// String nombre = rs.getString("nombreEnemigo");
-			int constitucion = rs.getInt("constitucionEnemigo");
-			int vitalidad = rs.getInt("vitalidadEnemigo");
-			int fuerza = rs.getInt("fuerzaEnemigo");
-			int agilidad = rs.getInt("agilidadEnemigo");
-			if (idEnemigo == 1) {
-				vitalityLabel2.setText(String.valueOf(vitalidad));
-				energyLabel2.setText(String.valueOf(agilidad));
-				fearLabel2.setText(String.valueOf(fuerza));
-				strengthLabel2.setText(String.valueOf(constitucion));
-				v2 = Integer.parseInt(vitalityLabel2.getText());
-			}
-		}
-		st.close();
+		
+        String myDriver = "org.gjt.mm.mysql.Driver";
+        String myUrl = "jdbc:mysql://localhost/rpg";
+        Class.forName(myDriver);
+        Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
+        String query = "SELECT * FROM enemigo";
+        conn.createStatement();
+        Statement st = (Statement) conn.createStatement();
+        ResultSet rs = st.executeQuery(query);
+        while (rs.next()) {
+            int idEnemigo = rs.getInt("idEnemigo");
+            // String nombre = rs.getString("nombreEnemigo");
+            int constitucion = rs.getInt("constitucionEnemigo");
+            int vitalidad = rs.getInt("vitalidadEnemigo");
+            int fuerza = rs.getInt("fuerzaEnemigo");
+            int agilidad = rs.getInt("agilidadEnemigo");
+            if (idEnemigo == num) {
+                vitalityLabel2.setText(String.valueOf(vitalidad));
+                energyLabel2.setText(String.valueOf(agilidad));
+                fearLabel2.setText(String.valueOf(fuerza));
+                strengthLabel2.setText(String.valueOf(constitucion));
+                v2 = Integer.parseInt(vitalityLabel2.getText());
+            }
+        }
+        st.close();
 	}
 
 	private void escuadron() throws ClassNotFoundException, SQLException {
