@@ -234,6 +234,7 @@ public class Battle implements Initializable {
 		
 		granadamon();
 		ultragranadamon();
+		
 
 	}
 
