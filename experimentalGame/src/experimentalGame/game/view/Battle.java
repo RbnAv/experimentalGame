@@ -314,6 +314,11 @@ public class Battle implements Initializable {
 			v = 0;
 			vit = 0;
 		}
+		
+		if (v2 <= 0) {
+			v2 = 0;
+			vit2 = 0;
+		}
 
 		// create a java mysql database connection
 		String myDriver = "org.gjt.mm.mysql.Driver";

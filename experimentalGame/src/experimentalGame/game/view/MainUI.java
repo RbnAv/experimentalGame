@@ -58,9 +58,9 @@ public class MainUI implements Initializable {
 	static int equipo = 0;
 	static String sector = "";
 
-	CharSequence e1 = "Escuadrón A";
-	CharSequence e2 = "Escuadrón B";
-	CharSequence e3 = "Escuadrón C";
+	CharSequence e1 = "ESCUADRÓN A";
+	CharSequence e2 = "ESCUADRÓN B";
+	CharSequence e3 = "ESCUADRÓN C";
 
 	CharSequence s1 = "A1";
 	CharSequence s2 = "A2";
@@ -135,7 +135,7 @@ public class MainUI implements Initializable {
 		try {
 			txt = "";
 			System.out.println(lista);
-			txt = comando.getText();
+			txt = comando.getText().toUpperCase();
 
 			if ((txt.contains(s1) || txt.contains(s2) || txt.contains(s3) || txt.contains(s4) || txt.contains(s5)
 					|| txt.contains(s6) || txt.contains(s7) || txt.contains(s8) || txt.contains(s9) || txt.contains(s10)
