@@ -40,10 +40,10 @@ public class FinalScreen implements Initializable {
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		try {
 			if (Evento.c == 1) {
-				evento = "F2";
+				evento = "F3";
 			}
 			else if (Evento.c == 2) {
-				evento = "F3";
+				evento = "F2";
 			}
 			else if (Evento.c == 3) {
 				evento = "F1";
@@ -61,7 +61,7 @@ public class FinalScreen implements Initializable {
 		String myDriver = "org.gjt.mm.mysql.Driver";
 		String myUrl = "jdbc:mysql://localhost/rpg";
 		Class.forName(myDriver);
-		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
+		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
 		String query = "SELECT * FROM evento";
 		conn.createStatement();
 		Statement st = (Statement) conn.createStatement();
@@ -94,6 +94,7 @@ public class FinalScreen implements Initializable {
 	public void fPrincipal(ActionEvent event) {
 		try {
 			MainUIController.c=-1;
+			MainUIController.cont=0;
 			for (int i = 0; i < MainUIController.myArray.length; i++) {
 				MainUIController.myArray[i]=null;
 			}
@@ -123,6 +124,7 @@ public class FinalScreen implements Initializable {
 
 		try {
 			MainUIController.c=-1;
+			MainUIController.cont=0;
 			for (int i = 0; i < MainUIController.myArray.length; i++) {
 				MainUIController.myArray[i]=null;
 			}
@@ -130,7 +132,7 @@ public class FinalScreen implements Initializable {
 			String myDriver = "org.gjt.mm.mysql.Driver";
 			String myUrl = "jdbc:mysql://localhost/rpg";
 			Class.forName(myDriver);
-			Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
+			Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
 
 			// create the java mysql update preparedstatement
 			String query = "update escuadron set vitalidadEscuadron = ?";
