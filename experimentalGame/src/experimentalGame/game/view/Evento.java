@@ -169,9 +169,6 @@ public class Evento implements Initializable {
 			}
 
 			if (nombreEvento.equals(sector)) {
-				System.out.println(accion1);
-				System.out.println(accion2);
-				System.out.println(accion3);
 				area1.setText(narrativa);
 				area2.setText(dialogo);
 				btn1.setText(accion1);
@@ -358,7 +355,6 @@ public class Evento implements Initializable {
 	public void continuar(ActionEvent event) {
 		try {
 			MainUIController.cont++;
-			System.out.println(MainUIController.cont);
 			String myDriver = "org.gjt.mm.mysql.Driver";
 			String myUrl = "jdbc:mysql://localhost/rpg";
 			Class.forName(myDriver);
@@ -373,21 +369,17 @@ public class Evento implements Initializable {
 				vitalidad = rs.getInt("vitalidadEscuadron");
 				if (nombre.equals("Escuadrón A")) {
 					v = String.valueOf(vitalidad);
-					System.out.println(v);
 				}
 				if (nombre.equals("Escuadrón B")) {
 					v2 = String.valueOf(vitalidad);
-					System.out.println(v2);
 				}
 				if (nombre.equals("Escuadrón C")) {
 					v3 = String.valueOf(vitalidad);
-					System.out.println(v3);
 				}
 			}
 			st.close();
 
 			if (v.equals("0") && v2.equals("0") && v3.equals("0")) {
-				System.out.println("raveeeeeeeeeeeee");
 				c = 3;
 				((Node) event.getSource()).getScene().getWindow().hide();
 				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("finalScreen.fxml"));

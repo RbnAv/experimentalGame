@@ -90,7 +90,7 @@ public class Battle implements Initializable {
 
 	int v = 0;
 	int v2 = 0;
-	int contadorBot = 3;
+	int contadorBot = 2;
 
 	int numIniciativa = 0;
 
@@ -123,8 +123,6 @@ public class Battle implements Initializable {
 			// }
 			// }
 			// iniciativa();
-
-			System.out.println(turno);
 			// escuadron();
 			// enemigo();
 			tirada();
@@ -217,7 +215,6 @@ public class Battle implements Initializable {
 		} else {
 			contadorBot -= 1;
 			lblBotiquin.setText(contadorBot + " unidades");
-			tirada();
 			curacion();
 		}
 	}
@@ -235,7 +232,7 @@ public class Battle implements Initializable {
 		Media sound = new Media(new File(musicFile).toURI().toString());
 		MediaPlayer mediaPlayer = new MediaPlayer(sound);
 		mediaPlayer.play();
-		
+		tirada();
 		granadamon();
 		ultragranadamon();
 		
@@ -250,7 +247,6 @@ public class Battle implements Initializable {
 	 */
 	private int tirada() {
 		int numTirada = (int) (Math.random() * 22 + 1);
-		System.out.println(tirada);
 		tirada = numTirada;
 		return tirada;
 	}
@@ -272,11 +268,6 @@ public class Battle implements Initializable {
 		vitalidadEnemigo = Integer.parseInt(vitalityLabel2.getText());
 		vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
 		resultado1 = vitalidadEnemigo - ((dañoUnidad - defensaEnemigo) + tirada);
-		System.out.println("vitalidadEnemigo: " + vitalidadEnemigo);
-		System.out.println("dañoUnidad: " + dañoUnidad);
-		System.out.println("defensaEnemigo: " + defensaEnemigo);
-		System.out.println("tirada: " + tirada);
-		System.out.println("resultado: " + resultado1);
 		consola.appendText(
 				String.valueOf("¡Disparad disparad! ¡Pam pam pam!\n- El escuadrón usó el fusil de silicona, ha hecho "
 						+ ((dañoUnidad - defensaEnemigo) + tirada) + " puntos de daño.\n"
@@ -298,7 +289,6 @@ public class Battle implements Initializable {
 
 	public void muerte(ActionEvent event) throws IOException, ClassNotFoundException, SQLException {
 		MainUIController.cont++;
-		System.out.println("Contador: " + MainUIController.cont);
 		v = Integer.parseInt(vitalityLabel.getText());
 		v2 = Integer.parseInt(vitalityLabel2.getText());
 		vit = v;
@@ -364,7 +354,6 @@ public class Battle implements Initializable {
 		vitalidadEnemigo = Integer.parseInt(vitalityLabel2.getText());
 		vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
 		resultado2 = vitalidadUnidad - ((dañoEnemigo - defensaUnidad) + tirada);
-		System.out.println("vitalidadUnidad: " + vitalidadUnidad);
 		consola.appendText(String.valueOf("¡Grrrrraaaaahhhh!\n- El enemigo lanzó ácido por la boca y ha hecho "
 				+ ((dañoEnemigo - defensaUnidad) + tirada) + " puntos de daño.\n" + "   Ha dejado al escuadrón con "
 				+ resultado2 + " puntos de vida."
@@ -438,7 +427,6 @@ public class Battle implements Initializable {
 		vitalidadEnemigo = Integer.parseInt(vitalityLabel2.getText());
 		vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
 		resultado2 = vitalidadUnidad - ((dañoEnemigo - defensaUnidad) + tirada + 5);
-		System.out.println("vitalidadUnidad: " + vitalidadUnidad);
 		consola.appendText(String.valueOf("¡Grrrrraaaaahhhh!\n- El enemigo lanzó ácido por la boca y ha hecho "
 				+ ((dañoEnemigo - defensaUnidad) + tirada + 5) + " puntos de daño.\n" + "   Ha dejado al escuadrón con "
 				+ resultado2 + " puntos de vida."
@@ -469,10 +457,9 @@ public class Battle implements Initializable {
 
 		vitalidadEnemigo = Integer.parseInt(vitalityLabel2.getText());
 		vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
-		resultado1 = (vitalidadUnidad + 30 + tirada);
-		int vidaTirada = 30 + tirada;
+		resultado1 = (vitalidadUnidad + 30);
 		vitalityLabel.setText(String.valueOf(resultado1));
-		consola.appendText(String.valueOf("¡Necesitamos curación!\n- El escadrón usó un botiquín y ha sanado " +vidaTirada
+		consola.appendText(String.valueOf("¡Necesitamos curación!\n- El escadrón usó un botiquín y ha sanado " +30
 				+ " puntos de salud.\n" + "Ahora el escuadrón tiene " + resultado1 + " puntos de vida."
 				+ "\n\n--------------------------------------------------------------------------------------\n\n"));
 		if (contadorBot == 0) {
@@ -498,15 +485,10 @@ public class Battle implements Initializable {
 		defensaEnemigo = Integer.parseInt(strengthLabel2.getText());
 		vitalidadEnemigo = Integer.parseInt(vitalityLabel2.getText());
 		vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
-		resultado1 = vitalidadEnemigo - ((dañoUnidad - defensaEnemigo) + tirada + 40);
-		System.out.println("vitalidadEnemigo: " + vitalidadEnemigo);
-		System.out.println("dañoUnidad: " + dañoUnidad);
-		System.out.println("defensaEnemigo: " + defensaEnemigo);
-		System.out.println("tirada: " + tirada);
-		System.out.println("resultado: " + resultado1);
+		resultado1 = vitalidadEnemigo - ((dañoUnidad - defensaEnemigo) + tirada + 30);
 		vitalityLabel2.setText(String.valueOf(resultado1));
 		consola.appendText(String.valueOf("¡Granada va! ¡Buuummm!\n- El escuadrón lanzó una granada y ha hecho "
-				+ ((dañoUnidad - defensaEnemigo) + tirada + 40) + " puntos de daño.\n" + "   Ha dejado al enemigo con "
+				+ ((dañoUnidad - defensaEnemigo) + tirada + 30) + " puntos de daño.\n" + "   Ha dejado al enemigo con "
 				+ resultado1 + " puntos de vida.\n\n"));
 		vitalidadEnemigo = Integer.parseInt(vitalityLabel2.getText());
 		vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
@@ -527,11 +509,10 @@ public class Battle implements Initializable {
 		defensaUnidad = Integer.parseInt(strengthLabel.getText());
 		vitalidadEnemigo = Integer.parseInt(vitalityLabel2.getText());
 		vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
-		resultado2 = vitalidadUnidad - ((dañoEnemigo - defensaUnidad) + tirada + 20);
-		System.out.println("vitalidadUnidad: " + vitalidadUnidad);
+		resultado2 = vitalidadUnidad - ((dañoEnemigo - defensaUnidad) + tirada + 25);
 		vitalityLabel.setText(String.valueOf(resultado2));
 		consola.appendText(String.valueOf("- La explosión es tan fuerte que hace daño al escuadrón.\n" + "   Ha hecho "
-				+ ((dañoEnemigo - defensaUnidad) + tirada + 20) + " puntos de daño.\n"
+				+ ((dañoEnemigo - defensaUnidad) + tirada + 25) + " puntos de daño.\n"
 				+ "   El escuadrón se ha quedado con " + resultado2 + " puntos de vida."
 				+ "\n\n--------------------------------------------------------------------------------------\n\n"));
 		// t.stop();
@@ -551,7 +532,6 @@ public class Battle implements Initializable {
 
 	private boolean iniciativa() {
 		numIniciativa = (int) (Math.random() * 10 + 1);
-		System.out.println(numIniciativa);
 		if (numIniciativa <= 5) {
 			turno = false;
 		} else {

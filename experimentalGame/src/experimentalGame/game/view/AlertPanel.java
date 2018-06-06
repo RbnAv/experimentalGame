@@ -32,8 +32,6 @@ public class AlertPanel implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		System.out.println("Escuadrón: "+Battle.vit);
-		System.out.println("Enemigo: "+Battle.vit2);
 		if (Battle.vit <= 0) {
 			lblGanador.setText("El enemigo ha ganado la batalla");
 		} else {
@@ -44,7 +42,6 @@ public class AlertPanel implements Initializable {
 	public void continuar(ActionEvent event) throws IOException {
 
 		try {
-			System.out.println(MainUIController.cont);
 			String myDriver = "org.gjt.mm.mysql.Driver";
 			String myUrl = "jdbc:mysql://localhost/rpg";
 			Class.forName(myDriver);
@@ -59,21 +56,17 @@ public class AlertPanel implements Initializable {
 				vitalidad = rs.getInt("vitalidadEscuadron");
 				if (nombre.equals("Escuadrón A")) {
 					v = String.valueOf(vitalidad);
-					System.out.println(v);
 				}
 				if (nombre.equals("Escuadrón B")) {
 					v2 = String.valueOf(vitalidad);
-					System.out.println(v2);
 				}
 				if (nombre.equals("Escuadrón C")) {
 					v3 = String.valueOf(vitalidad);
-					System.out.println(v3);
 				}
 			}
 			st.close();
 
 			if (v.equals("0") && v2.equals("0") && v3.equals("0")) {
-				System.out.println("raveeeeeeeeeeeee");
 				Evento.c = 3;
 				((Node) event.getSource()).getScene().getWindow().hide();
 				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("finalScreen.fxml"));

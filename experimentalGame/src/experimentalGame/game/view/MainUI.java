@@ -93,7 +93,6 @@ public class MainUI implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		try {
-			System.out.println("Contador: "+MainUIController.cont);
 			lbl.setText("");
 			String myDriver = "org.gjt.mm.mysql.Driver";
 			String myUrl = "jdbc:mysql://localhost/rpg";
@@ -125,7 +124,6 @@ public class MainUI implements Initializable {
 				}
 			}
 			st.close();
-			System.out.println(MainUIController.palabra);
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
@@ -134,7 +132,6 @@ public class MainUI implements Initializable {
 	public void evento(ActionEvent event) {
 		try {
 			txt = "";
-			System.out.println(lista);
 			txt = comando.getText().toUpperCase();
 
 			if ((txt.contains(s1) || txt.contains(s2) || txt.contains(s3) || txt.contains(s4) || txt.contains(s5)
@@ -145,7 +142,6 @@ public class MainUI implements Initializable {
 					&& (!vitalityLabel.getText().equals("0") || !vitalityLabel1.getText().equals("0")
 							|| !vitalityLabel2.getText().equals("0"))) {
 				MainUIController.c++;
-				System.out.println(MainUIController.c);
 				// Equipo
 				if (txt.contains(e1)) {
 					equipo = 1;
@@ -242,29 +238,18 @@ public class MainUI implements Initializable {
 				if (MainUIController.palabra.contains(String.valueOf(equipo))) {
 					
 					MainUIController.c--;
-					System.out.println(MainUIController.c);
 					lbl.setText("Escribe otro escuadrón.");
-					System.out.println("CONTIENE ESCUADRÓN");
-					System.out.println(MainUIController.palabra);
 				} else {
-					System.out.println(MainUIController.c);
 					// MainUIController.myArray[MainUIController.c] = String.valueOf(equipo);
-					System.out.println("NO CONTIENE ESCUADRÓN");
-					System.out.println(MainUIController.palabra);
 					if (MainUIController.palabra.contains(sector)) {
 						MainUIController.c--;
 						lbl.setText("Escribe otro sector.");
-						System.out.println("CONTIENE");
-						System.out.println(MainUIController.palabra);
-
 						// if (vitalityLabel.getText().equals("0")) {
 						//
 						// }
 					} else {
 						// MainUIController.c++;
 						MainUIController.myArray[MainUIController.c] = sector;
-						System.out.println("NO LO CONTIENE");
-						System.out.println(MainUIController.palabra);
 
 						if (sector.equals("C1") || (sector.equals("A3") || (sector.equals("B1")
 								|| (sector.equals("D1") || (sector.equals("A1")) || (sector.equals("D4")))))) {
