@@ -11,6 +11,8 @@ import com.mysql.jdbc.PreparedStatement;
 
 import experimentalGame.game.Main;
 import experimentalGame.game.model.Squad;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -47,10 +49,14 @@ public class MainUIController implements Initializable {
 	Main main;
 
 	static int cont = 0;
-	
+
 	static String[] myArray = new String[100];
 	static List<String> palabra = Arrays.asList(myArray);
 	static int c = -1;
+
+	static ObservableList<String> items = FXCollections.observableArrayList("- Sector A:", "A1", "A2", "A3", "A4", "A5",
+			"A6", "- Sector B:", "B1", "B2", "B3", "- Sector C:", "C1", "C2", "- Sector D:", "D1", "D2", "D3", "D4",
+			"- Sector B-D:", "B-D1");
 
 	/**
 	 * The constructor. The constructor is called before the initialize() method.
@@ -80,7 +86,7 @@ public class MainUIController implements Initializable {
 			String myDriver = "org.gjt.mm.mysql.Driver";
 			String myUrl = "jdbc:mysql://localhost/rpg";
 			Class.forName(myDriver);
-			Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
+			Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
 
 			// create the java mysql update preparedstatement
 			String query = "update escuadron set vitalidadEscuadron = ?";
@@ -168,7 +174,7 @@ public class MainUIController implements Initializable {
 			// TODO: handle exception
 		}
 	}
-	
+
 	public void mAyuda(ActionEvent event) {
 		try {
 			((Node) event.getSource()).getScene().getWindow().hide();
@@ -198,7 +204,7 @@ public class MainUIController implements Initializable {
 			// TODO: handle exception
 		}
 	}
-	
+
 	public void mCreditos(ActionEvent event) {
 		try {
 			((Node) event.getSource()).getScene().getWindow().hide();
@@ -228,7 +234,7 @@ public class MainUIController implements Initializable {
 			// TODO: handle exception
 		}
 	}
-	
+
 	public void mControles(ActionEvent event) {
 		try {
 			((Node) event.getSource()).getScene().getWindow().hide();
@@ -258,7 +264,7 @@ public class MainUIController implements Initializable {
 			// TODO: handle exception
 		}
 	}
-	
+
 	public void mAtras(ActionEvent event) {
 		try {
 			((Node) event.getSource()).getScene().getWindow().hide();

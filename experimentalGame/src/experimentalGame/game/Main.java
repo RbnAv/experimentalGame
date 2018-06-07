@@ -20,13 +20,11 @@ public class Main extends Application {
 
 	private Stage primaryStage;
 	private BorderPane rootStage;
-	
-	String musicFile = "./src/Sounds/menu.mp3"; 
+
+	String musicFile = "./src/Sounds/menu.mp3";
 
 	Media sound = new Media(new File(musicFile).toURI().toString());
 	MediaPlayer mediaPlayer = new MediaPlayer(sound);
-	
-	
 
 	/**
 	 * The data as an observable list of values.
@@ -40,7 +38,7 @@ public class Main extends Application {
 		squadData.add(new Squad("Asalto"));
 		squadData.add(new Squad("Reconocimiento"));
 		squadData.add(new Squad("Apoyo"));
-		
+
 	}
 
 	/**
@@ -60,17 +58,17 @@ public class Main extends Application {
 		showMainScreen();
 		mediaPlayer.play();
 		// showMainUI();
-		//String musicFile = "./src/Sounds/explosion-1.wav"; 
+		// String musicFile = "./src/Sounds/explosion-1.wav";
 
-		//Media sound = new Media(new File(musicFile).toURI().toString());
-		//MediaPlayer mediaPlayer = new MediaPlayer(sound);
-		//mediaPlayer.play();
+		// Media sound = new Media(new File(musicFile).toURI().toString());
+		// MediaPlayer mediaPlayer = new MediaPlayer(sound);
+		// mediaPlayer.play();
 
 	}
 
 	public static void main(String[] args) {
 		launch(args);
-		
+
 	}
 
 	/**
@@ -107,12 +105,11 @@ public class Main extends Application {
 			// establece el menú principal en el centro del stage (rootStage)
 
 			rootStage.setCenter(mainScreen);
-			
-//			musicFile = "./src/Sounds/intro.mp3"; 
-//
-//			sound = new Media(new File(musicFile).toURI().toString());
-//			mediaPlayer = new MediaPlayer(sound);
-			
+
+			// musicFile = "./src/Sounds/intro.mp3";
+			//
+			// sound = new Media(new File(musicFile).toURI().toString());
+			// mediaPlayer = new MediaPlayer(sound);
 
 		} catch (IOException e) {
 			e.printStackTrace();

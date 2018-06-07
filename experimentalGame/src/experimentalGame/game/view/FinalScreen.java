@@ -41,14 +41,11 @@ public class FinalScreen implements Initializable {
 		try {
 			if (Evento.c == 1) {
 				evento = "F3";
-			}
-			else if (Evento.c == 2) {
+			} else if (Evento.c == 2) {
 				evento = "F2";
-			}
-			else if (Evento.c == 3) {
+			} else if (Evento.c == 3) {
 				evento = "F1";
-			}
-			else if (Evento.c == 4) {
+			} else if (Evento.c == 4) {
 				evento = "F4";
 			}
 			evento();
@@ -61,7 +58,7 @@ public class FinalScreen implements Initializable {
 		String myDriver = "org.gjt.mm.mysql.Driver";
 		String myUrl = "jdbc:mysql://localhost/rpg";
 		Class.forName(myDriver);
-		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
+		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
 		String query = "SELECT * FROM evento";
 		conn.createStatement();
 		Statement st = (Statement) conn.createStatement();
@@ -86,17 +83,21 @@ public class FinalScreen implements Initializable {
 
 		st.close();
 	}
-	
+
 	public void fSalir(ActionEvent event) {
 		System.exit(0);
 	}
-	
+
 	public void fPrincipal(ActionEvent event) {
 		try {
-			MainUIController.c=-1;
-			MainUIController.cont=0;
+			MainUIController.c = -1;
+			MainUIController.cont = 0;
+			MainUIController.items.clear();
+			MainUIController.items.addAll("- Sector A:", "A1", "A2", "A3", "A4", "A5", "A6", "- Sector B:", "B1", "B2",
+					"B3", "- Sector C:", "C1", "C2", "- Sector D:", "D1", "D2", "D3", "D4", "- Sector B-D:", "B-D1");
+
 			for (int i = 0; i < MainUIController.myArray.length; i++) {
-				MainUIController.myArray[i]=null;
+				MainUIController.myArray[i] = null;
 			}
 			((Node) event.getSource()).getScene().getWindow().hide();
 			// se carga el root del archivo fmxl
@@ -119,20 +120,24 @@ public class FinalScreen implements Initializable {
 			// TODO: handle exception
 		}
 	}
-	
+
 	public void fNuevaPartida(ActionEvent event) {
 
 		try {
-			MainUIController.c=-1;
-			MainUIController.cont=0;
+			MainUIController.c = -1;
+			MainUIController.cont = 0;
+			MainUIController.items.clear();
+			MainUIController.items.addAll("- Sector A:", "A1", "A2", "A3", "A4", "A6", "- Sector B:", "B1", "B2", "B3",
+					"- Sector C:", "C1", "C2", "- Sector D:", "D1", "D2", "D3", "D4", "- Sector B-D:", "B-D1");
+
 			for (int i = 0; i < MainUIController.myArray.length; i++) {
-				MainUIController.myArray[i]=null;
+				MainUIController.myArray[i] = null;
 			}
 			// create a java mysql database connection
 			String myDriver = "org.gjt.mm.mysql.Driver";
 			String myUrl = "jdbc:mysql://localhost/rpg";
 			Class.forName(myDriver);
-			Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
+			Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
 
 			// create the java mysql update preparedstatement
 			String query = "update escuadron set vitalidadEscuadron = ?";

@@ -19,6 +19,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
@@ -53,6 +54,10 @@ public class MainUI implements Initializable {
 	private MenuItem mOpciones;
 	@FXML
 	private MenuItem mSalir;
+
+	// private ListView<String> list = new ListView<String>();
+	@FXML
+	private ListView<String> list;
 
 	String txt = "";
 	static int equipo = 0;
@@ -93,11 +98,13 @@ public class MainUI implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		try {
+			list.setItems(MainUIController.items);
+
 			lbl.setText("");
 			String myDriver = "org.gjt.mm.mysql.Driver";
 			String myUrl = "jdbc:mysql://localhost/rpg";
 			Class.forName(myDriver);
-			Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
+			Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
 			String query = "SELECT * FROM escuadron";
 			conn.createStatement();
 			Statement st = (Statement) conn.createStatement();
@@ -236,7 +243,7 @@ public class MainUI implements Initializable {
 				////////////////////////////////////////////////////////////////////////////
 
 				if (MainUIController.palabra.contains(String.valueOf(equipo))) {
-					
+
 					MainUIController.c--;
 					lbl.setText("Escribe otro escuadrón.");
 				} else {
@@ -249,6 +256,9 @@ public class MainUI implements Initializable {
 						// }
 					} else {
 						// MainUIController.c++;
+						if (list.getItems().contains(sector)) {
+							list.getItems().remove(sector);
+						}
 						MainUIController.myArray[MainUIController.c] = sector;
 
 						if (sector.equals("C1") || (sector.equals("A3") || (sector.equals("B1")
@@ -288,7 +298,7 @@ public class MainUI implements Initializable {
 			// TODO: handle exception
 		}
 	}
-	
+
 	public void mOption(ActionEvent event) {
 		try {
 			((Node) event.getSource()).getScene().getWindow().hide();
@@ -299,13 +309,12 @@ public class MainUI implements Initializable {
 			stage.setScene(new Scene(root));
 			stage.setResizable(false);
 			stage.show();
-			
-			
+
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
 	}
-	
+
 	public void salir(ActionEvent event) {
 		System.exit(0);
 	}
