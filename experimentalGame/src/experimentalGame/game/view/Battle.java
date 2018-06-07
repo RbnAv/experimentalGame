@@ -102,6 +102,8 @@ public class Battle implements Initializable {
 	private String sonido2;
 	private String sonido3;
 	private String sonido4;
+	
+	int numTirada=0;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -161,6 +163,7 @@ public class Battle implements Initializable {
 				|| vitalityLabel2.getText().toString() != String.valueOf(0)) {
 			tirada();
 			atacar1();
+			tirada();
 			atacar2();
 
 		} else {
@@ -189,6 +192,7 @@ public class Battle implements Initializable {
 				|| vitalityLabel2.getText().toString() != String.valueOf(0)) {
 			tirada();
 			atacar3();
+			tirada();
 			atacar4();
 
 		} else {
@@ -234,6 +238,7 @@ public class Battle implements Initializable {
 		mediaPlayer.play();
 		tirada();
 		granadamon();
+		tirada();
 		ultragranadamon();
 		
 
@@ -246,7 +251,7 @@ public class Battle implements Initializable {
 	 * @return tirada
 	 */
 	private int tirada() {
-		int numTirada = (int) (Math.random() * 22 + 1);
+		numTirada = (int) (Math.random() * 22 + 1);
 		tirada = numTirada;
 		return tirada;
 	}
@@ -268,6 +273,9 @@ public class Battle implements Initializable {
 		vitalidadEnemigo = Integer.parseInt(vitalityLabel2.getText());
 		vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
 		resultado1 = vitalidadEnemigo - ((dañoUnidad - defensaEnemigo) + tirada);
+		if(resultado1<=0) {
+			resultado1=0;
+		}
 		consola.appendText(
 				String.valueOf("¡Disparad disparad! ¡Pam pam pam!\n- El escuadrón usó el fusil de silicona, ha hecho "
 						+ ((dañoUnidad - defensaEnemigo) + tirada) + " puntos de daño.\n"
@@ -354,6 +362,9 @@ public class Battle implements Initializable {
 		vitalidadEnemigo = Integer.parseInt(vitalityLabel2.getText());
 		vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
 		resultado2 = vitalidadUnidad - ((dañoEnemigo - defensaUnidad) + tirada);
+		if(resultado2<=0) {
+			resultado2=0;
+		}
 		consola.appendText(String.valueOf("¡Grrrrraaaaahhhh!\n- El enemigo lanzó ácido por la boca y ha hecho "
 				+ ((dañoEnemigo - defensaUnidad) + tirada) + " puntos de daño.\n" + "   Ha dejado al escuadrón con "
 				+ resultado2 + " puntos de vida."
@@ -391,6 +402,9 @@ public class Battle implements Initializable {
 		vitalidadEnemigo = Integer.parseInt(vitalityLabel2.getText());
 		vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
 		resultado1 = vitalidadEnemigo - ((dañoUnidad - defensaEnemigo) + tirada + 10);
+		if(resultado1<=0) {
+			resultado1=0;
+		}
 		vitalityLabel2.setText(String.valueOf(resultado1));
 		consola.appendText(String.valueOf(
 				"¡Utilizad el fusil de asalto! ¡Bam bam bam!\n- El escadrón disparó contra el enemigo y ha hecho "
@@ -427,6 +441,9 @@ public class Battle implements Initializable {
 		vitalidadEnemigo = Integer.parseInt(vitalityLabel2.getText());
 		vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
 		resultado2 = vitalidadUnidad - ((dañoEnemigo - defensaUnidad) + tirada + 5);
+		if(resultado2<=0) {
+			resultado2=0;
+		}
 		consola.appendText(String.valueOf("¡Grrrrraaaaahhhh!\n- El enemigo lanzó ácido por la boca y ha hecho "
 				+ ((dañoEnemigo - defensaUnidad) + tirada + 5) + " puntos de daño.\n" + "   Ha dejado al escuadrón con "
 				+ resultado2 + " puntos de vida."
@@ -486,6 +503,9 @@ public class Battle implements Initializable {
 		vitalidadEnemigo = Integer.parseInt(vitalityLabel2.getText());
 		vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
 		resultado1 = vitalidadEnemigo - ((dañoUnidad - defensaEnemigo) + tirada + 30);
+		if(resultado1<=0) {
+			resultado1=0;
+		}
 		vitalityLabel2.setText(String.valueOf(resultado1));
 		consola.appendText(String.valueOf("¡Granada va! ¡Buuummm!\n- El escuadrón lanzó una granada y ha hecho "
 				+ ((dañoUnidad - defensaEnemigo) + tirada + 30) + " puntos de daño.\n" + "   Ha dejado al enemigo con "
@@ -510,6 +530,9 @@ public class Battle implements Initializable {
 		vitalidadEnemigo = Integer.parseInt(vitalityLabel2.getText());
 		vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
 		resultado2 = vitalidadUnidad - ((dañoEnemigo - defensaUnidad) + tirada + 25);
+		if(resultado2<=0) {
+			resultado2=0;
+		}
 		vitalityLabel.setText(String.valueOf(resultado2));
 		consola.appendText(String.valueOf("- La explosión es tan fuerte que hace daño al escuadrón.\n" + "   Ha hecho "
 				+ ((dañoEnemigo - defensaUnidad) + tirada + 25) + " puntos de daño.\n"

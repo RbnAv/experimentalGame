@@ -37,7 +37,7 @@
          <image>
             <Image url="/img/titulo.jpg" />
          </image></ImageView>
-      <Label layoutX="241.0" layoutY="638.0" prefHeight="17.0" prefWidth="76.0" text="Version 2.01.1" textFill="#615f5f">
+      <Label layoutX="241.0" layoutY="645.0" prefHeight="17.0" prefWidth="76.0" text="Version 2.01.1" textFill="#615f5f">
          <font>
             <Font size="12.0" />
          </font>
@@ -57,32 +57,27 @@
             <Image url="/img/violencia.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="62.0" fitWidth="52.0" layoutX="178.0" layoutY="684.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="/img/terror.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="53.0" fitWidth="52.0" layoutX="179.0" layoutY="621.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="53.0" fitWidth="52.0" layoutX="179.0" layoutY="684.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="/img/jugador.PNG" />
          </image>
       </ImageView>
-      <Label layoutX="241.0" layoutY="655.0" prefHeight="24.0" prefWidth="723.0" text="SOLO PARA USO DOMÉSTICO: Queda prohibido cualquier acceso, uso o transferencia no autorizada al producto. QUEDA PROHIBIDA LA" textFill="#615f5f">
+      <Label layoutX="241.0" layoutY="662.0" prefHeight="24.0" prefWidth="723.0" text="SOLO PARA USO DOMÉSTICO: Queda prohibido cualquier acceso, uso o transferencia no autorizada al producto. QUEDA PROHIBIDA LA" textFill="#615f5f">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <Label layoutX="241.0" layoutY="676.0" prefHeight="24.0" prefWidth="723.0" text="REVENTA O ALQUILER A MENOS QUE ESTÉ EXPRESAMENTE AUTORIZADO POR SUS CREADORES. No está disponible en todos los países" textFill="#615f5f">
+      <Label layoutX="241.0" layoutY="683.0" prefHeight="24.0" prefWidth="723.0" text="REVENTA O ALQUILER A MENOS QUE ESTÉ EXPRESAMENTE AUTORIZADO POR SUS CREADORES. No está disponible en todos los países" textFill="#615f5f">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <Label layoutX="241.0" layoutY="695.0" prefHeight="24.0" prefWidth="723.0" text="e idiomas. No es necesario disponer de servicio a internet. Los usuarios deben tener 16 años o más y los usuarios menosres de 18 años" textFill="#615f5f">
+      <Label layoutX="241.0" layoutY="702.0" prefHeight="24.0" prefWidth="723.0" text="e idiomas. No es necesario disponer de servicio a internet. Los usuarios deben tener 16 años o más y los usuarios menosres de 18 años" textFill="#615f5f">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <Label layoutX="241.0" layoutY="713.0" prefHeight="24.0" prefWidth="723.0" text="necesitan permiso paterno. Made in Spain. All rights reserved." textFill="#615f5f">
+      <Label layoutX="241.0" layoutY="720.0" prefHeight="24.0" prefWidth="723.0" text="necesitan permiso paterno. Creado en España." textFill="#615f5f">
          <font>
             <Font size="12.0" />
          </font>
