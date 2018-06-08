@@ -58,7 +58,7 @@ public class FinalScreen implements Initializable {
 		String myDriver = "org.gjt.mm.mysql.Driver";
 		String myUrl = "jdbc:mysql://localhost/rpg";
 		Class.forName(myDriver);
-		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
+		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
 		String query = "SELECT * FROM evento";
 		conn.createStatement();
 		Statement st = (Statement) conn.createStatement();
@@ -137,7 +137,7 @@ public class FinalScreen implements Initializable {
 			String myDriver = "org.gjt.mm.mysql.Driver";
 			String myUrl = "jdbc:mysql://localhost/rpg";
 			Class.forName(myDriver);
-			Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
+			Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
 
 			// create the java mysql update preparedstatement
 			String query = "update escuadron set vitalidadEscuadron = ?";
