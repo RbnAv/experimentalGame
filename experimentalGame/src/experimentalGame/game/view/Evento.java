@@ -35,6 +35,8 @@ public class Evento implements Initializable {
 	@FXML
 	private Label lbl2;
 	@FXML
+	private Label lblSector;
+	@FXML
 	private Button btn1 = new Button("");
 	@FXML
 	private Button btn2 = new Button("");
@@ -177,6 +179,7 @@ public class Evento implements Initializable {
 				t1 = texto1;
 				t2 = texto2;
 				t3 = texto3;
+				lblSector.setText("Sector "+nombreEvento);
 			}
 		}
 		st.close();

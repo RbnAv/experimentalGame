@@ -62,7 +62,10 @@ public class Battle implements Initializable {
 	private Button granada;
 	@FXML
 	private Button fin;
-
+	@FXML
+	private Label lblEsc;
+	@FXML
+	private Label lblSectorN;
 	@FXML
 	private Label lblBotiquin;
 
@@ -108,6 +111,7 @@ public class Battle implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		try {
+			lblSectorN.setText("Sector "+sector);
 			fin.setDisable(true);
 			random = (int) (Math.random() * 3 + 1);
 			num = random;
@@ -602,7 +606,7 @@ public class Battle implements Initializable {
 		ResultSet rs = st.executeQuery(query);
 		while (rs.next()) {
 			int idEscuadron = rs.getInt("idEscuadron");
-			// String nombre = rs.getString("nombreEscuadron");
+			String nombre = rs.getString("nombreEscuadron");
 			int constitucion = rs.getInt("constitucionEscuadron");
 			int vitalidad = rs.getInt("vitalidadEscuadron");
 			int fuerza = rs.getInt("fuerzaEscuadron");
@@ -613,6 +617,7 @@ public class Battle implements Initializable {
 				fearLabel.setText(String.valueOf(fuerza));
 				strengthLabel.setText(String.valueOf(constitucion));
 				v = Integer.parseInt(vitalityLabel.getText());
+				lblEsc.setText(nombre);
 			}
 		}
 		st.close();

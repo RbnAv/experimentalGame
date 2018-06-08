@@ -19,6 +19,16 @@
                   <Image url="/img/batalla.png" />
                </image>
             </ImageView>
+            <Label fx:id="lblEsc" alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="103.0" prefHeight="35.0" prefWidth="139.0" text="Escuadrón A" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblSectorN" alignment="CENTER" contentDisplay="CENTER" layoutX="855.0" layoutY="103.0" prefHeight="35.0" prefWidth="132.0" text="Sector B-D1" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </top>

@@ -51,6 +51,11 @@
                <image>
                   <Image url="@../../../img/3.png" />
                </image></ImageView>
+            <Label fx:id="lblSector" alignment="CENTER" contentDisplay="CENTER" layoutX="234.0" layoutY="14.0" prefHeight="35.0" prefWidth="132.0" text="Sector B-D1" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
          </children>
          <opaqueInsets>
             <Insets />
