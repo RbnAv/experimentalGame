@@ -1,4 +1,4 @@
-package experimentalGame.game.view;
+package experimentalGame.game;
 
 import java.net.URL;
 import java.sql.DriverManager;
@@ -10,7 +10,6 @@ import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 import com.mysql.jdbc.Statement;
 
-import experimentalGame.game.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -56,9 +55,9 @@ public class FinalScreen implements Initializable {
 
 	private void evento() throws SQLException, ClassNotFoundException {
 		String myDriver = "org.gjt.mm.mysql.Driver";
-		String myUrl = "jdbc:mysql://localhost/rpg";
+		String myUrl = "jdbc:mysql://localhost/rpg?useSSL=false";
 		Class.forName(myDriver);
-		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
+		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
 		String query = "SELECT * FROM evento";
 		conn.createStatement();
 		Statement st = (Statement) conn.createStatement();
@@ -102,7 +101,7 @@ public class FinalScreen implements Initializable {
 			((Node) event.getSource()).getScene().getWindow().hide();
 			// se carga el root del archivo fmxl
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Main.class.getResource("view/rootStage.fxml"));
+			loader.setLocation(Main.class.getResource("rootStage.fxml"));
 			Stage primaryStage = new Stage();
 			BorderPane rootStage = (BorderPane) loader.load();
 			// Muestra la escena que contiene el diseño de la raíz.
@@ -112,7 +111,7 @@ public class FinalScreen implements Initializable {
 			primaryStage.show();
 
 			FXMLLoader fxmlLoader = new FXMLLoader();
-			fxmlLoader.setLocation(Main.class.getResource("view/MainScreen.fxml"));
+			fxmlLoader.setLocation(Main.class.getResource("MainScreen.fxml"));
 			AnchorPane mainScreen = (AnchorPane) fxmlLoader.load();
 			// establece el menú principal en el centro del stage (rootStage)
 			rootStage.setCenter(mainScreen);
@@ -135,9 +134,9 @@ public class FinalScreen implements Initializable {
 			}
 			// create a java mysql database connection
 			String myDriver = "org.gjt.mm.mysql.Driver";
-			String myUrl = "jdbc:mysql://localhost/rpg";
+			String myUrl = "jdbc:mysql://localhost/rpg?useSSL=false";
 			Class.forName(myDriver);
-			Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
+			Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
 
 			// create the java mysql update preparedstatement
 			String query = "update escuadron set vitalidadEscuadron = ?";

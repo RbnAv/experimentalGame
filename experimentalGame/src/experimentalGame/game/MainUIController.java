@@ -1,4 +1,4 @@
-package experimentalGame.game.view;
+package experimentalGame.game;
 
 import java.net.URL;
 import java.sql.DriverManager;
@@ -9,7 +9,6 @@ import java.util.ResourceBundle;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
-import experimentalGame.game.Main;
 import experimentalGame.game.model.Squad;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -84,9 +83,9 @@ public class MainUIController implements Initializable {
 		try {
 			// create a java mysql database connection
 			String myDriver = "org.gjt.mm.mysql.Driver";
-			String myUrl = "jdbc:mysql://localhost/rpg";
+			String myUrl = "jdbc:mysql://localhost/rpg?useSSL=false";
 			Class.forName(myDriver);
-			Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
+			Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
 
 			// create the java mysql update preparedstatement
 			String query = "update escuadron set vitalidadEscuadron = ?";
@@ -126,7 +125,7 @@ public class MainUIController implements Initializable {
 
 			// se carga el root del archivo fmxl
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Main.class.getResource("view/rootStage.fxml"));
+			loader.setLocation(Main.class.getResource("rootStage.fxml"));
 			Stage primaryStage = new Stage();
 			BorderPane rootStage = (BorderPane) loader.load();
 			// Muestra la escena que contiene el diseño de la raíz.
@@ -136,7 +135,7 @@ public class MainUIController implements Initializable {
 			primaryStage.show();
 
 			FXMLLoader fxmlLoader = new FXMLLoader();
-			fxmlLoader.setLocation(Main.class.getResource("view/MainScreen.fxml"));
+			fxmlLoader.setLocation(Main.class.getResource("MainScreen.fxml"));
 			AnchorPane mainScreen = (AnchorPane) fxmlLoader.load();
 			// establece el menú principal en el centro del stage (rootStage)
 			rootStage.setCenter(mainScreen);
@@ -333,7 +332,7 @@ public class MainUIController implements Initializable {
 		this.main = main;
 
 		// Add observable list data to the table
-		squadTable.setItems(main.getSquadData());
+		// squadTable.setItems(main.getSquadData());
 	}
 
 	/**

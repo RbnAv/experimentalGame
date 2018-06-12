@@ -1,4 +1,4 @@
-package experimentalGame.game.view;
+package experimentalGame.game;
 
 import java.net.URL;
 import java.sql.DriverManager;
@@ -102,9 +102,9 @@ public class MainUI implements Initializable {
 
 			lbl.setText("");
 			String myDriver = "org.gjt.mm.mysql.Driver";
-			String myUrl = "jdbc:mysql://localhost/rpg";
+			String myUrl = "jdbc:mysql://localhost/rpg?useSSL=false";
 			Class.forName(myDriver);
-			Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
+			Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
 			String query = "SELECT * FROM escuadron";
 			conn.createStatement();
 			Statement st = (Statement) conn.createStatement();

@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane prefHeight="768.0" prefWidth="1024.0" style="-fx-background-size: 1200 350;" styleClass="interfaz" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experimentalGame.game.view.Battle">
+<BorderPane prefHeight="768.0" prefWidth="1024.0" style="-fx-background-size: 1200 350;" styleClass="interfaz" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experimentalGame.game.Battle">
    <top>
       <AnchorPane prefHeight="0.0" prefWidth="1024.0" styleClass="interfaz" stylesheets="@style.css" BorderPane.alignment="CENTER">
          <children>

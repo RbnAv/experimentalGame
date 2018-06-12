@@ -30,7 +30,7 @@ public class Sounds {
 	public Sounds(String explosion, String ataque1, String ataque2, String curacion) {
 		this.explosion = explosion;
 		this.sonidoExplosionMedia = new Media(new File(explosion).toURI().toString());
-		this.sonidoExplosionMPlayer = new MediaPlayer(sonidoExplosionMedia);
+		Sounds.sonidoExplosionMPlayer = new MediaPlayer(sonidoExplosionMedia);
 		
 		this.ataque1 = ataque1;
 		this.sonidoAtaque1Media = new Media(new File(ataque1).toURI().toString());
@@ -98,7 +98,7 @@ public class Sounds {
 	}
 
 	public void setSonidoExplosionMPlayer(MediaPlayer sonidoExplosionMPlayer) {
-		this.sonidoExplosionMPlayer = sonidoExplosionMPlayer;
+		Sounds.sonidoExplosionMPlayer = sonidoExplosionMPlayer;
 	}
 
 	public String getAtaque1() {

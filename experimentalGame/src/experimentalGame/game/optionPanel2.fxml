@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="540.0" prefWidth="457.0" styleClass="interfaz" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experimentalGame.game.view.MainUIController">
+<AnchorPane prefHeight="540.0" prefWidth="457.0" styleClass="interfaz" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experimentalGame.game.MainUIController">
    <children>
       <VBox layoutX="455.0" layoutY="404.0" spacing="20.0" />
       <Label layoutX="156.0" layoutY="58.0" prefHeight="45.0" prefWidth="146.0" text="OPCIONES" textFill="WHITE">
@@ -16,22 +16,22 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Button layoutX="186.0" layoutY="429.0" mnemonicParsing="false" onAction="#principal" prefHeight="25.0" prefWidth="87.0" stylesheets="@style.css" text="Aceptar" textFill="WHITE">
+      <Button layoutX="186.0" layoutY="429.0" mnemonicParsing="false" onAction="#option2" prefHeight="25.0" prefWidth="87.0" stylesheets="@style.css" text="Aceptar" textFill="WHITE">
          <styleClass>
             <String fx:value="color" />
             <String fx:value="border" />
          </styleClass></Button>
-      <Button layoutX="185.0" layoutY="301.0" mnemonicParsing="false" onAction="#creditos" prefHeight="25.0" prefWidth="87.0" stylesheets="@style.css" text="Créditos" textFill="WHITE">
+      <Button layoutX="185.0" layoutY="301.0" mnemonicParsing="false" onAction="#mCreditos" prefHeight="25.0" prefWidth="87.0" stylesheets="@style.css" text="Créditos" textFill="WHITE">
          <styleClass>
             <String fx:value="color" />
             <String fx:value="border" />
          </styleClass></Button>
-      <Button layoutX="186.0" layoutY="212.0" mnemonicParsing="false" onAction="#ayuda" prefHeight="25.0" prefWidth="87.0" stylesheets="@style.css" text="Ayuda" textFill="WHITE">
+      <Button layoutX="186.0" layoutY="212.0" mnemonicParsing="false" onAction="#mAyuda" prefHeight="25.0" prefWidth="87.0" stylesheets="@style.css" text="Ayuda" textFill="WHITE">
          <styleClass>
             <String fx:value="color" />
             <String fx:value="border" />
          </styleClass></Button>
-      <Button layoutX="185.0" layoutY="256.0" mnemonicParsing="false" onAction="#controles" prefHeight="25.0" prefWidth="87.0" stylesheets="@style.css" text="Controles" textFill="WHITE">
+      <Button layoutX="185.0" layoutY="256.0" mnemonicParsing="false" onAction="#mControles" prefHeight="25.0" prefWidth="87.0" stylesheets="@style.css" text="Controles" textFill="WHITE">
          <styleClass>
             <String fx:value="color" />
             <String fx:value="border" />

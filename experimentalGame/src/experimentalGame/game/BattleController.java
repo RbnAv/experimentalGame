@@ -1,4 +1,4 @@
-package experimentalGame.game.view;
+package experimentalGame.game;
 
 import java.io.IOException;
 

@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<SplitPane orientation="VERTICAL" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-size: 1300 900;" styleClass="interfaz" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experimentalGame.game.view.Narrative">
+<SplitPane orientation="VERTICAL" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-size: 1300 900;" styleClass="interfaz" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experimentalGame.game.Narrative">
   <items>
     <AnchorPane prefHeight="418.0" prefWidth="1278.0">
          <children>

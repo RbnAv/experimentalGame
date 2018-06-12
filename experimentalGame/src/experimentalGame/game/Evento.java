@@ -1,4 +1,4 @@
-package experimentalGame.game.view;
+package experimentalGame.game;
 
 import java.net.URL;
 import java.sql.DriverManager;
@@ -102,9 +102,9 @@ public class Evento implements Initializable {
 
 	private void escuadron() throws ClassNotFoundException, SQLException {
 		String myDriver = "org.gjt.mm.mysql.Driver";
-		String myUrl = "jdbc:mysql://localhost/rpg";
+		String myUrl = "jdbc:mysql://localhost/rpg?useSSL=false";
 		Class.forName(myDriver);
-		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
+		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
 		String query = "SELECT * FROM escuadron";
 		conn.createStatement();
 		Statement st = (Statement) conn.createStatement();
@@ -124,9 +124,9 @@ public class Evento implements Initializable {
 
 	private void evento() throws ClassNotFoundException, SQLException {
 		String myDriver = "org.gjt.mm.mysql.Driver";
-		String myUrl = "jdbc:mysql://localhost/rpg";
+		String myUrl = "jdbc:mysql://localhost/rpg?useSSL=false";
 		Class.forName(myDriver);
-		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
+		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
 		String query = "SELECT * FROM evento";
 		conn.createStatement();
 		Statement st = (Statement) conn.createStatement();
@@ -187,9 +187,9 @@ public class Evento implements Initializable {
 
 	public void btn1(ActionEvent event) throws ClassNotFoundException, SQLException {
 		String myDriver = "org.gjt.mm.mysql.Driver";
-		String myUrl = "jdbc:mysql://localhost/rpg";
+		String myUrl = "jdbc:mysql://localhost/rpg?useSSL=false";
 		Class.forName(myDriver);
-		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
+		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
 		String query = "SELECT * FROM evento";
 		conn.createStatement();
 		Statement st = (Statement) conn.createStatement();
@@ -243,9 +243,9 @@ public class Evento implements Initializable {
 
 		// create a java mysql database connection
 		String myDriver = "org.gjt.mm.mysql.Driver";
-		String myUrl = "jdbc:mysql://localhost/rpg";
+		String myUrl = "jdbc:mysql://localhost/rpg?useSSL=false";
 		Class.forName(myDriver);
-		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
+		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
 
 		// create the java mysql update preparedstatement
 		String query = "update escuadron set vitalidadEscuadron = ? where nombreEscuadron = ?";
@@ -262,9 +262,9 @@ public class Evento implements Initializable {
 
 	public void btn2(ActionEvent event) throws ClassNotFoundException, SQLException {
 		String myDriver = "org.gjt.mm.mysql.Driver";
-		String myUrl = "jdbc:mysql://localhost/rpg";
+		String myUrl = "jdbc:mysql://localhost/rpg?useSSL=false";
 		Class.forName(myDriver);
-		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
+		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
 		String query = "SELECT * FROM evento";
 		conn.createStatement();
 		Statement st = (Statement) conn.createStatement();
@@ -313,9 +313,9 @@ public class Evento implements Initializable {
 
 	public void btn3(ActionEvent event) throws ClassNotFoundException, SQLException {
 		String myDriver = "org.gjt.mm.mysql.Driver";
-		String myUrl = "jdbc:mysql://localhost/rpg";
+		String myUrl = "jdbc:mysql://localhost/rpg?useSSL=false";
 		Class.forName(myDriver);
-		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
+		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
 		String query = "SELECT * FROM evento";
 		conn.createStatement();
 		Statement st = (Statement) conn.createStatement();
@@ -359,9 +359,9 @@ public class Evento implements Initializable {
 		try {
 			MainUIController.cont++;
 			String myDriver = "org.gjt.mm.mysql.Driver";
-			String myUrl = "jdbc:mysql://localhost/rpg";
+			String myUrl = "jdbc:mysql://localhost/rpg?useSSL=false";
 			Class.forName(myDriver);
-			Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
+			Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
 			String query = "SELECT * FROM escuadron";
 			conn.createStatement();
 			Statement st = (Statement) conn.createStatement();

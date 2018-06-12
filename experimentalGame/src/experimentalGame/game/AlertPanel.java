@@ -1,4 +1,4 @@
-package experimentalGame.game.view;
+package experimentalGame.game;
 
 import java.io.IOException;
 import java.net.URL;
@@ -43,9 +43,9 @@ public class AlertPanel implements Initializable {
 
 		try {
 			String myDriver = "org.gjt.mm.mysql.Driver";
-			String myUrl = "jdbc:mysql://localhost/rpg";
+			String myUrl = "jdbc:mysql://localhost/rpg?useSSL=false";
 			Class.forName(myDriver);
-			Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
+			Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
 			String query = "SELECT * FROM escuadron";
 			conn.createStatement();
 			Statement st = (Statement) conn.createStatement();

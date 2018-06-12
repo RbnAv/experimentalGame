@@ -1,14 +1,13 @@
 package experimentalGame.game;
 
-import java.io.File;
 import java.io.IOException;
 
 import experimentalGame.game.model.Squad;
-import experimentalGame.game.view.MainUIController;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -21,10 +20,11 @@ public class Main extends Application {
 	private Stage primaryStage;
 	private BorderPane rootStage;
 
-	String musicFile = "./src/Sounds/menu.mp3";
-
-	Media sound = new Media(new File(musicFile).toURI().toString());
-	MediaPlayer mediaPlayer = new MediaPlayer(sound);
+	String musicFile = "Sounds/menu.mp3";
+	Media sound;
+	MediaPlayer mediaPlayer;
+	
+	static String documentBase;
 
 	/**
 	 * The data as an observable list of values.
@@ -54,16 +54,24 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("HORIZON");
-		initRootStage();
-		showMainScreen();
-		mediaPlayer.play();
+		// initRootStage();
+		// showMainScreen();
+		try {
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MainScreen.fxml"));
+			Parent root = (Parent) fxmlLoader.load();
+			Stage stage = new Stage();
+			stage.setScene(new Scene(root));
+			stage.setResizable(false);
+			stage.show();
+
+			documentBase = getHostServices().getDocumentBase();
+			sound = new Media(documentBase + musicFile);
+			mediaPlayer = new MediaPlayer(sound);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		// showMainUI();
-		// String musicFile = "./src/Sounds/explosion-1.wav";
-
-		// Media sound = new Media(new File(musicFile).toURI().toString());
-		// MediaPlayer mediaPlayer = new MediaPlayer(sound);
-		// mediaPlayer.play();
-
+		mediaPlayer.play();
 	}
 
 	public static void main(String[] args) {
@@ -79,7 +87,7 @@ public class Main extends Application {
 		try {
 			// se carga el root del archivo fmxl
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Main.class.getResource("view/rootStage.fxml"));
+			loader.setLocation(Main.class.getResource("rootStage.fxml"));
 			rootStage = (BorderPane) loader.load();
 
 			// Muestra la escena que contiene el diseño de la raíz.
@@ -89,6 +97,7 @@ public class Main extends Application {
 			primaryStage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
+			System.out.println("Error initRootStage");
 		}
 	}
 
@@ -99,20 +108,20 @@ public class Main extends Application {
 	public void showMainScreen() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Main.class.getResource("view/MainScreen.fxml"));
+			loader.setLocation(Main.class.getResource("MainScreen.fxml"));
 			AnchorPane mainScreen = (AnchorPane) loader.load();
 
 			// establece el menú principal en el centro del stage (rootStage)
 
 			rootStage.setCenter(mainScreen);
 
-			// musicFile = "./src/Sounds/intro.mp3";
-			//
-			// sound = new Media(new File(musicFile).toURI().toString());
-			// mediaPlayer = new MediaPlayer(sound);
+			String documentBase = getHostServices().getDocumentBase();
+			sound = new Media(documentBase + musicFile);
+			mediaPlayer = new MediaPlayer(sound);
 
 		} catch (IOException e) {
 			e.printStackTrace();
+			System.out.println("Error showMainScreen");
 		}
 	}
 
@@ -120,7 +129,7 @@ public class Main extends Application {
 		try {
 			// Load person overview.
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Main.class.getResource("view/MainUI.fxml"));
+			loader.setLocation(Main.class.getResource("MainUI.fxml"));
 			AnchorPane personOverview = (AnchorPane) loader.load();
 
 			// Set person overview into the center of root layout.

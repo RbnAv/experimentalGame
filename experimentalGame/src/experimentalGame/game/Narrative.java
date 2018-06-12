@@ -1,4 +1,4 @@
-package experimentalGame.game.view;
+package experimentalGame.game;
 
 import java.net.URL;
 import java.util.ResourceBundle;

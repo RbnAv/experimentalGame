@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="404.0" prefWidth="643.0" styleClass="interfaz" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experimentalGame.game.view.AlertPanel">
+<AnchorPane prefHeight="404.0" prefWidth="643.0" styleClass="interfaz" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="experimentalGame.game.AlertPanel">
    <children>
       <VBox layoutX="455.0" layoutY="404.0" spacing="20.0" />
       <Button fx:id="btnContinuar" alignment="CENTER" layoutX="265.0" layoutY="328.0" mnemonicParsing="false" onAction="#continuar" prefHeight="37.0" prefWidth="117.0" stylesheets="@style.css" text="Continuar" textFill="WHITE">

@@ -1,6 +1,5 @@
-package experimentalGame.game.view;
+package experimentalGame.game;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.DriverManager;
@@ -74,7 +73,7 @@ public class Battle implements Initializable {
 
 	ActionEvent event;
 	int random = 0;
-    int num = 0;
+	int num = 0;
 
 	boolean turno = false; // si es true comienza el jugador, si no, el enemigo
 	private int resultado1 = 0;
@@ -101,17 +100,16 @@ public class Battle implements Initializable {
 	String equi;
 	String sector = MainUI.sector;
 
-	private String sonido1;
-	private String sonido2;
-	private String sonido3;
-	private String sonido4;
+	int numTirada = 0;
 	
-	int numTirada=0;
-
+	String musicFile;
+	Media sound;
+	MediaPlayer mediaPlayer;
+	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		try {
-			lblSectorN.setText("Sector "+sector);
+			lblSectorN.setText("Sector " + sector);
 			fin.setDisable(true);
 			random = (int) (Math.random() * 3 + 1);
 			num = random;
@@ -156,11 +154,11 @@ public class Battle implements Initializable {
 		// Sounds sonido = new Sounds();
 		// sonido.ataque1Play();
 
-		// Música 
-		String musicFile = "./src/Sounds/machinegun.wav"; 
+		// Música
+		musicFile = "Sounds/machinegun.wav";
 
-		Media sound = new Media(new File(musicFile).toURI().toString());
-		MediaPlayer mediaPlayer = new MediaPlayer(sound);
+		sound = new Media(Main.documentBase + musicFile);
+		mediaPlayer = new MediaPlayer(sound);
 		mediaPlayer.play();
 
 		if (vitalityLabel.getText().toString() != String.valueOf(0)
@@ -185,13 +183,13 @@ public class Battle implements Initializable {
 	 * @param event
 	 */
 	public void btnAtaque2(ActionEvent event) {
-		
-		String musicFile = "./src/Sounds/laser.wav"; 
 
-		Media sound = new Media(new File(musicFile).toURI().toString());
-		MediaPlayer mediaPlayer = new MediaPlayer(sound);
+		musicFile = "./src/Sounds/laser.wav";
+
+		sound = new Media(Main.documentBase + musicFile);
+		mediaPlayer = new MediaPlayer(sound);
 		mediaPlayer.play();
-		
+
 		if (vitalityLabel.getText().toString() != String.valueOf(0)
 				|| vitalityLabel2.getText().toString() != String.valueOf(0)) {
 			tirada();
@@ -211,13 +209,13 @@ public class Battle implements Initializable {
 	 * @param event
 	 */
 	public void btnBotiquin(ActionEvent event) {
-		
-		String musicFile = "./src/Sounds/medkit.wav"; 
 
-		Media sound = new Media(new File(musicFile).toURI().toString());
-		MediaPlayer mediaPlayer = new MediaPlayer(sound);
+		musicFile = "./src/Sounds/medkit.wav";
+
+		sound = new Media(Main.documentBase + musicFile);
+		mediaPlayer = new MediaPlayer(sound);
 		mediaPlayer.play();
-		
+
 		if (contadorBot == 0) {
 			botiquin.setDisable(true);
 		} else {
@@ -234,17 +232,16 @@ public class Battle implements Initializable {
 	 * @param event
 	 */
 	public void btnGranada(ActionEvent event) {
-		
-		String musicFile = "./src/Sounds/granade.mp3"; 
 
-		Media sound = new Media(new File(musicFile).toURI().toString());
-		MediaPlayer mediaPlayer = new MediaPlayer(sound);
+		musicFile = "./src/Sounds/granade.mp3";
+
+		sound = new Media(Main.documentBase + musicFile);
+		mediaPlayer = new MediaPlayer(sound);
 		mediaPlayer.play();
 		tirada();
 		granadamon();
 		tirada();
 		ultragranadamon();
-		
 
 	}
 
@@ -277,8 +274,8 @@ public class Battle implements Initializable {
 		vitalidadEnemigo = Integer.parseInt(vitalityLabel2.getText());
 		vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
 		resultado1 = vitalidadEnemigo - ((dañoUnidad - defensaEnemigo) + tirada);
-		if(resultado1<=0) {
-			resultado1=0;
+		if (resultado1 <= 0) {
+			resultado1 = 0;
 		}
 		consola.appendText(
 				String.valueOf("¡Disparad disparad! ¡Pam pam pam!\n- El escuadrón usó el fusil de silicona, ha hecho "
@@ -323,9 +320,9 @@ public class Battle implements Initializable {
 
 		// create a java mysql database connection
 		String myDriver = "org.gjt.mm.mysql.Driver";
-		String myUrl = "jdbc:mysql://localhost/rpg";
+		String myUrl = "jdbc:mysql://localhost/rpg?useSSL=false";
 		Class.forName(myDriver);
-		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
+		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
 
 		// create the java mysql update preparedstatement
 		String query = "update escuadron set vitalidadEscuadron = ? where nombreEscuadron = ?";
@@ -366,8 +363,8 @@ public class Battle implements Initializable {
 		vitalidadEnemigo = Integer.parseInt(vitalityLabel2.getText());
 		vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
 		resultado2 = vitalidadUnidad - ((dañoEnemigo - defensaUnidad) + tirada);
-		if(resultado2<=0) {
-			resultado2=0;
+		if (resultado2 <= 0) {
+			resultado2 = 0;
 		}
 		consola.appendText(String.valueOf("¡Grrrrraaaaahhhh!\n- El enemigo lanzó ácido por la boca y ha hecho "
 				+ ((dañoEnemigo - defensaUnidad) + tirada) + " puntos de daño.\n" + "   Ha dejado al escuadrón con "
@@ -406,8 +403,8 @@ public class Battle implements Initializable {
 		vitalidadEnemigo = Integer.parseInt(vitalityLabel2.getText());
 		vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
 		resultado1 = vitalidadEnemigo - ((dañoUnidad - defensaEnemigo) + tirada + 10);
-		if(resultado1<=0) {
-			resultado1=0;
+		if (resultado1 <= 0) {
+			resultado1 = 0;
 		}
 		vitalityLabel2.setText(String.valueOf(resultado1));
 		consola.appendText(String.valueOf(
@@ -445,8 +442,8 @@ public class Battle implements Initializable {
 		vitalidadEnemigo = Integer.parseInt(vitalityLabel2.getText());
 		vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
 		resultado2 = vitalidadUnidad - ((dañoEnemigo - defensaUnidad) + tirada + 5);
-		if(resultado2<=0) {
-			resultado2=0;
+		if (resultado2 <= 0) {
+			resultado2 = 0;
 		}
 		consola.appendText(String.valueOf("¡Grrrrraaaaahhhh!\n- El enemigo lanzó ácido por la boca y ha hecho "
 				+ ((dañoEnemigo - defensaUnidad) + tirada + 5) + " puntos de daño.\n" + "   Ha dejado al escuadrón con "
@@ -480,7 +477,7 @@ public class Battle implements Initializable {
 		vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
 		resultado1 = (vitalidadUnidad + 30);
 		vitalityLabel.setText(String.valueOf(resultado1));
-		consola.appendText(String.valueOf("¡Necesitamos curación!\n- El escadrón usó un botiquín y ha sanado " +30
+		consola.appendText(String.valueOf("¡Necesitamos curación!\n- El escadrón usó un botiquín y ha sanado " + 30
 				+ " puntos de salud.\n" + "Ahora el escuadrón tiene " + resultado1 + " puntos de vida."
 				+ "\n\n--------------------------------------------------------------------------------------\n\n"));
 		if (contadorBot == 0) {
@@ -507,8 +504,8 @@ public class Battle implements Initializable {
 		vitalidadEnemigo = Integer.parseInt(vitalityLabel2.getText());
 		vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
 		resultado1 = vitalidadEnemigo - ((dañoUnidad - defensaEnemigo) + tirada + 30);
-		if(resultado1<=0) {
-			resultado1=0;
+		if (resultado1 <= 0) {
+			resultado1 = 0;
 		}
 		vitalityLabel2.setText(String.valueOf(resultado1));
 		consola.appendText(String.valueOf("¡Granada va! ¡Buuummm!\n- El escuadrón lanzó una granada y ha hecho "
@@ -534,8 +531,8 @@ public class Battle implements Initializable {
 		vitalidadEnemigo = Integer.parseInt(vitalityLabel2.getText());
 		vitalidadUnidad = Integer.parseInt(vitalityLabel.getText());
 		resultado2 = vitalidadUnidad - ((dañoEnemigo - defensaUnidad) + tirada + 25);
-		if(resultado2<=0) {
-			resultado2=0;
+		if (resultado2 <= 0) {
+			resultado2 = 0;
 		}
 		vitalityLabel.setText(String.valueOf(resultado2));
 		consola.appendText(String.valueOf("- La explosión es tan fuerte que hace daño al escuadrón.\n" + "   Ha hecho "
@@ -568,38 +565,38 @@ public class Battle implements Initializable {
 	}
 
 	private void enemigo() throws ClassNotFoundException, SQLException {
-		
-        String myDriver = "org.gjt.mm.mysql.Driver";
-        String myUrl = "jdbc:mysql://localhost/rpg";
-        Class.forName(myDriver);
-        Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
-        String query = "SELECT * FROM enemigo";
-        conn.createStatement();
-        Statement st = (Statement) conn.createStatement();
-        ResultSet rs = st.executeQuery(query);
-        while (rs.next()) {
-            int idEnemigo = rs.getInt("idEnemigo");
-            // String nombre = rs.getString("nombreEnemigo");
-            int constitucion = rs.getInt("constitucionEnemigo");
-            int vitalidad = rs.getInt("vitalidadEnemigo");
-            int fuerza = rs.getInt("fuerzaEnemigo");
-            int agilidad = rs.getInt("agilidadEnemigo");
-            if (idEnemigo == num) {
-                vitalityLabel2.setText(String.valueOf(vitalidad));
-                energyLabel2.setText(String.valueOf(agilidad));
-                fearLabel2.setText(String.valueOf(fuerza));
-                strengthLabel2.setText(String.valueOf(constitucion));
-                v2 = Integer.parseInt(vitalityLabel2.getText());
-            }
-        }
-        st.close();
+
+		String myDriver = "org.gjt.mm.mysql.Driver";
+		String myUrl = "jdbc:mysql://localhost/rpg?useSSL=false";
+		Class.forName(myDriver);
+		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
+		String query = "SELECT * FROM enemigo";
+		conn.createStatement();
+		Statement st = (Statement) conn.createStatement();
+		ResultSet rs = st.executeQuery(query);
+		while (rs.next()) {
+			int idEnemigo = rs.getInt("idEnemigo");
+			// String nombre = rs.getString("nombreEnemigo");
+			int constitucion = rs.getInt("constitucionEnemigo");
+			int vitalidad = rs.getInt("vitalidadEnemigo");
+			int fuerza = rs.getInt("fuerzaEnemigo");
+			int agilidad = rs.getInt("agilidadEnemigo");
+			if (idEnemigo == num) {
+				vitalityLabel2.setText(String.valueOf(vitalidad));
+				energyLabel2.setText(String.valueOf(agilidad));
+				fearLabel2.setText(String.valueOf(fuerza));
+				strengthLabel2.setText(String.valueOf(constitucion));
+				v2 = Integer.parseInt(vitalityLabel2.getText());
+			}
+		}
+		st.close();
 	}
 
 	private void escuadron() throws ClassNotFoundException, SQLException {
 		String myDriver = "org.gjt.mm.mysql.Driver";
-		String myUrl = "jdbc:mysql://localhost/rpg";
+		String myUrl = "jdbc:mysql://localhost/rpg?useSSL=false";
 		Class.forName(myDriver);
-		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "silvestre96");
+		Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
 		String query = "SELECT * FROM escuadron";
 		conn.createStatement();
 		Statement st = (Statement) conn.createStatement();
