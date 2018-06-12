@@ -22,8 +22,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 /**
@@ -123,22 +121,23 @@ public class MainUIController implements Initializable {
 		try {
 			((Node) event.getSource()).getScene().getWindow().hide();
 
-			// se carga el root del archivo fmxl
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Main.class.getResource("rootStage.fxml"));
-			Stage primaryStage = new Stage();
-			BorderPane rootStage = (BorderPane) loader.load();
-			// Muestra la escena que contiene el diseño de la raíz.
-			Scene scene = new Scene(rootStage);
-			primaryStage.setScene(scene);
-			primaryStage.setResizable(false);
-			primaryStage.show();
+			// // se carga el root del archivo fmxl
+			// FXMLLoader loader = new FXMLLoader();
+			// loader.setLocation(Main.class.getResource("rootStage.fxml"));
+			// Stage primaryStage = new Stage();
+			// BorderPane rootStage = (BorderPane) loader.load();
+			// // Muestra la escena que contiene el diseño de la raíz.
+			// Scene scene = new Scene(rootStage);
+			// primaryStage.setScene(scene);
+			// primaryStage.setResizable(false);
+			// primaryStage.show();
 
-			FXMLLoader fxmlLoader = new FXMLLoader();
-			fxmlLoader.setLocation(Main.class.getResource("MainScreen.fxml"));
-			AnchorPane mainScreen = (AnchorPane) fxmlLoader.load();
-			// establece el menú principal en el centro del stage (rootStage)
-			rootStage.setCenter(mainScreen);
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MainScreen.fxml"));
+			Parent root = (Parent) fxmlLoader.load();
+			Stage stage = new Stage();
+			stage.setScene(new Scene(root));
+			stage.setResizable(false);
+			stage.show();
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
