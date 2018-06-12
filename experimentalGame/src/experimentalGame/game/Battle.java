@@ -184,7 +184,7 @@ public class Battle implements Initializable {
 	 */
 	public void btnAtaque2(ActionEvent event) {
 
-		musicFile = "./src/Sounds/laser.wav";
+		musicFile = "Sounds/laser.wav";
 
 		sound = new Media(Main.documentBase + musicFile);
 		mediaPlayer = new MediaPlayer(sound);
@@ -210,7 +210,7 @@ public class Battle implements Initializable {
 	 */
 	public void btnBotiquin(ActionEvent event) {
 
-		musicFile = "./src/Sounds/medkit.wav";
+		musicFile = "Sounds/medkit.wav";
 
 		sound = new Media(Main.documentBase + musicFile);
 		mediaPlayer = new MediaPlayer(sound);
@@ -233,7 +233,7 @@ public class Battle implements Initializable {
 	 */
 	public void btnGranada(ActionEvent event) {
 
-		musicFile = "./src/Sounds/granade.mp3";
+		musicFile = "Sounds/granade.mp3";
 
 		sound = new Media(Main.documentBase + musicFile);
 		mediaPlayer = new MediaPlayer(sound);
