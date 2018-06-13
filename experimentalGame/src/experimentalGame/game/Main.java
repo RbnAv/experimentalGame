@@ -61,7 +61,7 @@ public class Main extends Application {
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MainScreen.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
-			stage.getIcons().add(new Image("/img/titulo.jpg"));
+			stage.getIcons().add(new Image("/img/icon.png"));
 			stage.setScene(new Scene(root));
 			stage.setResizable(false);
 			stage.show();

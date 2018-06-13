@@ -86,7 +86,7 @@ public class Narrative implements Initializable {
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MainUI.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
-			stage.getIcons().add(new Image("/img/titulo.jpg"));
+			stage.getIcons().add(new Image("/img/icon.png"));
 			stage.setScene(new Scene(root));
 			stage.setResizable(false);
 			stage.show();
