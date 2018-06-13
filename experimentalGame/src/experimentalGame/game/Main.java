@@ -9,6 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.media.Media;
@@ -60,6 +61,7 @@ public class Main extends Application {
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MainScreen.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
+			stage.getIcons().add(new Image("/img/titulo.jpg"));
 			stage.setScene(new Scene(root));
 			stage.setResizable(false);
 			stage.show();

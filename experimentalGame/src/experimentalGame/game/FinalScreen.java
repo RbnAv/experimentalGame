@@ -18,6 +18,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class FinalScreen implements Initializable {
@@ -97,20 +98,11 @@ public class FinalScreen implements Initializable {
 				MainUIController.myArray[i] = null;
 			}
 			((Node) event.getSource()).getScene().getWindow().hide();
-			// // se carga el root del archivo fmxl
-			// FXMLLoader loader = new FXMLLoader();
-			// loader.setLocation(Main.class.getResource("rootStage.fxml"));
-			// Stage primaryStage = new Stage();
-			// BorderPane rootStage = (BorderPane) loader.load();
-			// // Muestra la escena que contiene el diseño de la raíz.
-			// Scene scene = new Scene(rootStage);
-			// primaryStage.setScene(scene);
-			// primaryStage.setResizable(false);
-			// primaryStage.show();
 
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MainScreen.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
+			stage.getIcons().add(new Image("/img/titulo.jpg"));
 			stage.setScene(new Scene(root));
 			stage.setResizable(false);
 			stage.show();
@@ -131,35 +123,25 @@ public class FinalScreen implements Initializable {
 			for (int i = 0; i < MainUIController.myArray.length; i++) {
 				MainUIController.myArray[i] = null;
 			}
-			// create a java mysql database connection
+
 			String myDriver = "org.gjt.mm.mysql.Driver";
 			String myUrl = "jdbc:mysql://localhost/rpg?useSSL=false";
 			Class.forName(myDriver);
 			Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
 
-			// create the java mysql update preparedstatement
 			String query = "update escuadron set vitalidadEscuadron = ?";
 			PreparedStatement preparedStmt = (PreparedStatement) conn.prepareStatement(query);
 			preparedStmt.setInt(1, 236);
-
-			// execute the java preparedstatement
 			preparedStmt.executeUpdate();
 			conn.close();
 
-			// Cerramos esta ventana
 			((Node) event.getSource()).getScene().getWindow().hide();
-
-			// Añadimos el fxml y lo cargamos
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("narrativeScreen.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 
-			// Creamos un nuevo Stage (una nueva ventana vacía)
 			Stage stage = new Stage();
-
-			// Dentro del Stage añadimos la escena que anteriormente hemos leído y metido en
-			// root
+			stage.getIcons().add(new Image("/img/titulo.jpg"));
 			stage.setScene(new Scene(root));
-
 			stage.setResizable(false);
 
 			// Mostramos la ventana

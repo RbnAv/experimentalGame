@@ -17,6 +17,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class AlertPanel implements Initializable {
@@ -72,6 +73,7 @@ public class AlertPanel implements Initializable {
 				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("finalScreen.fxml"));
 				Parent root = (Parent) fxmlLoader.load();
 				Stage stage = new Stage();
+				stage.getIcons().add(new Image("/img/titulo.jpg"));
 				stage.setScene(new Scene(root));
 				stage.setResizable(false);
 				stage.show();
@@ -83,6 +85,7 @@ public class AlertPanel implements Initializable {
 					FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("finalScreen.fxml"));
 					Parent root = (Parent) fxmlLoader.load();
 					Stage stage = new Stage();
+					stage.getIcons().add(new Image("/img/titulo.jpg"));
 					stage.setScene(new Scene(root));
 					stage.setResizable(false);
 					stage.show();
@@ -92,6 +95,7 @@ public class AlertPanel implements Initializable {
 					FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("finalScreen.fxml"));
 					Parent root = (Parent) fxmlLoader.load();
 					Stage stage = new Stage();
+					stage.getIcons().add(new Image("/img/titulo.jpg"));
 					stage.setScene(new Scene(root));
 					stage.setResizable(false);
 					stage.show();
@@ -101,6 +105,7 @@ public class AlertPanel implements Initializable {
 					FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("finalScreen.fxml"));
 					Parent root = (Parent) fxmlLoader.load();
 					Stage stage = new Stage();
+					stage.getIcons().add(new Image("/img/titulo.jpg"));
 					stage.setScene(new Scene(root));
 					stage.setResizable(false);
 					stage.show();
@@ -110,6 +115,7 @@ public class AlertPanel implements Initializable {
 				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MainUI.fxml"));
 				Parent root = (Parent) fxmlLoader.load();
 				Stage stage = new Stage();
+				stage.getIcons().add(new Image("/img/titulo.jpg"));
 				stage.setScene(new Scene(root));
 				stage.setResizable(false);
 				stage.show();

@@ -75,7 +75,6 @@ public class Evento implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		try {
-			// Image image = new Image("/img/fusil.png");
 			Image image = new Image(MainUI.img);
 			imgEvent.setImage(image);
 
@@ -85,10 +84,7 @@ public class Evento implements Initializable {
 			evento();
 
 			btn1.setDisable(btn1.getText().toString().equals(""));
-			/*
-			 * if (btn1.getText().isEmpty()) { btn1.setDisable(true);
-			 * btn1.setText(String.valueOf(btn3.getText().length())); }
-			 */
+
 			if (btn2.getText().toString().equals("")) {
 				btn2.setDisable(true);
 			}
@@ -112,9 +108,6 @@ public class Evento implements Initializable {
 		while (rs.next()) {
 			idEscuadron = rs.getInt("idEscuadron");
 			String nombre = rs.getString("nombreEscuadron");
-			// vitalidad = rs.getInt("vitalidadEscuadron");
-			// int constitucion = rs.getInt("constitucionEscuadron");
-			// int fuerza = rs.getInt("fuerzaEscuadron");
 			if (idEscuadron == equipo) {
 				lbl1.setText(nombre);
 			}
@@ -179,7 +172,7 @@ public class Evento implements Initializable {
 				t1 = texto1;
 				t2 = texto2;
 				t3 = texto3;
-				lblSector.setText("Sector "+nombreEvento);
+				lblSector.setText("Sector " + nombreEvento);
 			}
 		}
 		st.close();
@@ -196,8 +189,6 @@ public class Evento implements Initializable {
 		ResultSet rs = st.executeQuery(query);
 		while (rs.next()) {
 			String nombreEvento = rs.getString("nombreEvento");
-			// String narrativa = rs.getString("narrativa");
-			// String dialogo = rs.getString("dialogo");
 			String accion1 = rs.getString("accion1");
 			String texto1 = rs.getString("texto1");
 			String accion2 = rs.getString("accion2");
@@ -271,8 +262,6 @@ public class Evento implements Initializable {
 		ResultSet rs = st.executeQuery(query);
 		while (rs.next()) {
 			String nombreEvento = rs.getString("nombreEvento");
-			// String narrativa = rs.getString("narrativa");
-			// String dialogo = rs.getString("dialogo");
 			String accion1 = rs.getString("accion1");
 			String texto1 = rs.getString("texto1");
 			String accion2 = rs.getString("accion2");
@@ -303,7 +292,6 @@ public class Evento implements Initializable {
 			}
 
 		}
-
 		btn1.setDisable(true);
 		btn2.setDisable(true);
 		btn3.setDisable(true);
@@ -322,8 +310,6 @@ public class Evento implements Initializable {
 		ResultSet rs = st.executeQuery(query);
 		while (rs.next()) {
 			String nombreEvento = rs.getString("nombreEvento");
-			// String narrativa = rs.getString("narrativa");
-			// String dialogo = rs.getString("dialogo");
 			String accion1 = rs.getString("accion1");
 			String texto1 = rs.getString("texto1");
 			String accion2 = rs.getString("accion2");
@@ -347,7 +333,6 @@ public class Evento implements Initializable {
 				}
 			}
 		}
-
 		btn1.setDisable(true);
 		btn2.setDisable(true);
 		btn3.setDisable(true);
@@ -388,6 +373,7 @@ public class Evento implements Initializable {
 				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("finalScreen.fxml"));
 				Parent root = (Parent) fxmlLoader.load();
 				Stage stage = new Stage();
+				stage.getIcons().add(new Image("/img/titulo.jpg"));
 				stage.setScene(new Scene(root));
 				stage.setResizable(false);
 				stage.show();
@@ -399,6 +385,7 @@ public class Evento implements Initializable {
 					FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("finalScreen.fxml"));
 					Parent root = (Parent) fxmlLoader.load();
 					Stage stage = new Stage();
+					stage.getIcons().add(new Image("/img/titulo.jpg"));
 					stage.setScene(new Scene(root));
 					stage.setResizable(false);
 					stage.show();
@@ -408,6 +395,7 @@ public class Evento implements Initializable {
 					FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("finalScreen.fxml"));
 					Parent root = (Parent) fxmlLoader.load();
 					Stage stage = new Stage();
+					stage.getIcons().add(new Image("/img/titulo.jpg"));
 					stage.setScene(new Scene(root));
 					stage.setResizable(false);
 					stage.show();
@@ -417,6 +405,7 @@ public class Evento implements Initializable {
 					FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("finalScreen.fxml"));
 					Parent root = (Parent) fxmlLoader.load();
 					Stage stage = new Stage();
+					stage.getIcons().add(new Image("/img/titulo.jpg"));
 					stage.setScene(new Scene(root));
 					stage.setResizable(false);
 					stage.show();
@@ -426,6 +415,7 @@ public class Evento implements Initializable {
 				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MainUI.fxml"));
 				Parent root = (Parent) fxmlLoader.load();
 				Stage stage = new Stage();
+				stage.getIcons().add(new Image("/img/titulo.jpg"));
 				stage.setScene(new Scene(root));
 				stage.setResizable(false);
 				stage.show();
@@ -435,6 +425,3 @@ public class Evento implements Initializable {
 		}
 	}
 }
-
-
-

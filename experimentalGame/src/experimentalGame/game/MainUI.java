@@ -22,6 +22,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class MainUI implements Initializable {
@@ -268,6 +269,7 @@ public class MainUI implements Initializable {
 							FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Battle.fxml"));
 							Parent root = (Parent) fxmlLoader.load();
 							Stage stage = new Stage();
+							stage.getIcons().add(new Image("/img/titulo.jpg"));
 							stage.setScene(new Scene(root));
 							stage.setResizable(false);
 							stage.show();
@@ -277,6 +279,7 @@ public class MainUI implements Initializable {
 							FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("eventScreen.fxml"));
 							Parent root = (Parent) fxmlLoader.load();
 							Stage stage = new Stage();
+							stage.getIcons().add(new Image("/img/titulo.jpg"));
 							stage.setScene(new Scene(root));
 							stage.setResizable(false);
 							stage.show();
@@ -306,6 +309,7 @@ public class MainUI implements Initializable {
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("optionPanel2.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
+			stage.getIcons().add(new Image("/img/titulo.jpg"));
 			stage.setScene(new Scene(root));
 			stage.setResizable(false);
 			stage.show();

@@ -22,6 +22,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 /**
@@ -79,18 +80,16 @@ public class MainUIController implements Initializable {
 	public void nuevaPartida(ActionEvent event) {
 
 		try {
-			// create a java mysql database connection
+			// Creamos la conexión
 			String myDriver = "org.gjt.mm.mysql.Driver";
 			String myUrl = "jdbc:mysql://localhost/rpg?useSSL=false";
 			Class.forName(myDriver);
 			Connection conn = (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
 
-			// create the java mysql update preparedstatement
+			// Ponemos lo que va a hacer en la base de datos (un update)
 			String query = "update escuadron set vitalidadEscuadron = ?";
 			PreparedStatement preparedStmt = (PreparedStatement) conn.prepareStatement(query);
 			preparedStmt.setInt(1, 236);
-
-			// execute the java preparedstatement
 			preparedStmt.executeUpdate();
 			conn.close();
 
@@ -103,9 +102,9 @@ public class MainUIController implements Initializable {
 
 			// Creamos un nuevo Stage (una nueva ventana vacía)
 			Stage stage = new Stage();
+			stage.getIcons().add(new Image("/img/titulo.jpg"));
 
-			// Dentro del Stage añadimos la escena que anteriormente hemos leído y metido en
-			// root
+			// Dentro del Stage añadimos la escena que anteriormente hemos metido en root
 			stage.setScene(new Scene(root));
 
 			stage.setResizable(false);
@@ -121,20 +120,10 @@ public class MainUIController implements Initializable {
 		try {
 			((Node) event.getSource()).getScene().getWindow().hide();
 
-			// // se carga el root del archivo fmxl
-			// FXMLLoader loader = new FXMLLoader();
-			// loader.setLocation(Main.class.getResource("rootStage.fxml"));
-			// Stage primaryStage = new Stage();
-			// BorderPane rootStage = (BorderPane) loader.load();
-			// // Muestra la escena que contiene el diseño de la raíz.
-			// Scene scene = new Scene(rootStage);
-			// primaryStage.setScene(scene);
-			// primaryStage.setResizable(false);
-			// primaryStage.show();
-
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MainScreen.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
+			stage.getIcons().add(new Image("/img/titulo.jpg"));
 			stage.setScene(new Scene(root));
 			stage.setResizable(false);
 			stage.show();
@@ -150,6 +139,7 @@ public class MainUIController implements Initializable {
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("optionPanel.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
+			stage.getIcons().add(new Image("/img/titulo.jpg"));
 			stage.setScene(new Scene(root));
 			stage.setResizable(false);
 			stage.show();
@@ -165,6 +155,7 @@ public class MainUIController implements Initializable {
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("helpPanel.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
+			stage.getIcons().add(new Image("/img/titulo.jpg"));
 			stage.setScene(new Scene(root));
 			stage.setResizable(false);
 			stage.show();
@@ -180,6 +171,7 @@ public class MainUIController implements Initializable {
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("helpPanel2.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
+			stage.getIcons().add(new Image("/img/titulo.jpg"));
 			stage.setScene(new Scene(root));
 			stage.setResizable(false);
 			stage.show();
@@ -195,6 +187,7 @@ public class MainUIController implements Initializable {
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("creditsPanel.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
+			stage.getIcons().add(new Image("/img/titulo.jpg"));
 			stage.setScene(new Scene(root));
 			stage.setResizable(false);
 			stage.show();
@@ -210,6 +203,7 @@ public class MainUIController implements Initializable {
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("creditsPanel2.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
+			stage.getIcons().add(new Image("/img/titulo.jpg"));
 			stage.setScene(new Scene(root));
 			stage.setResizable(false);
 			stage.show();
@@ -225,6 +219,7 @@ public class MainUIController implements Initializable {
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("controlsPanel.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
+			stage.getIcons().add(new Image("/img/titulo.jpg"));
 			stage.setScene(new Scene(root));
 			stage.setResizable(false);
 			stage.show();
@@ -240,6 +235,7 @@ public class MainUIController implements Initializable {
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("controlsPanel2.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
+			stage.getIcons().add(new Image("/img/titulo.jpg"));
 			stage.setScene(new Scene(root));
 			stage.setResizable(false);
 			stage.show();
@@ -255,6 +251,7 @@ public class MainUIController implements Initializable {
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("optionPanel.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
+			stage.getIcons().add(new Image("/img/titulo.jpg"));
 			stage.setScene(new Scene(root));
 			stage.setResizable(false);
 			stage.show();
@@ -270,6 +267,7 @@ public class MainUIController implements Initializable {
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("optionPanel2.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
+			stage.getIcons().add(new Image("/img/titulo.jpg"));
 			stage.setScene(new Scene(root));
 			stage.setResizable(false);
 			stage.show();
@@ -285,6 +283,7 @@ public class MainUIController implements Initializable {
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MainUI.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
+			stage.getIcons().add(new Image("/img/titulo.jpg"));
 			stage.setScene(new Scene(root));
 			stage.setResizable(false);
 			stage.show();
@@ -296,31 +295,6 @@ public class MainUIController implements Initializable {
 	public void salir(ActionEvent event) {
 		System.exit(0);
 	}
-
-	/*
-	 * public void escogerPersonaje(ActionEvent event) { try { // create our mysql
-	 * database connection String myDriver = "org.gjt.mm.mysql.Driver"; String myUrl
-	 * = "jdbc:mysql://localhost/mydb"; Class.forName(myDriver); Connection conn =
-	 * (Connection) DriverManager.getConnection(myUrl, "root", "studium2017");
-	 * 
-	 * // our SQL SELECT query. // if you only need a few columns, specify them by
-	 * name instead of using "*" String query = "SELECT * FROM personaje";
-	 * 
-	 * // create the java statement Statement st = (Statement)
-	 * conn.createStatement();
-	 * 
-	 * // execute the query, and get a java resultset ResultSet rs =
-	 * st.executeQuery(query);
-	 * 
-	 * // iterate through the java resultset while (rs.next()) { String
-	 * nombrePersonaje = rs.getString("nombrePersonaje"); int vidaPersonaje =
-	 * rs.getInt("vidaPersonaje");
-	 * 
-	 * // Apoyo if (nombrePersonaje.equals("Apoyo")) { int v1 = vidaPersonaje;
-	 * lbl.setText("Vida :" + v1); } } st.close(); } catch (Exception e) {
-	 * System.err.println("Got an exception! "); System.err.println(e.getMessage());
-	 * } }
-	 */
 
 	/**
 	 * Is called by the main application to give a reference back to itself.

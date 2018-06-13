@@ -21,6 +21,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
@@ -341,6 +342,7 @@ public class Battle implements Initializable {
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("alertPanel.fxml"));
 		Parent root = (Parent) fxmlLoader.load();
 		Stage stage = new Stage();
+		stage.getIcons().add(new Image("/img/titulo.jpg"));
 		stage.setScene(new Scene(root));
 		stage.setResizable(false);
 		stage.show();
